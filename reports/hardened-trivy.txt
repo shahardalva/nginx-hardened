@@ -1,17 +1,17 @@
-2026-11-08T16:49:04+02:00	INFO	[vuln] Vulnerability scanning is enabled
-2026-11-08T16:49:04+02:00	INFO	[secret] Secret scanning is enabled
-2026-11-08T16:49:04+02:00	INFO	[secret] If your scanning is slow, please try '--scanners vuln' to disable secret scanning
-2026-11-08T16:49:04+02:00	INFO	[secret] Please see https://trivy.dev/docs/v0.76/guide/scanner/secret#recommendation for faster secret detection
-2026-11-08T16:49:50+02:00	INFO	Detected OS	family="debian" version="12.15"
-2026-11-08T16:49:50+02:00	INFO	[debian] Detecting vulnerabilities...	os_version="12" pkg_num=134
-2026-11-08T16:49:50+02:00	WARN	Using severities from other vendors for some vulnerabilities. Read https://trivy.dev/docs/v0.76/guide/scanner/vulnerability#severity-selection for details.
+2026-11-08T20:58:36+02:00	INFO	[vuln] Vulnerability scanning is enabled
+2026-11-08T20:58:36+02:00	INFO	[secret] Secret scanning is enabled
+2026-11-08T20:58:36+02:00	INFO	[secret] If your scanning is slow, please try '--scanners vuln' to disable secret scanning
+2026-11-08T20:58:36+02:00	INFO	[secret] Please see https://trivy.dev/docs/v0.76/guide/scanner/secret#recommendation for faster secret detection
+2026-11-08T20:58:36+02:00	INFO	Detected OS	family="debian" version="12.15"
+2026-11-08T20:58:36+02:00	INFO	[debian] Detecting vulnerabilities...	os_version="12" pkg_num=149
+2026-11-08T20:58:37+02:00	WARN	Using severities from other vendors for some vulnerabilities. Read https://trivy.dev/docs/v0.76/guide/scanner/vulnerability#severity-selection for details.
 
 Report Summary
 
 ┌──────────────────────────────────────┬────────┬─────────────────┬─────────┐
 │                Target                │  Type  │ Vulnerabilities │ Secrets │
 ├──────────────────────────────────────┼────────┼─────────────────┼─────────┤
-│ nginx-hardened:latest (debian 12.15) │ debian │       359       │    -    │
+│ nginx-hardened:latest (debian 12.15) │ debian │       466       │    -    │
 └──────────────────────────────────────┴────────┴─────────────────┴─────────┘
 Legend:
 - '-': Not scanned
@@ -20,7 +20,7 @@ Legend:
 
 nginx-hardened:latest (debian 12.15)
 ====================================
-Total: 359 (UNKNOWN: 39, LOW: 122, MEDIUM: 125, HIGH: 70, CRITICAL: 3)
+Total: 466 (UNKNOWN: 39, LOW: 187, MEDIUM: 156, HIGH: 81, CRITICAL: 3)
 
 ┌────────────────────┬─────────────────────┬──────────┬──────────────┬─────────────────────────────┬───────────────┬──────────────────────────────────────────────────────────────┐
 │      Library       │    Vulnerability    │ Severity │    Status    │      Installed Version      │ Fixed Version │                            Title                             │
@@ -83,6 +83,144 @@ Total: 359 (UNKNOWN: 39, LOW: 122, MEDIUM: 125, HIGH: 70, CRITICAL: 3)
 │                    │ CVE-2026-56392      │          │              │                             │               │ coreutils: GNU coreutils unexpand: Denial of Service via     │
 │                    │                     │          │              │                             │               │ crafted tab stop values...                                   │
 │                    │                     │          │              │                             │               │ https://avd.aquasec.com/nvd/cve-2026-56392                   │
+├────────────────────┼─────────────────────┼──────────┼──────────────┼─────────────────────────────┼───────────────┼──────────────────────────────────────────────────────────────┤
+│ curl               │ CVE-2026-12064      │ HIGH     │ fix_deferred │ 7.88.1-10+deb12u15          │               │ curl: curl: SSH host verification bypass when using          │
+│                    │                     │          │              │                             │               │ schemeless URLs with SFTP/SCP...                             │
+│                    │                     │          │              │                             │               │ https://avd.aquasec.com/nvd/cve-2026-12064                   │
+│                    ├─────────────────────┤          ├──────────────┤                             ├───────────────┼──────────────────────────────────────────────────────────────┤
+│                    │ CVE-2026-6276       │          │ affected     │                             │               │ curl: libcurl: Information disclosure due to cookie leak     │
+│                    │                     │          │              │                             │               │ when reusing connections with...                             │
+│                    │                     │          │              │                             │               │ https://avd.aquasec.com/nvd/cve-2026-6276                    │
+│                    ├─────────────────────┤          ├──────────────┤                             ├───────────────┼──────────────────────────────────────────────────────────────┤
+│                    │ CVE-2026-8286       │          │ fix_deferred │                             │               │ curl: curl: Insecure connection establishment due to TLS     │
+│                    │                     │          │              │                             │               │ configuration mismatch                                       │
+│                    │                     │          │              │                             │               │ https://avd.aquasec.com/nvd/cve-2026-8286                    │
+│                    ├─────────────────────┤          │              │                             ├───────────────┼──────────────────────────────────────────────────────────────┤
+│                    │ CVE-2026-8458       │          │              │                             │               │ curl: libcurl: Unauthorized connection reuse due to a        │
+│                    │                     │          │              │                             │               │ logical error                                                │
+│                    │                     │          │              │                             │               │ https://avd.aquasec.com/nvd/cve-2026-8458                    │
+│                    ├─────────────────────┤          │              │                             ├───────────────┼──────────────────────────────────────────────────────────────┤
+│                    │ CVE-2026-8927       │          │              │                             │               │ curl: Information disclosure due to uncleared proxy          │
+│                    │                     │          │              │                             │               │ authentication state                                         │
+│                    │                     │          │              │                             │               │ https://avd.aquasec.com/nvd/cve-2026-8927                    │
+│                    ├─────────────────────┼──────────┤              │                             ├───────────────┼──────────────────────────────────────────────────────────────┤
+│                    │ CVE-2026-10536      │ MEDIUM   │              │                             │               │ libcurl: libcurl: Use-after-free vulnerability leading to    │
+│                    │                     │          │              │                             │               │ Denial of Service                                            │
+│                    │                     │          │              │                             │               │ https://avd.aquasec.com/nvd/cve-2026-10536                   │
+│                    ├─────────────────────┤          │              │                             ├───────────────┼──────────────────────────────────────────────────────────────┤
+│                    │ CVE-2026-11856      │          │              │                             │               │ curl: curl: Information disclosure via incorrect Digest      │
+│                    │                     │          │              │                             │               │ authentication header reuse                                  │
+│                    │                     │          │              │                             │               │ https://avd.aquasec.com/nvd/cve-2026-11856                   │
+│                    ├─────────────────────┤          ├──────────────┤                             ├───────────────┼──────────────────────────────────────────────────────────────┤
+│                    │ CVE-2026-1965       │          │ affected     │                             │               │ curl: curl: Authentication bypass due to incorrect           │
+│                    │                     │          │              │                             │               │ connection reuse with Negotiate authentication...            │
+│                    │                     │          │              │                             │               │ https://avd.aquasec.com/nvd/cve-2026-1965                    │
+│                    ├─────────────────────┤          ├──────────────┤                             ├───────────────┼──────────────────────────────────────────────────────────────┤
+│                    │ CVE-2026-19931      │          │ fix_deferred │                             │               │ curl: libcurl: Information disclosure via incorrect          │
+│                    │                     │          │              │                             │               │ connection reuse with Negotiate authentication               │
+│                    │                     │          │              │                             │               │ https://avd.aquasec.com/nvd/cve-2026-19931                   │
+│                    ├─────────────────────┤          ├──────────────┤                             ├───────────────┼──────────────────────────────────────────────────────────────┤
+│                    │ CVE-2026-4873       │          │ affected     │                             │               │ curl: curl: Information disclosure due to incorrect TLS      │
+│                    │                     │          │              │                             │               │ connection reuse                                             │
+│                    │                     │          │              │                             │               │ https://avd.aquasec.com/nvd/cve-2026-4873                    │
+│                    ├─────────────────────┤          │              │                             ├───────────────┼──────────────────────────────────────────────────────────────┤
+│                    │ CVE-2026-5545       │          │              │                             │               │ curl: libcurl: Authentication bypass due to incorrect HTTP   │
+│                    │                     │          │              │                             │               │ Negotiate connection reuse                                   │
+│                    │                     │          │              │                             │               │ https://avd.aquasec.com/nvd/cve-2026-5545                    │
+│                    ├─────────────────────┤          │              │                             ├───────────────┼──────────────────────────────────────────────────────────────┤
+│                    │ CVE-2026-6253       │          │              │                             │               │ curl: curl: Proxy credential disclosure via redirects to     │
+│                    │                     │          │              │                             │               │ unauthenticated proxies                                      │
+│                    │                     │          │              │                             │               │ https://avd.aquasec.com/nvd/cve-2026-6253                    │
+│                    ├─────────────────────┤          │              │                             ├───────────────┼──────────────────────────────────────────────────────────────┤
+│                    │ CVE-2026-6429       │          │              │                             │               │ curl: libcurl: Credential leak via reused proxy connection   │
+│                    │                     │          │              │                             │               │ during HTTP redirects                                        │
+│                    │                     │          │              │                             │               │ https://avd.aquasec.com/nvd/cve-2026-6429                    │
+│                    ├─────────────────────┤          ├──────────────┤                             ├───────────────┼──────────────────────────────────────────────────────────────┤
+│                    │ CVE-2026-8924       │          │ fix_deferred │                             │               │ curl: curl: Cookie injection via malicious HTTP server using │
+│                    │                     │          │              │                             │               │ super cookies                                                │
+│                    │                     │          │              │                             │               │ https://avd.aquasec.com/nvd/cve-2026-8924                    │
+│                    ├─────────────────────┤          │              │                             ├───────────────┼──────────────────────────────────────────────────────────────┤
+│                    │ CVE-2026-8932       │          │              │                             │               │ libcurl: libcurl: Security feature bypass due to improper    │
+│                    │                     │          │              │                             │               │ mTLS connection reuse                                        │
+│                    │                     │          │              │                             │               │ https://avd.aquasec.com/nvd/cve-2026-8932                    │
+│                    ├─────────────────────┤          │              │                             ├───────────────┼──────────────────────────────────────────────────────────────┤
+│                    │ CVE-2026-92388      │          │              │                             │               │ curl: curl: FTP wildcard write callback mixup                │
+│                    │                     │          │              │                             │               │ https://avd.aquasec.com/nvd/cve-2026-92388                   │
+│                    ├─────────────────────┼──────────┼──────────────┤                             ├───────────────┼──────────────────────────────────────────────────────────────┤
+│                    │ CVE-2024-2379       │ LOW      │ affected     │                             │               │ curl: QUIC certificate check bypass with wolfSSL             │
+│                    │                     │          │              │                             │               │ https://avd.aquasec.com/nvd/cve-2024-2379                    │
+│                    ├─────────────────────┤          │              │                             ├───────────────┼──────────────────────────────────────────────────────────────┤
+│                    │ CVE-2025-0725       │          │              │                             │               │ libcurl: Buffer Overflow in libcurl via zlib Integer         │
+│                    │                     │          │              │                             │               │ Overflow                                                     │
+│                    │                     │          │              │                             │               │ https://avd.aquasec.com/nvd/cve-2025-0725                    │
+│                    ├─────────────────────┤          │              │                             ├───────────────┼──────────────────────────────────────────────────────────────┤
+│                    │ CVE-2025-10966      │          │              │                             │               │ curl: Curl missing SFTP host verification with wolfSSH       │
+│                    │                     │          │              │                             │               │ backend                                                      │
+│                    │                     │          │              │                             │               │ https://avd.aquasec.com/nvd/cve-2025-10966                   │
+│                    ├─────────────────────┤          │              │                             ├───────────────┼──────────────────────────────────────────────────────────────┤
+│                    │ CVE-2025-14017      │          │              │                             │               │ curl: curl: Security bypass due to global TLS option changes │
+│                    │                     │          │              │                             │               │ in multi-threaded...                                         │
+│                    │                     │          │              │                             │               │ https://avd.aquasec.com/nvd/cve-2025-14017                   │
+│                    ├─────────────────────┤          │              │                             ├───────────────┼──────────────────────────────────────────────────────────────┤
+│                    │ CVE-2025-15079      │          │              │                             │               │ curl: Host verification bypass during SSH transfers          │
+│                    │                     │          │              │                             │               │ https://avd.aquasec.com/nvd/cve-2025-15079                   │
+│                    ├─────────────────────┤          │              │                             ├───────────────┼──────────────────────────────────────────────────────────────┤
+│                    │ CVE-2025-15224      │          │              │                             │               │ curl: libssh key passphrase bypass without agent set         │
+│                    │                     │          │              │                             │               │ https://avd.aquasec.com/nvd/cve-2025-15224                   │
+│                    ├─────────────────────┤          │              │                             ├───────────────┼──────────────────────────────────────────────────────────────┤
+│                    │ CVE-2026-107928     │          │              │                             │               │ curl: curl: info leak uploading over WebSockets with GnuTLS  │
+│                    │                     │          │              │                             │               │ https://avd.aquasec.com/nvd/cve-2026-107928                  │
+│                    ├─────────────────────┤          ├──────────────┤                             ├───────────────┼──────────────────────────────────────────────────────────────┤
+│                    │ CVE-2026-13608      │          │ fix_deferred │                             │               │ curl: curl: Authentication bypass in OpenLDAP SASL           │
+│                    │                     │          │              │                             │               │ negotiation via Man-in-the-Middle (MITM) attack...           │
+│                    │                     │          │              │                             │               │ https://avd.aquasec.com/nvd/cve-2026-13608                   │
+│                    ├─────────────────────┤          │              │                             ├───────────────┼──────────────────────────────────────────────────────────────┤
+│                    │ CVE-2026-18924      │          │              │                             │               │ curl: libcurl: Use-after-free in HTTP/2 Server Push with     │
+│                    │                     │          │              │                             │               │ shared connections                                           │
+│                    │                     │          │              │                             │               │ https://avd.aquasec.com/nvd/cve-2026-18924                   │
+│                    ├─────────────────────┤          │              │                             ├───────────────┼──────────────────────────────────────────────────────────────┤
+│                    │ CVE-2026-80230      │          │              │                             │               │ curl: curl: Public key pinning bypass allows unauthenticated │
+│                    │                     │          │              │                             │               │ connections                                                  │
+│                    │                     │          │              │                             │               │ https://avd.aquasec.com/nvd/cve-2026-80230                   │
+│                    ├─────────────────────┤          │              │                             ├───────────────┼──────────────────────────────────────────────────────────────┤
+│                    │ CVE-2026-82209      │          │              │                             │               │ curl: libcurl: Information disclosure via improper Public    │
+│                    │                     │          │              │                             │               │ Suffix List boundary check                                   │
+│                    │                     │          │              │                             │               │ https://avd.aquasec.com/nvd/cve-2026-82209                   │
+│                    ├─────────────────────┤          ├──────────────┤                             ├───────────────┼──────────────────────────────────────────────────────────────┤
+│                    │ CVE-2026-86409      │          │ affected     │                             │               │ curl: curl: stale SigV4 headers sent unintended              │
+│                    │                     │          │              │                             │               │ https://avd.aquasec.com/nvd/cve-2026-86409                   │
+│                    ├─────────────────────┤          │              │                             ├───────────────┼──────────────────────────────────────────────────────────────┤
+│                    │ CVE-2026-86410      │          │              │                             │               │ curl: curl: redirect to SFTP or SCP bypasses host            │
+│                    │                     │          │              │                             │               │ verification                                                 │
+│                    │                     │          │              │                             │               │ https://avd.aquasec.com/nvd/cve-2026-86410                   │
+│                    ├─────────────────────┤          │              │                             ├───────────────┼──────────────────────────────────────────────────────────────┤
+│                    │ CVE-2026-86414      │          │              │                             │               │ curl: curl: leaking host credentials to HTTP proxy           │
+│                    │                     │          │              │                             │               │ https://avd.aquasec.com/nvd/cve-2026-86414                   │
+│                    ├─────────────────────┤          ├──────────────┤                             ├───────────────┼──────────────────────────────────────────────────────────────┤
+│                    │ CVE-2026-87864      │          │ fix_deferred │                             │               │ curl: IMAP APPEND plus CRLF conversion command injection     │
+│                    │                     │          │              │                             │               │ https://avd.aquasec.com/nvd/cve-2026-87864                   │
+│                    ├─────────────────────┤          │              │                             ├───────────────┼──────────────────────────────────────────────────────────────┤
+│                    │ CVE-2026-87865      │          │              │                             │               │ curl: curl: knownhost callback mismatches key as missing     │
+│                    │                     │          │              │                             │               │ https://avd.aquasec.com/nvd/cve-2026-87865                   │
+│                    ├─────────────────────┤          ├──────────────┤                             ├───────────────┼──────────────────────────────────────────────────────────────┤
+│                    │ CVE-2026-87866      │          │ affected     │                             │               │ curl: curl: wolfSSL public-key pinning bypass                │
+│                    │                     │          │              │                             │               │ https://avd.aquasec.com/nvd/cve-2026-87866                   │
+│                    ├─────────────────────┤          ├──────────────┤                             ├───────────────┼──────────────────────────────────────────────────────────────┤
+│                    │ CVE-2026-92389      │          │ fix_deferred │                             │               │ curl: curl: TFTP direction confusion                         │
+│                    │                     │          │              │                             │               │ https://avd.aquasec.com/nvd/cve-2026-92389                   │
+│                    ├─────────────────────┤          │              │                             ├───────────────┼──────────────────────────────────────────────────────────────┤
+│                    │ CVE-2026-92390      │          │              │                             │               │ curl: curl: -J no-clobber guarantee bypassed with 103 early  │
+│                    │                     │          │              │                             │               │ hints                                                        │
+│                    │                     │          │              │                             │               │ https://avd.aquasec.com/nvd/cve-2026-92390                   │
+│                    ├─────────────────────┤          ├──────────────┤                             ├───────────────┼──────────────────────────────────────────────────────────────┤
+│                    │ CVE-2026-92391      │          │ affected     │                             │               │ curl: curl: curl_mime_free stack overflow by recursion       │
+│                    │                     │          │              │                             │               │ https://avd.aquasec.com/nvd/cve-2026-92391                   │
+│                    ├─────────────────────┤          │              │                             ├───────────────┼──────────────────────────────────────────────────────────────┤
+│                    │ CVE-2026-94266      │          │              │                             │               │ curl: curl: password leak in CURLINFO_EFFECTIVE_URL          │
+│                    │                     │          │              │                             │               │ https://avd.aquasec.com/nvd/cve-2026-94266                   │
+│                    ├─────────────────────┤          │              │                             ├───────────────┼──────────────────────────────────────────────────────────────┤
+│                    │ CVE-2026-9547       │          │              │                             │               │ curl: curl: Man-in-the-middle attack via SSH host key bypass │
+│                    │                     │          │              │                             │               │ https://avd.aquasec.com/nvd/cve-2026-9547                    │
 ├────────────────────┼─────────────────────┤          │              ├─────────────────────────────┼───────────────┼──────────────────────────────────────────────────────────────┤
 │ dash               │ CVE-2026-102473     │          │              │ 0.5.12-2                    │               │ dash: dash: Super-polynomial backtracking in pmatch when     │
 │                    │                     │          │              │                             │               │ libc fnmatch is disabled                                     │
@@ -380,6 +518,144 @@ Total: 359 (UNKNOWN: 39, LOW: 122, MEDIUM: 125, HIGH: 70, CRITICAL: 3)
 │                    │                     │          │              │                             │               │ strncasecmp                                                  │
 │                    │                     │          │              │                             │               │ https://avd.aquasec.com/nvd/cve-2026-97399                   │
 ├────────────────────┼─────────────────────┼──────────┼──────────────┼─────────────────────────────┼───────────────┼──────────────────────────────────────────────────────────────┤
+│ libcurl4           │ CVE-2026-12064      │ HIGH     │ fix_deferred │ 7.88.1-10+deb12u15          │               │ curl: curl: SSH host verification bypass when using          │
+│                    │                     │          │              │                             │               │ schemeless URLs with SFTP/SCP...                             │
+│                    │                     │          │              │                             │               │ https://avd.aquasec.com/nvd/cve-2026-12064                   │
+│                    ├─────────────────────┤          ├──────────────┤                             ├───────────────┼──────────────────────────────────────────────────────────────┤
+│                    │ CVE-2026-6276       │          │ affected     │                             │               │ curl: libcurl: Information disclosure due to cookie leak     │
+│                    │                     │          │              │                             │               │ when reusing connections with...                             │
+│                    │                     │          │              │                             │               │ https://avd.aquasec.com/nvd/cve-2026-6276                    │
+│                    ├─────────────────────┤          ├──────────────┤                             ├───────────────┼──────────────────────────────────────────────────────────────┤
+│                    │ CVE-2026-8286       │          │ fix_deferred │                             │               │ curl: curl: Insecure connection establishment due to TLS     │
+│                    │                     │          │              │                             │               │ configuration mismatch                                       │
+│                    │                     │          │              │                             │               │ https://avd.aquasec.com/nvd/cve-2026-8286                    │
+│                    ├─────────────────────┤          │              │                             ├───────────────┼──────────────────────────────────────────────────────────────┤
+│                    │ CVE-2026-8458       │          │              │                             │               │ curl: libcurl: Unauthorized connection reuse due to a        │
+│                    │                     │          │              │                             │               │ logical error                                                │
+│                    │                     │          │              │                             │               │ https://avd.aquasec.com/nvd/cve-2026-8458                    │
+│                    ├─────────────────────┤          │              │                             ├───────────────┼──────────────────────────────────────────────────────────────┤
+│                    │ CVE-2026-8927       │          │              │                             │               │ curl: Information disclosure due to uncleared proxy          │
+│                    │                     │          │              │                             │               │ authentication state                                         │
+│                    │                     │          │              │                             │               │ https://avd.aquasec.com/nvd/cve-2026-8927                    │
+│                    ├─────────────────────┼──────────┤              │                             ├───────────────┼──────────────────────────────────────────────────────────────┤
+│                    │ CVE-2026-10536      │ MEDIUM   │              │                             │               │ libcurl: libcurl: Use-after-free vulnerability leading to    │
+│                    │                     │          │              │                             │               │ Denial of Service                                            │
+│                    │                     │          │              │                             │               │ https://avd.aquasec.com/nvd/cve-2026-10536                   │
+│                    ├─────────────────────┤          │              │                             ├───────────────┼──────────────────────────────────────────────────────────────┤
+│                    │ CVE-2026-11856      │          │              │                             │               │ curl: curl: Information disclosure via incorrect Digest      │
+│                    │                     │          │              │                             │               │ authentication header reuse                                  │
+│                    │                     │          │              │                             │               │ https://avd.aquasec.com/nvd/cve-2026-11856                   │
+│                    ├─────────────────────┤          ├──────────────┤                             ├───────────────┼──────────────────────────────────────────────────────────────┤
+│                    │ CVE-2026-1965       │          │ affected     │                             │               │ curl: curl: Authentication bypass due to incorrect           │
+│                    │                     │          │              │                             │               │ connection reuse with Negotiate authentication...            │
+│                    │                     │          │              │                             │               │ https://avd.aquasec.com/nvd/cve-2026-1965                    │
+│                    ├─────────────────────┤          ├──────────────┤                             ├───────────────┼──────────────────────────────────────────────────────────────┤
+│                    │ CVE-2026-19931      │          │ fix_deferred │                             │               │ curl: libcurl: Information disclosure via incorrect          │
+│                    │                     │          │              │                             │               │ connection reuse with Negotiate authentication               │
+│                    │                     │          │              │                             │               │ https://avd.aquasec.com/nvd/cve-2026-19931                   │
+│                    ├─────────────────────┤          ├──────────────┤                             ├───────────────┼──────────────────────────────────────────────────────────────┤
+│                    │ CVE-2026-4873       │          │ affected     │                             │               │ curl: curl: Information disclosure due to incorrect TLS      │
+│                    │                     │          │              │                             │               │ connection reuse                                             │
+│                    │                     │          │              │                             │               │ https://avd.aquasec.com/nvd/cve-2026-4873                    │
+│                    ├─────────────────────┤          │              │                             ├───────────────┼──────────────────────────────────────────────────────────────┤
+│                    │ CVE-2026-5545       │          │              │                             │               │ curl: libcurl: Authentication bypass due to incorrect HTTP   │
+│                    │                     │          │              │                             │               │ Negotiate connection reuse                                   │
+│                    │                     │          │              │                             │               │ https://avd.aquasec.com/nvd/cve-2026-5545                    │
+│                    ├─────────────────────┤          │              │                             ├───────────────┼──────────────────────────────────────────────────────────────┤
+│                    │ CVE-2026-6253       │          │              │                             │               │ curl: curl: Proxy credential disclosure via redirects to     │
+│                    │                     │          │              │                             │               │ unauthenticated proxies                                      │
+│                    │                     │          │              │                             │               │ https://avd.aquasec.com/nvd/cve-2026-6253                    │
+│                    ├─────────────────────┤          │              │                             ├───────────────┼──────────────────────────────────────────────────────────────┤
+│                    │ CVE-2026-6429       │          │              │                             │               │ curl: libcurl: Credential leak via reused proxy connection   │
+│                    │                     │          │              │                             │               │ during HTTP redirects                                        │
+│                    │                     │          │              │                             │               │ https://avd.aquasec.com/nvd/cve-2026-6429                    │
+│                    ├─────────────────────┤          ├──────────────┤                             ├───────────────┼──────────────────────────────────────────────────────────────┤
+│                    │ CVE-2026-8924       │          │ fix_deferred │                             │               │ curl: curl: Cookie injection via malicious HTTP server using │
+│                    │                     │          │              │                             │               │ super cookies                                                │
+│                    │                     │          │              │                             │               │ https://avd.aquasec.com/nvd/cve-2026-8924                    │
+│                    ├─────────────────────┤          │              │                             ├───────────────┼──────────────────────────────────────────────────────────────┤
+│                    │ CVE-2026-8932       │          │              │                             │               │ libcurl: libcurl: Security feature bypass due to improper    │
+│                    │                     │          │              │                             │               │ mTLS connection reuse                                        │
+│                    │                     │          │              │                             │               │ https://avd.aquasec.com/nvd/cve-2026-8932                    │
+│                    ├─────────────────────┤          │              │                             ├───────────────┼──────────────────────────────────────────────────────────────┤
+│                    │ CVE-2026-92388      │          │              │                             │               │ curl: curl: FTP wildcard write callback mixup                │
+│                    │                     │          │              │                             │               │ https://avd.aquasec.com/nvd/cve-2026-92388                   │
+│                    ├─────────────────────┼──────────┼──────────────┤                             ├───────────────┼──────────────────────────────────────────────────────────────┤
+│                    │ CVE-2024-2379       │ LOW      │ affected     │                             │               │ curl: QUIC certificate check bypass with wolfSSL             │
+│                    │                     │          │              │                             │               │ https://avd.aquasec.com/nvd/cve-2024-2379                    │
+│                    ├─────────────────────┤          │              │                             ├───────────────┼──────────────────────────────────────────────────────────────┤
+│                    │ CVE-2025-0725       │          │              │                             │               │ libcurl: Buffer Overflow in libcurl via zlib Integer         │
+│                    │                     │          │              │                             │               │ Overflow                                                     │
+│                    │                     │          │              │                             │               │ https://avd.aquasec.com/nvd/cve-2025-0725                    │
+│                    ├─────────────────────┤          │              │                             ├───────────────┼──────────────────────────────────────────────────────────────┤
+│                    │ CVE-2025-10966      │          │              │                             │               │ curl: Curl missing SFTP host verification with wolfSSH       │
+│                    │                     │          │              │                             │               │ backend                                                      │
+│                    │                     │          │              │                             │               │ https://avd.aquasec.com/nvd/cve-2025-10966                   │
+│                    ├─────────────────────┤          │              │                             ├───────────────┼──────────────────────────────────────────────────────────────┤
+│                    │ CVE-2025-14017      │          │              │                             │               │ curl: curl: Security bypass due to global TLS option changes │
+│                    │                     │          │              │                             │               │ in multi-threaded...                                         │
+│                    │                     │          │              │                             │               │ https://avd.aquasec.com/nvd/cve-2025-14017                   │
+│                    ├─────────────────────┤          │              │                             ├───────────────┼──────────────────────────────────────────────────────────────┤
+│                    │ CVE-2025-15079      │          │              │                             │               │ curl: Host verification bypass during SSH transfers          │
+│                    │                     │          │              │                             │               │ https://avd.aquasec.com/nvd/cve-2025-15079                   │
+│                    ├─────────────────────┤          │              │                             ├───────────────┼──────────────────────────────────────────────────────────────┤
+│                    │ CVE-2025-15224      │          │              │                             │               │ curl: libssh key passphrase bypass without agent set         │
+│                    │                     │          │              │                             │               │ https://avd.aquasec.com/nvd/cve-2025-15224                   │
+│                    ├─────────────────────┤          │              │                             ├───────────────┼──────────────────────────────────────────────────────────────┤
+│                    │ CVE-2026-107928     │          │              │                             │               │ curl: curl: info leak uploading over WebSockets with GnuTLS  │
+│                    │                     │          │              │                             │               │ https://avd.aquasec.com/nvd/cve-2026-107928                  │
+│                    ├─────────────────────┤          ├──────────────┤                             ├───────────────┼──────────────────────────────────────────────────────────────┤
+│                    │ CVE-2026-13608      │          │ fix_deferred │                             │               │ curl: curl: Authentication bypass in OpenLDAP SASL           │
+│                    │                     │          │              │                             │               │ negotiation via Man-in-the-Middle (MITM) attack...           │
+│                    │                     │          │              │                             │               │ https://avd.aquasec.com/nvd/cve-2026-13608                   │
+│                    ├─────────────────────┤          │              │                             ├───────────────┼──────────────────────────────────────────────────────────────┤
+│                    │ CVE-2026-18924      │          │              │                             │               │ curl: libcurl: Use-after-free in HTTP/2 Server Push with     │
+│                    │                     │          │              │                             │               │ shared connections                                           │
+│                    │                     │          │              │                             │               │ https://avd.aquasec.com/nvd/cve-2026-18924                   │
+│                    ├─────────────────────┤          │              │                             ├───────────────┼──────────────────────────────────────────────────────────────┤
+│                    │ CVE-2026-80230      │          │              │                             │               │ curl: curl: Public key pinning bypass allows unauthenticated │
+│                    │                     │          │              │                             │               │ connections                                                  │
+│                    │                     │          │              │                             │               │ https://avd.aquasec.com/nvd/cve-2026-80230                   │
+│                    ├─────────────────────┤          │              │                             ├───────────────┼──────────────────────────────────────────────────────────────┤
+│                    │ CVE-2026-82209      │          │              │                             │               │ curl: libcurl: Information disclosure via improper Public    │
+│                    │                     │          │              │                             │               │ Suffix List boundary check                                   │
+│                    │                     │          │              │                             │               │ https://avd.aquasec.com/nvd/cve-2026-82209                   │
+│                    ├─────────────────────┤          ├──────────────┤                             ├───────────────┼──────────────────────────────────────────────────────────────┤
+│                    │ CVE-2026-86409      │          │ affected     │                             │               │ curl: curl: stale SigV4 headers sent unintended              │
+│                    │                     │          │              │                             │               │ https://avd.aquasec.com/nvd/cve-2026-86409                   │
+│                    ├─────────────────────┤          │              │                             ├───────────────┼──────────────────────────────────────────────────────────────┤
+│                    │ CVE-2026-86410      │          │              │                             │               │ curl: curl: redirect to SFTP or SCP bypasses host            │
+│                    │                     │          │              │                             │               │ verification                                                 │
+│                    │                     │          │              │                             │               │ https://avd.aquasec.com/nvd/cve-2026-86410                   │
+│                    ├─────────────────────┤          │              │                             ├───────────────┼──────────────────────────────────────────────────────────────┤
+│                    │ CVE-2026-86414      │          │              │                             │               │ curl: curl: leaking host credentials to HTTP proxy           │
+│                    │                     │          │              │                             │               │ https://avd.aquasec.com/nvd/cve-2026-86414                   │
+│                    ├─────────────────────┤          ├──────────────┤                             ├───────────────┼──────────────────────────────────────────────────────────────┤
+│                    │ CVE-2026-87864      │          │ fix_deferred │                             │               │ curl: IMAP APPEND plus CRLF conversion command injection     │
+│                    │                     │          │              │                             │               │ https://avd.aquasec.com/nvd/cve-2026-87864                   │
+│                    ├─────────────────────┤          │              │                             ├───────────────┼──────────────────────────────────────────────────────────────┤
+│                    │ CVE-2026-87865      │          │              │                             │               │ curl: curl: knownhost callback mismatches key as missing     │
+│                    │                     │          │              │                             │               │ https://avd.aquasec.com/nvd/cve-2026-87865                   │
+│                    ├─────────────────────┤          ├──────────────┤                             ├───────────────┼──────────────────────────────────────────────────────────────┤
+│                    │ CVE-2026-87866      │          │ affected     │                             │               │ curl: curl: wolfSSL public-key pinning bypass                │
+│                    │                     │          │              │                             │               │ https://avd.aquasec.com/nvd/cve-2026-87866                   │
+│                    ├─────────────────────┤          ├──────────────┤                             ├───────────────┼──────────────────────────────────────────────────────────────┤
+│                    │ CVE-2026-92389      │          │ fix_deferred │                             │               │ curl: curl: TFTP direction confusion                         │
+│                    │                     │          │              │                             │               │ https://avd.aquasec.com/nvd/cve-2026-92389                   │
+│                    ├─────────────────────┤          │              │                             ├───────────────┼──────────────────────────────────────────────────────────────┤
+│                    │ CVE-2026-92390      │          │              │                             │               │ curl: curl: -J no-clobber guarantee bypassed with 103 early  │
+│                    │                     │          │              │                             │               │ hints                                                        │
+│                    │                     │          │              │                             │               │ https://avd.aquasec.com/nvd/cve-2026-92390                   │
+│                    ├─────────────────────┤          ├──────────────┤                             ├───────────────┼──────────────────────────────────────────────────────────────┤
+│                    │ CVE-2026-92391      │          │ affected     │                             │               │ curl: curl: curl_mime_free stack overflow by recursion       │
+│                    │                     │          │              │                             │               │ https://avd.aquasec.com/nvd/cve-2026-92391                   │
+│                    ├─────────────────────┤          │              │                             ├───────────────┼──────────────────────────────────────────────────────────────┤
+│                    │ CVE-2026-94266      │          │              │                             │               │ curl: curl: password leak in CURLINFO_EFFECTIVE_URL          │
+│                    │                     │          │              │                             │               │ https://avd.aquasec.com/nvd/cve-2026-94266                   │
+│                    ├─────────────────────┤          │              │                             ├───────────────┼──────────────────────────────────────────────────────────────┤
+│                    │ CVE-2026-9547       │          │              │                             │               │ curl: curl: Man-in-the-middle attack via SSH host key bypass │
+│                    │                     │          │              │                             │               │ https://avd.aquasec.com/nvd/cve-2026-9547                    │
+├────────────────────┼─────────────────────┼──────────┼──────────────┼─────────────────────────────┼───────────────┼──────────────────────────────────────────────────────────────┤
 │ libdav1d6          │ CVE-2023-32570      │ MEDIUM   │ will_not_fix │ 1.0.0-2+deb12u1             │               │ VideoLAN dav1d before 1.2.0 has a thread_task.c race         │
 │                    │                     │          │              │                             │               │ condition that ca ......                                     │
 │                    │                     │          │              │                             │               │ https://avd.aquasec.com/nvd/cve-2023-32570                   │
@@ -478,6 +754,28 @@ Total: 359 (UNKNOWN: 39, LOW: 122, MEDIUM: 125, HIGH: 70, CRITICAL: 3)
 │                    │ CVE-2026-95210      │          │              │                             │               │ gnutls: gnutls: certificates with invalid extensions         │
 │                    │                     │          │              │                             │               │ incorrectly accepted                                         │
 │                    │                     │          │              │                             │               │ https://avd.aquasec.com/nvd/cve-2026-95210                   │
+├────────────────────┼─────────────────────┼──────────┼──────────────┼─────────────────────────────┼───────────────┼──────────────────────────────────────────────────────────────┤
+│ libgssapi-krb5-2   │ CVE-2026-107708     │ MEDIUM   │ fix_deferred │ 1.20.1-2+deb12u5            │               │ krb5: krb5: Denial of Service via malformed PAC in S4U2Proxy │
+│                    │                     │          │              │                             │               │ requests                                                     │
+│                    │                     │          │              │                             │               │ https://avd.aquasec.com/nvd/cve-2026-107708                  │
+│                    ├─────────────────────┤          │              │                             ├───────────────┼──────────────────────────────────────────────────────────────┤
+│                    │ CVE-2026-107778     │          │              │                             │               │ krb5: krb5: Denial of Service via crafted forwarded          │
+│                    │                     │          │              │                             │               │ credentials                                                  │
+│                    │                     │          │              │                             │               │ https://avd.aquasec.com/nvd/cve-2026-107778                  │
+│                    ├─────────────────────┼──────────┼──────────────┤                             ├───────────────┼──────────────────────────────────────────────────────────────┤
+│                    │ CVE-2018-5709       │ LOW      │ affected     │                             │               │ krb5: integer overflow in dbentry->n_key_data in             │
+│                    │                     │          │              │                             │               │ kadmin/dbutil/dump.c                                         │
+│                    │                     │          │              │                             │               │ https://avd.aquasec.com/nvd/cve-2018-5709                    │
+│                    ├─────────────────────┤          │              │                             ├───────────────┼──────────────────────────────────────────────────────────────┤
+│                    │ CVE-2024-26458      │          │              │                             │               │ krb5: Memory leak at /krb5/src/lib/rpc/pmap_rmt.c            │
+│                    │                     │          │              │                             │               │ https://avd.aquasec.com/nvd/cve-2024-26458                   │
+│                    ├─────────────────────┤          │              │                             ├───────────────┼──────────────────────────────────────────────────────────────┤
+│                    │ CVE-2024-26461      │          │              │                             │               │ krb5: Memory leak at /krb5/src/lib/gssapi/krb5/k5sealv3.c    │
+│                    │                     │          │              │                             │               │ https://avd.aquasec.com/nvd/cve-2024-26461                   │
+│                    ├─────────────────────┤          │              │                             ├───────────────┼──────────────────────────────────────────────────────────────┤
+│                    │ CVE-2026-11850      │          │              │                             │               │ krb5: krb5: integer underflow in berval2tl_data() leads to   │
+│                    │                     │          │              │                             │               │ heap out-of-bounds read                                      │
+│                    │                     │          │              │                             │               │ https://avd.aquasec.com/nvd/cve-2026-11850                   │
 ├────────────────────┼─────────────────────┼──────────┤              ├─────────────────────────────┼───────────────┼──────────────────────────────────────────────────────────────┤
 │ libheif1           │ CVE-2025-68431      │ HIGH     │              │ 1.15.1-1+deb12u1            │               │ libheif is an HEIF and AVIF file format decoder and encoder. │
 │                    │                     │          │              │                             │               │ Prior...                                                     │
@@ -785,6 +1083,94 @@ Total: 359 (UNKNOWN: 39, LOW: 122, MEDIUM: 125, HIGH: 70, CRITICAL: 3)
 │ libjbig0           │ CVE-2017-9937       │ LOW      │              │ 2.1-6.1                     │               │ libtiff: memory malloc failure in tif_jbig.c could cause     │
 │                    │                     │          │              │                             │               │ DOS.                                                         │
 │                    │                     │          │              │                             │               │ https://avd.aquasec.com/nvd/cve-2017-9937                    │
+├────────────────────┼─────────────────────┼──────────┼──────────────┼─────────────────────────────┼───────────────┼──────────────────────────────────────────────────────────────┤
+│ libk5crypto3       │ CVE-2026-107708     │ MEDIUM   │ fix_deferred │ 1.20.1-2+deb12u5            │               │ krb5: krb5: Denial of Service via malformed PAC in S4U2Proxy │
+│                    │                     │          │              │                             │               │ requests                                                     │
+│                    │                     │          │              │                             │               │ https://avd.aquasec.com/nvd/cve-2026-107708                  │
+│                    ├─────────────────────┤          │              │                             ├───────────────┼──────────────────────────────────────────────────────────────┤
+│                    │ CVE-2026-107778     │          │              │                             │               │ krb5: krb5: Denial of Service via crafted forwarded          │
+│                    │                     │          │              │                             │               │ credentials                                                  │
+│                    │                     │          │              │                             │               │ https://avd.aquasec.com/nvd/cve-2026-107778                  │
+│                    ├─────────────────────┼──────────┼──────────────┤                             ├───────────────┼──────────────────────────────────────────────────────────────┤
+│                    │ CVE-2018-5709       │ LOW      │ affected     │                             │               │ krb5: integer overflow in dbentry->n_key_data in             │
+│                    │                     │          │              │                             │               │ kadmin/dbutil/dump.c                                         │
+│                    │                     │          │              │                             │               │ https://avd.aquasec.com/nvd/cve-2018-5709                    │
+│                    ├─────────────────────┤          │              │                             ├───────────────┼──────────────────────────────────────────────────────────────┤
+│                    │ CVE-2024-26458      │          │              │                             │               │ krb5: Memory leak at /krb5/src/lib/rpc/pmap_rmt.c            │
+│                    │                     │          │              │                             │               │ https://avd.aquasec.com/nvd/cve-2024-26458                   │
+│                    ├─────────────────────┤          │              │                             ├───────────────┼──────────────────────────────────────────────────────────────┤
+│                    │ CVE-2024-26461      │          │              │                             │               │ krb5: Memory leak at /krb5/src/lib/gssapi/krb5/k5sealv3.c    │
+│                    │                     │          │              │                             │               │ https://avd.aquasec.com/nvd/cve-2024-26461                   │
+│                    ├─────────────────────┤          │              │                             ├───────────────┼──────────────────────────────────────────────────────────────┤
+│                    │ CVE-2026-11850      │          │              │                             │               │ krb5: krb5: integer underflow in berval2tl_data() leads to   │
+│                    │                     │          │              │                             │               │ heap out-of-bounds read                                      │
+│                    │                     │          │              │                             │               │ https://avd.aquasec.com/nvd/cve-2026-11850                   │
+├────────────────────┼─────────────────────┼──────────┼──────────────┤                             ├───────────────┼──────────────────────────────────────────────────────────────┤
+│ libkrb5-3          │ CVE-2026-107708     │ MEDIUM   │ fix_deferred │                             │               │ krb5: krb5: Denial of Service via malformed PAC in S4U2Proxy │
+│                    │                     │          │              │                             │               │ requests                                                     │
+│                    │                     │          │              │                             │               │ https://avd.aquasec.com/nvd/cve-2026-107708                  │
+│                    ├─────────────────────┤          │              │                             ├───────────────┼──────────────────────────────────────────────────────────────┤
+│                    │ CVE-2026-107778     │          │              │                             │               │ krb5: krb5: Denial of Service via crafted forwarded          │
+│                    │                     │          │              │                             │               │ credentials                                                  │
+│                    │                     │          │              │                             │               │ https://avd.aquasec.com/nvd/cve-2026-107778                  │
+│                    ├─────────────────────┼──────────┼──────────────┤                             ├───────────────┼──────────────────────────────────────────────────────────────┤
+│                    │ CVE-2018-5709       │ LOW      │ affected     │                             │               │ krb5: integer overflow in dbentry->n_key_data in             │
+│                    │                     │          │              │                             │               │ kadmin/dbutil/dump.c                                         │
+│                    │                     │          │              │                             │               │ https://avd.aquasec.com/nvd/cve-2018-5709                    │
+│                    ├─────────────────────┤          │              │                             ├───────────────┼──────────────────────────────────────────────────────────────┤
+│                    │ CVE-2024-26458      │          │              │                             │               │ krb5: Memory leak at /krb5/src/lib/rpc/pmap_rmt.c            │
+│                    │                     │          │              │                             │               │ https://avd.aquasec.com/nvd/cve-2024-26458                   │
+│                    ├─────────────────────┤          │              │                             ├───────────────┼──────────────────────────────────────────────────────────────┤
+│                    │ CVE-2024-26461      │          │              │                             │               │ krb5: Memory leak at /krb5/src/lib/gssapi/krb5/k5sealv3.c    │
+│                    │                     │          │              │                             │               │ https://avd.aquasec.com/nvd/cve-2024-26461                   │
+│                    ├─────────────────────┤          │              │                             ├───────────────┼──────────────────────────────────────────────────────────────┤
+│                    │ CVE-2026-11850      │          │              │                             │               │ krb5: krb5: integer underflow in berval2tl_data() leads to   │
+│                    │                     │          │              │                             │               │ heap out-of-bounds read                                      │
+│                    │                     │          │              │                             │               │ https://avd.aquasec.com/nvd/cve-2026-11850                   │
+├────────────────────┼─────────────────────┼──────────┼──────────────┤                             ├───────────────┼──────────────────────────────────────────────────────────────┤
+│ libkrb5support0    │ CVE-2026-107708     │ MEDIUM   │ fix_deferred │                             │               │ krb5: krb5: Denial of Service via malformed PAC in S4U2Proxy │
+│                    │                     │          │              │                             │               │ requests                                                     │
+│                    │                     │          │              │                             │               │ https://avd.aquasec.com/nvd/cve-2026-107708                  │
+│                    ├─────────────────────┤          │              │                             ├───────────────┼──────────────────────────────────────────────────────────────┤
+│                    │ CVE-2026-107778     │          │              │                             │               │ krb5: krb5: Denial of Service via crafted forwarded          │
+│                    │                     │          │              │                             │               │ credentials                                                  │
+│                    │                     │          │              │                             │               │ https://avd.aquasec.com/nvd/cve-2026-107778                  │
+│                    ├─────────────────────┼──────────┼──────────────┤                             ├───────────────┼──────────────────────────────────────────────────────────────┤
+│                    │ CVE-2018-5709       │ LOW      │ affected     │                             │               │ krb5: integer overflow in dbentry->n_key_data in             │
+│                    │                     │          │              │                             │               │ kadmin/dbutil/dump.c                                         │
+│                    │                     │          │              │                             │               │ https://avd.aquasec.com/nvd/cve-2018-5709                    │
+│                    ├─────────────────────┤          │              │                             ├───────────────┼──────────────────────────────────────────────────────────────┤
+│                    │ CVE-2024-26458      │          │              │                             │               │ krb5: Memory leak at /krb5/src/lib/rpc/pmap_rmt.c            │
+│                    │                     │          │              │                             │               │ https://avd.aquasec.com/nvd/cve-2024-26458                   │
+│                    ├─────────────────────┤          │              │                             ├───────────────┼──────────────────────────────────────────────────────────────┤
+│                    │ CVE-2024-26461      │          │              │                             │               │ krb5: Memory leak at /krb5/src/lib/gssapi/krb5/k5sealv3.c    │
+│                    │                     │          │              │                             │               │ https://avd.aquasec.com/nvd/cve-2024-26461                   │
+│                    ├─────────────────────┤          │              │                             ├───────────────┼──────────────────────────────────────────────────────────────┤
+│                    │ CVE-2026-11850      │          │              │                             │               │ krb5: krb5: integer underflow in berval2tl_data() leads to   │
+│                    │                     │          │              │                             │               │ heap out-of-bounds read                                      │
+│                    │                     │          │              │                             │               │ https://avd.aquasec.com/nvd/cve-2026-11850                   │
+├────────────────────┼─────────────────────┼──────────┤              ├─────────────────────────────┼───────────────┼──────────────────────────────────────────────────────────────┤
+│ libldap-2.5-0      │ CVE-2023-2953       │ HIGH     │              │ 2.5.13+dfsg-5               │               │ openldap: null pointer dereference in ber_memalloc_x         │
+│                    │                     │          │              │                             │               │ function                                                     │
+│                    │                     │          │              │                             │               │ https://avd.aquasec.com/nvd/cve-2023-2953                    │
+│                    ├─────────────────────┼──────────┤              │                             ├───────────────┼──────────────────────────────────────────────────────────────┤
+│                    │ CVE-2015-3276       │ LOW      │              │                             │               │ openldap: incorrect multi-keyword mode cipherstring parsing  │
+│                    │                     │          │              │                             │               │ https://avd.aquasec.com/nvd/cve-2015-3276                    │
+│                    ├─────────────────────┤          │              │                             ├───────────────┼──────────────────────────────────────────────────────────────┤
+│                    │ CVE-2017-14159      │          │              │                             │               │ openldap: Privilege escalation via PID file manipulation     │
+│                    │                     │          │              │                             │               │ https://avd.aquasec.com/nvd/cve-2017-14159                   │
+│                    ├─────────────────────┤          │              │                             ├───────────────┼──────────────────────────────────────────────────────────────┤
+│                    │ CVE-2017-17740      │          │              │                             │               │ openldap: contrib/slapd-modules/nops/nops.c attempts to free │
+│                    │                     │          │              │                             │               │ stack buffer allowing remote attackers to cause...           │
+│                    │                     │          │              │                             │               │ https://avd.aquasec.com/nvd/cve-2017-17740                   │
+│                    ├─────────────────────┤          │              │                             ├───────────────┼──────────────────────────────────────────────────────────────┤
+│                    │ CVE-2020-15719      │          │              │                             │               │ openldap: Certificate validation incorrectly matches name    │
+│                    │                     │          │              │                             │               │ against CN-ID                                                │
+│                    │                     │          │              │                             │               │ https://avd.aquasec.com/nvd/cve-2020-15719                   │
+│                    ├─────────────────────┤          │              │                             ├───────────────┼──────────────────────────────────────────────────────────────┤
+│                    │ CVE-2026-22185      │          │              │                             │               │ OpenLDAP: OpenLDAP LMDB: Denial of Service and Information   │
+│                    │                     │          │              │                             │               │ Disclosure via Heap Buffer...                                │
+│                    │                     │          │              │                             │               │ https://avd.aquasec.com/nvd/cve-2026-22185                   │
 ├────────────────────┼─────────────────────┼──────────┤              ├─────────────────────────────┼───────────────┼──────────────────────────────────────────────────────────────┤
 │ libmount1          │ CVE-2026-53613      │ HIGH     │              │ 2.38.1-5+deb12u3            │               │ util-linux: TOCTOU in the mount program via ancestor         │
 │                    │                     │          │              │                             │               │ directory swap on target...                                  │
@@ -818,7 +1204,11 @@ Total: 359 (UNKNOWN: 39, LOW: 122, MEDIUM: 125, HIGH: 70, CRITICAL: 3)
 │                    │                     │          │              │                             │               │ when processing 256-byte usernames                           │
 │                    │                     │          │              │                             │               │ https://avd.aquasec.com/nvd/cve-2025-14104                   │
 ├────────────────────┼─────────────────────┼──────────┼──────────────┼─────────────────────────────┼───────────────┼──────────────────────────────────────────────────────────────┤
-│ libp11-kit0        │ CVE-2026-13757      │ MEDIUM   │ fix_deferred │ 0.24.1-2                    │               │ p11-kit: Stack exhaustion via unbounded recursion in RPC     │
+│ libnghttp2-14      │ CVE-2026-58055      │ MEDIUM   │ fix_deferred │ 1.52.0-1+deb12u3            │               │ nghttp2: nghttp2: HTTP Request/Response Smuggling and        │
+│                    │                     │          │              │                             │               │ Response-Queue Poisoning via ambiguous HTTP/1.1 Upgrade...   │
+│                    │                     │          │              │                             │               │ https://avd.aquasec.com/nvd/cve-2026-58055                   │
+├────────────────────┼─────────────────────┤          │              ├─────────────────────────────┼───────────────┼──────────────────────────────────────────────────────────────┤
+│ libp11-kit0        │ CVE-2026-13757      │          │              │ 0.24.1-2                    │               │ p11-kit: Stack exhaustion via unbounded recursion in RPC     │
 │                    │                     │          │              │                             │               │ attribute parsing                                            │
 │                    │                     │          │              │                             │               │ https://avd.aquasec.com/nvd/cve-2026-13757                   │
 │                    ├─────────────────────┤          │              │                             ├───────────────┼──────────────────────────────────────────────────────────────┤

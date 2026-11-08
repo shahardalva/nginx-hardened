@@ -1,9 +1,13 @@
 # Grype VEX proof on the final image (nginx-hardened:latest), 2026-11-08
-$ grype nginx-hardened:latest                             -> 312 findings
-$ grype nginx-hardened:latest --vex vex/vex.openvex.json  -> 308 findings
+# Grype read the image from a `docker save` archive (README, scanner notes).
+$ grype docker-archive:hard.tar                             -> 419 findings
+$ grype docker-archive:hard.tar --vex vex/vex.openvex.json  -> 414 findings
 
 Rows suppressed by vex/vex.openvex.json:
-libssl3             3.0.22-1~deb12u2                          deb   CVE-2025-27587    Negligible  0.4% (39th)    < 0.1         
-nginx               1.25.5-1~bookworm+hardened1               deb   CVE-2026-15176    Critical    1.0% (62nd)    0.9           
+nginx               1.25.5-1~bookworm+hardened1               deb   CVE-2023-44487    High        100.0% (99th)  78.8   (kev)  
 nginx               1.25.5-1~bookworm+hardened1               deb   CVE-2026-93479    Critical    1.2% (68th)    1.1           
+nginx               1.25.5-1~bookworm+hardened1               deb   CVE-2026-15176    Critical    1.0% (62nd)    0.9           
+libssl3             3.0.22-1~deb12u2                          deb   CVE-2025-27587    Negligible  0.4% (39th)    < 0.1         
 openssl             3.0.22-1~deb12u2                          deb   CVE-2025-27587    Negligible  0.4% (39th)    < 0.1         
+
+CVE-2023-45853 (zlib1g) is not reported by Grype, so its VEX statement only affects Trivy.

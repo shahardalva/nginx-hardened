@@ -3,7 +3,7 @@
   "@id": "https://github.com/shahardalva/nginx-hardened/vex",
   "author": "Shahar Dalva",
   "timestamp": "2026-11-08T00:00:00Z",
-  "version": 1,
+  "version": 2,
   "statements": [
     {
       "vulnerability": { "name": "CVE-2026-15176" },
@@ -31,6 +31,32 @@
       "status": "not_affected",
       "justification": "vulnerable_code_not_in_execute_path",
       "impact_statement": "CVE-2025-27587 affects OpenSSL only on the PowerPC architecture. This image runs on amd64, so the vulnerable code path is never executed."
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2023-44487"
+      },
+      "products": [
+        {
+          "@id": "pkg:deb/debian/nginx@1.25.5-1~bookworm+hardened1?arch=amd64&distro=debian-12.15"
+        }
+      ],
+      "status": "not_affected",
+      "justification": "inline_mitigations_already_exist",
+      "impact_statement": "HTTP/2 rapid reset. nginx 1.25.3 added a mitigation (CHANGES 1.25.3: improved detection of misbehaving clients when using HTTP/2): new streams handled per read-handler iteration are limited to 2 * http2_max_concurrent_streams (h2c->new_streams in src/http/v2/ngx_http_v2.c). 1.25.5 contains it."
+    },
+    {
+      "vulnerability": {
+        "name": "CVE-2023-45853"
+      },
+      "products": [
+        {
+          "@id": "pkg:deb/debian/zlib1g@1.2.13.dfsg-1?arch=amd64&distro=debian-12.15&epoch=1"
+        }
+      ],
+      "status": "not_affected",
+      "justification": "vulnerable_code_not_present",
+      "impact_statement": "The bug is in MiniZip (zipOpenNewFileInZip4_64), which Debian ships in a separate package, libminizip1. In this image zlib1g contains only libz.so.1; libminizip1 is not installed and no MiniZip file exists."
     }
   ]
 }

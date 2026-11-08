@@ -3,8 +3,8 @@
   "Trivy": {
     "Version": "0.76.2"
   },
-  "ReportID": "01a1bbfc-16d4-79b2-a27e-41432d7bc3f8",
-  "CreatedAt": "2026-11-08T18:27:02.740638261+02:00",
+  "ReportID": "01a1bc87-21b0-7143-8014-77bca158abd8",
+  "CreatedAt": "2026-11-08T20:58:55.024085087+02:00",
   "ArtifactID": "sha256:9db30594f8698afba32bfff3122f7880a412a334527fb31cdde58c4d4fbd8790",
   "ArtifactName": "nginx:1.25-bookworm",
   "ArtifactType": "container_image",
