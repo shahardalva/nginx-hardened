@@ -30,3 +30,10 @@ all: deb image test
 clean:
 	rm -rf dist
 	-docker rmi $(IMAGE) nginx-hardened-builder 2>/dev/null || true
+
+.PHONY: triage
+TRIVY_FLAGS ?=
+triage:
+	trivy image --pkg-types os --list-all-pkgs $(TRIVY_FLAGS) -f json -q $(REFERENCE_IMAGE) > reports/baseline-trivy.json
+	trivy image --pkg-types os --list-all-pkgs $(TRIVY_FLAGS) -f json -q $(IMAGE) > reports/hardened-trivy.json
+	python3 scripts/triage.py

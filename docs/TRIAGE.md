@@ -1,5 +1,8 @@
 # CVE Triage
 
+This file covers the decisions on the selected CVEs. Every baseline finding is
+classified in [`TRIAGE-SUMMARY.md`](TRIAGE-SUMMARY.md) and `reports/triage.csv`.
+
 Baseline scans of `nginx:1.25-bookworm`: `reports/baseline-trivy.txt`,
 `reports/baseline-grype.txt`. Hardened scans: `reports/hardened-*.txt`.
 

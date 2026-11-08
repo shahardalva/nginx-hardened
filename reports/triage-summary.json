@@ -1,0 +1,17 @@
+{
+  "total": 847,
+  "trivy_baseline_findings": 839,
+  "grype_nginx_findings": 8,
+  "by_method": {
+    "no Debian fix": 349,
+    "version bump": 315,
+    "component removed": 173,
+    "not affected (VEX)": 3,
+    "open": 5,
+    "backport": 1,
+    "open: backport candidate": 1
+  },
+  "open": 355,
+  "new_in_hardened": 8,
+  "new_in_hardened_untriaged": 0
+}

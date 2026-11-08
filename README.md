@@ -21,6 +21,7 @@ make scan    # Trivy + Grype on the hardened image -> reports/hardened-*.txt
 | `make image` | builds `nginx-hardened:latest` from `Containerfile` and `dist/*.deb` |
 | `make test` | runs the compatibility suite in `test/` against both images |
 | `make scan` | Trivy and Grype scans of the hardened image into `reports/` |
+| `make triage` | Trivy JSON scans of both images + `scripts/triage.py` → `reports/triage.csv`, `docs/TRIAGE-SUMMARY.md` |
 | `make all` | `deb` + `image` + `test` |
 | `make clean` | removes `dist/` and the built images |
 
@@ -80,7 +81,7 @@ compiling OpenSSL into nginx is explained in `docs/TRIAGE.md`.
 
 | | Baseline (`nginx:1.25-bookworm`) | Hardened (`nginx-hardened:latest`) |
 |---|---|---|
-| Trivy findings (`--pkg-types os`, same database, final image) | 786 | 318 |
+| Trivy findings (`--pkg-types os`, same database, final image) | 839 (785 CVE + 54 Debian TEMP/DLA/DSA) | 359 (316 CVE + 43 TEMP) |
 | Grype findings | 789 (first scan of the day) | 216 (build before the modules were added) |
 | Image size (`docker images`) | 276MB | 267MB |
 
@@ -101,6 +102,30 @@ libGeoIP); the Trivy numbers are for the final image.
 
 A backport keeps the version at `1.25.5`, so Grype keeps flagging the patched CVE.
 A VEX statement tells the scanner it is fixed. Full triage: `docs/TRIAGE.md`.
+
+### Triage of every finding
+
+Every baseline finding is triaged, not only the ones fixed above: `make triage`
+(`scripts/triage.py`) records for each (CVE, package) the package it lives in, the
+upstream fix status and version, and how this image handles it. One row per finding:
+`reports/triage.csv`; per-package summary: `docs/TRIAGE-SUMMARY.md`.
+
+| Outcome | Findings |
+|---|---|
+| Version bump: package installed at a version without the finding (explicit `libssl3`/`libpcre2-8-0`/`zlib1g` upgrade plus the current bookworm base) | 315 |
+| Component removed: package not installed in this image (`curl`, `libcurl4`, Kerberos, LDAP, `libssh2`, `libnghttp2`, SASL) | 173 |
+| Backport (`build/patches/`) | 1 |
+| Not affected, VEX statement (`vex/vex.openvex.json`) | 3 |
+| Open: Debian has no fixed version (`affected`, `fix_deferred`, `will_not_fix`) | 349 |
+| Open: nginx CVEs not addressed (one is a backport candidate) | 6 |
+| **Total** (839 Trivy + 8 Grype nginx findings) | **847** |
+
+No open finding has a fixed Debian version that is not installed. The largest open
+item is `libheif1` (69), which is present only as a dependency of `libgd3`, needed
+by the `image_filter` module; removing it would break drop-in compatibility.
+Trivy reports no findings for the nginx.org `nginx` package in the official image, but
+reports 8 for the `nginx` package built here. These are the same nginx CVEs Grype
+reports for the baseline, already triaged above; the cause was not investigated.
 
 ## 3. Build & container design
 
@@ -300,6 +325,7 @@ I used Claude Code throughout, mainly as an accelerator for search and scaffoldi
 ```
 build/          Dockerfile, build.sh, SHA256SUMS, patches/
 Containerfile   runtime image (drop-in, parity-matched)
+scripts/        triage.py: classifies every baseline finding (make triage)
 test/           pytest suite: test_compat.py, test_custom.py, fixtures/
 poc/            PoC config + proof script for CVE-2026-15176
 vex/            OpenVEX document
