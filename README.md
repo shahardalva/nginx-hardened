@@ -256,9 +256,16 @@ pytest exits non-zero, which makes `make test` fail. Run it with `make test` or
   backport. The others have not been assessed.
 - **Base image.** Most of the reduction in total findings comes from the newer
   base image, not from the changes in this repo (section 1).
-- **Source checksums.** `build/SHA256SUMS` was recorded from the downloads
-  (nginx.org over HTTPS, njs from a GitHub tag archive): trust on first use.
-  Verifying the nginx release's PGP signature would be stronger.
+- **Source verification.** nginx is checked twice during the build: the SHA-256
+  pin in `build/SHA256SUMS`, and the upstream PGP signature
+  (`build/nginx-1.25.5.tar.gz.asc`) verified with `gpgv` against
+  `build/keys/nginx-arutyunyan.gpg`, the key nginx.org publishes for Roman
+  Arutyunyan at `https://nginx.org/keys/arut.key` (fingerprint
+  `4338 7825 DDB1 BB97 EC36 BA5D 007C 8D7C 15D8 7369`). njs comes from a GitHub
+  tag archive, which is unsigned, so the build pins it by SHA-256 only. I
+  cross-checked its content once by hand: Alpine's independent copy of njs 0.8.4
+  (from hg.nginx.org, sha512 matching Alpine's APKBUILD) has identical files,
+  apart from Mercurial's `.hg_archival.txt`.
 - **Test scope.** See "Not covered" in section 4.
 
 ## 6. What surprised me
@@ -320,7 +327,7 @@ I used Claude Code throughout, mainly as an accelerator for search and scaffoldi
 ## Layout
 
 ```
-build/          Dockerfile, build.sh, SHA256SUMS, patches/
+build/          Dockerfile, build.sh, SHA256SUMS, nginx .asc signature, keys/, patches/
 Containerfile   runtime image (drop-in, parity-matched)
 scripts/        triage.py: classifies every baseline finding (make triage)
 test/           pytest suite: test_compat.py, test_custom.py, fixtures/
