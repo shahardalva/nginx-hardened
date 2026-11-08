@@ -13,6 +13,7 @@ statements. VEX records why a finding does not apply; it does not fix anything.
 ```bash
 make all     # build the .debs from source, build the image, run the compatibility tests
 make scan    # Trivy + Grype on the hardened image -> reports/hardened-*.txt
+make triage  # classify every baseline finding -> reports/triage.csv
 ```
 
 | Target | What it does |
@@ -74,8 +75,7 @@ compiling OpenSSL into nginx is explained in `docs/TRIAGE.md`.
 - **Grype with VEX** (final image): 312 → 308 findings. The four rows removed are
   exactly CVE-2026-15176 and CVE-2026-93479 on `nginx`, and CVE-2025-27587 on
   `libssl3` and `openssl`.
-- **Trivy with VEX** (final image): CVE-2025-27587 drops from 2 to
-  0.
+- **Trivy with VEX** (final image): CVE-2025-27587 drops from 2 to 0.
 
 ### Scan totals and image size
 
@@ -89,14 +89,18 @@ Trivy counts are findings in `reports/*-trivy.json` (Debian TEMP/DLA/DSA IDs
 included); Grype counts are rows with a CVE or GHSA ID in `reports/*-grype.txt`.
 Hardened counts are before VEX is applied.
 
-> **Attribution.** Most of the drop in the totals comes from building on a current
-> `debian:bookworm-slim` base; the official image ships an older base. What this
-> repo changes directly is the backport, the OpenSSL bump and the VEX statements.
+> **Attribution.** Most of the drop in the totals comes from two things: building on
+> a current `debian:bookworm-slim` base (the official image ships an older one), and
+> not installing packages nginx does not need, such as `curl` and the Kerberos and
+> LDAP libraries (173 findings, section 2). The CVE-specific changes are the
+> backport, the OpenSSL bump and the VEX statements.
 
 ## 2. Key triage finding: the two scanners disagree
 
-- **Trivy** flags no CVEs against nginx. It relies on Debian security advisories,
-  and the official image installs nginx from **nginx.org**, not from Debian.
+- **Trivy** flags no CVEs against nginx in the official image, which installs
+  nginx from **nginx.org**, not from Debian. It does flag the nginx CVEs on the
+  `nginx` package built here, which is not from Debian either; I did not
+  establish why.
 - **Grype** flags nginx by its version string, so it does see the nginx CVEs.
 
 A backport keeps the version at `1.25.5`, so Grype keeps flagging the patched CVE.
@@ -122,15 +126,15 @@ upstream fix status and version, and how this image handles it. One row per find
 No open finding has a fixed Debian version that is not installed. The largest open
 item is `libheif1` (69), which is present only as a dependency of `libgd3`, needed
 by the `image_filter` module; removing it would break drop-in compatibility.
-Trivy reports no findings for the nginx.org `nginx` package in the official image, but
-reports 8 for the `nginx` package built here. These are the same nginx CVEs Grype
-reports for the baseline, already triaged above; the cause was not investigated.
+The 8 findings Trivy reports on the hardened `nginx` package are the same nginx
+CVEs Grype reports for the baseline, already triaged above.
 
 ## 3. Build & container design
 
 - **Sources.** `build/build.sh` downloads nginx 1.25.5 (nginx.org) and njs 0.8.4
   (GitHub) and checks both against `build/SHA256SUMS`. The build fails if a
-  pinned hash is missing or does not match.
+  pinned hash is missing or does not match. nginx is also verified against its
+  upstream PGP signature with `gpgv` (section 5).
 - **Patches.** `build/patches/*.patch` are applied to the nginx source in
   filename order; the build fails if there are none.
 - **Four compiles, as nginx.org does.** `nginx` and `nginx-debug` are built with
@@ -255,7 +259,8 @@ pytest exits non-zero, which makes `make test` fail. Run it with `make test` or
   applies cleanly to 1.25.5 (`git apply --check`) and is the natural next
   backport. The others have not been assessed.
 - **Base image.** Most of the reduction in total findings comes from the newer
-  base image, not from the changes in this repo (section 1).
+  base image and from packages that are not installed, not from the CVE-specific
+  changes (section 1).
 - **Source verification.** nginx is checked twice during the build: the SHA-256
   pin in `build/SHA256SUMS`, and the upstream PGP signature
   (`build/nginx-1.25.5.tar.gz.asc`) verified with `gpgv` against
@@ -270,8 +275,8 @@ pytest exits non-zero, which makes `make test` fail. Run it with `make test` or
 
 ## 6. What surprised me
 
-- nginx is invisible to Trivy but flagged by Grype, because the official image
-  takes nginx from nginx.org.
+- nginx is invisible to Trivy in the official image (nginx.org package) but
+  flagged by Grype. On my image Trivy does flag it, and I did not establish why.
 - **CVE-2026-93479 is a false positive on 1.25.5.** The vulnerable reserved-area
   allocation was introduced after 1.25.5 (commits `b76754049` / `a8289aa69`,
   2026-07-15), so the upstream fix does not even apply. The right treatment is
@@ -333,7 +338,7 @@ scripts/        triage.py: classifies every baseline finding (make triage)
 test/           pytest suite: test_compat.py, test_custom.py, fixtures/
 poc/            PoC config + proof script for CVE-2026-15176
 vex/            OpenVEX document
-docs/TRIAGE.md  CVE triage and decisions
-reports/        scans, proofs and checks
-Makefile        deb / image / test / scan / all / clean
+docs/           TRIAGE.md (decisions), TRIAGE-SUMMARY.md (every finding)
+reports/        scans, proofs, checks, triage.csv
+Makefile        deb / image / test / scan / triage / all / clean
 ```
