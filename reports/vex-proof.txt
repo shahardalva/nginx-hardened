@@ -1,0 +1,4 @@
+=== VEX suppression proof (Trivy) ===
+CVE-2025-27587 — OpenSSL, affects PowerPC only; this image is amd64.
+before VEX: 2
+after  VEX: 0

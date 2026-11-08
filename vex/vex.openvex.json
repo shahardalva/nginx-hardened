@@ -1,0 +1,36 @@
+{
+  "@context": "https://openvex.dev/ns/v0.2.0",
+  "@id": "https://github.com/shahardalva/nginx-hardened/vex",
+  "author": "Shahar Dalva",
+  "timestamp": "2026-11-08T00:00:00Z",
+  "version": 1,
+  "statements": [
+    {
+      "vulnerability": { "name": "CVE-2026-15176" },
+      "products": [
+        { "@id": "pkg:deb/debian/nginx@1.25.5-1~bookworm+hardened1?arch=amd64&distro=debian-12.15" }
+      ],
+      "status": "fixed",
+      "status_notes": "Backported upstream fix (commit f8a23425b, released in nginx 1.31.7) onto 1.25.5. See build/patches/CVE-2026-15176.patch and poc/prove-cve-2026-15176.sh. Scanners still flag it because the version string is still 1.25.5 — this statement tells them it is fixed in the source."
+    },
+    {
+      "vulnerability": { "name": "CVE-2026-93479" },
+      "products": [
+        { "@id": "pkg:deb/debian/nginx@1.25.5-1~bookworm+hardened1?arch=amd64&distro=debian-12.15" }
+      ],
+      "status": "not_affected",
+      "justification": "vulnerable_code_not_present",
+      "impact_statement": "The vulnerable reserved-area allocation in ngx_http_script_run() was introduced after 1.25.5 (commits b76754049 and a8289aa69, 2026-07-15). 1.25.5 uses the simpler allocation and is not affected."
+    },
+    {
+      "vulnerability": { "name": "CVE-2025-27587" },
+      "products": [
+        { "@id": "pkg:deb/debian/libssl3@3.0.22-1~deb12u2?arch=amd64&distro=debian-12.15" },
+        { "@id": "pkg:deb/debian/openssl@3.0.22-1~deb12u2?arch=amd64&distro=debian-12.15" }
+      ],
+      "status": "not_affected",
+      "justification": "vulnerable_code_not_in_execute_path",
+      "impact_statement": "CVE-2025-27587 affects OpenSSL only on the PowerPC architecture. This image runs on amd64, so the vulnerable code path is never executed."
+    }
+  ]
+}
