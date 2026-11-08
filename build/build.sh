@@ -145,11 +145,17 @@ ST="${SRC}/stage-nginx"
 rm -rf "$ST"
 make -C "${SRC}/b-nginx" install DESTDIR="$ST"
 install -m 0755 "${SRC}/b-nginx-debug/objs/nginx" "$ST/usr/sbin/nginx-debug"
+# Strip symbols, as the official packages do.
+strip --strip-unneeded "$ST/usr/sbin/nginx" "$ST/usr/sbin/nginx-debug"
 rm -rf "$ST/etc/nginx/html"
 rm -f "$ST"/etc/nginx/*.default
 install -d "$ST/usr/lib/nginx/modules" "$ST/var/cache/nginx" "$ST/var/log/nginx"
 ln -sfn /usr/lib/nginx/modules "$ST/etc/nginx/modules"
+# The official entrypoint enables IPv6 only if conf.d/default.conf matches the
+# md5 that dpkg records for the nginx package, so ship the official file as a conffile.
+install -D -m 0644 "${HERE}/files/default.conf" "$ST/etc/nginx/conf.d/default.conf"
 mkdir -p "$ST/DEBIAN"
+echo "/etc/nginx/conf.d/default.conf" > "$ST/DEBIAN/conffiles"
 cat > "$ST/DEBIAN/postinst" <<'PINST'
 #!/bin/sh
 set -e
@@ -176,6 +182,7 @@ stage_module() {
         install -m 0644 "${SRC}/b-modules-debug/objs/${m}.so" "$st/usr/lib/nginx/modules/${m}-debug.so"
         files+=("$st/usr/lib/nginx/modules/${m}.so" "$st/usr/lib/nginx/modules/${m}-debug.so")
     done
+    strip --strip-unneeded "${files[@]}"
     deps="nginx (= ${NGINX_DEB_VERSION})"
     libdeps="$(deps_for "${files[@]}")"
     if [ -n "$libdeps" ]; then deps="${deps}, ${libdeps}"; fi

@@ -21,7 +21,7 @@ test:
 
 scan:
 	mkdir -p reports
-	trivy image --scanners vuln --pkg-types os $(IMAGE) > reports/hardened-trivy.txt 2>&1
+	trivy image --pkg-types os $(IMAGE) > reports/hardened-trivy.txt 2>&1
 	-grype $(IMAGE) -o table > reports/hardened-grype.txt 2>/dev/null
 	@echo "scans written to reports/"
 

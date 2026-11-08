@@ -105,3 +105,12 @@ def test_image_config_matches(docker_client):
     hard = docker_client.images.get(HARDENED_IMAGE).attrs["Config"]
     for key in keys:
         assert hard.get(key) == ref.get(key), f"{key}: ref={ref.get(key)} hard={hard.get(key)}"
+
+
+def test_entrypoint_enables_ipv6(docker_client):
+    """The entrypoint adds `listen [::]:80` only if default.conf matches the packaged version."""
+    script = ("/docker-entrypoint.sh nginx -t >/dev/null 2>&1; "
+              "grep -c 'listen  \\[::\\]:80;' /etc/nginx/conf.d/default.conf")
+    for image in (REFERENCE_IMAGE, HARDENED_IMAGE):
+        _, out = _run(docker_client, image, "sh", "-c", script)
+        assert out.strip().splitlines()[-1] == "1", f"{image}: {out}"
