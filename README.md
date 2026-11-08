@@ -356,6 +356,41 @@ I used Claude Code throughout, mainly as an accelerator for search and scaffoldi
   behind each finding, and ran every build, test, scan and proof on my own
   machine.
 
+### Second pass: external review and fixes
+
+After the first version, I asked Claude (claude.ai) to review the repository
+against the assignment. For each finding it gave me a command to check it on my
+machine; a fix was written only if the output confirmed the finding. The fixes
+went in through PRs #6-#9, each merged only after `make clean && make all`
+passed.
+
+- **Where it helped (findings I verified and fixed):**
+  - The official image ships `curl`; mine did not, which breaks `curl`-based
+    healthchecks. A package-set comparison test then exposed a missing
+    `libedit2`, which traced back to the `njs` command-line tool
+    (`/usr/bin/njs`) never being built. A file-level comparison found the missing
+    init, default, logrotate, systemd and copyright files.
+  - My version-bump step (`apt-get install --only-upgrade libssl3`) was a no-op,
+    because `debian:bookworm-slim` has no `libssl3`. The minimum version is now
+    enforced through the packages' `Depends`.
+  - Trivy ignores the official nginx packages because of a maintainer-based
+    third-party heuristic in its source; I confirmed this with `trivy --debug`.
+  - The CVE-2023-44487 and CVE-2023-45853 VEX statements were written only after
+    checking nginx's CHANGES and source, and the contents of `zlib1g`.
+- **Where it hurt (mistakes my verification caught):**
+  - Its first `trivy --debug` check also passed `-q`, which suppresses logs; the
+    empty output wrongly suggested there was no third-party detection. Rerunning
+    without `-q` showed it.
+  - It recorded CVE-2023-45853 as reported by both scanners. My rescan showed
+    Grype does not report it, and the row was corrected.
+  - Its workaround for the Grype hang (scanning `docker save` archives) did not
+    fix it; restarting WSL did.
+- **My part:** deciding to run a review pass at all; setting the rules (one
+  branch and PR per change, merge only after a clean build and all tests pass,
+  nothing in the README that was not run and checked); choosing which findings
+  to fix and which to defer (`make poc`/`make vex` and an ASan build are under
+  "With more time"); and running every build, test, scan and proof.
+
 ## Layout
 
 ```
