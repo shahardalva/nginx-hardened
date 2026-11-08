@@ -1,6 +1,6 @@
 # Builder image: compiles nginx, nginx-debug and the dynamic modules from source
 # and emits .debs. Separate from the runtime image so the toolchain never ships.
-FROM debian:bookworm-slim
+FROM debian:bookworm-slim@sha256:734a72b3d6142a71993b4bc580ca01d8ca687f77a2c422d96a961d3376b179bc
 
 # Toolchain + headers. nginx links dynamically against the system libraries,
 # like the official image (OpenSSL, PCRE2, zlib; libxml2/libxslt, libgd and

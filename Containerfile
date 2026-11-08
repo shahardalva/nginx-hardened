@@ -4,10 +4,10 @@
 # from the official image, so behaviour, user and paths match it.
 
 # Stage 1: the official image, used only as a source of config, scripts and assets.
-FROM nginx:1.25-bookworm AS stock
+FROM nginx:1.25-bookworm@sha256:a484819eb60211f5299034ac80f6a681b06f89e65866ce91f356ed7c72af059c AS stock
 
 # Stage 2: the runtime image.
-FROM debian:bookworm-slim
+FROM debian:bookworm-slim@sha256:734a72b3d6142a71993b4bc580ca01d8ca687f77a2c422d96a961d3376b179bc
 
 # Same environment variables as the official image (values copied from it).
 ENV NGINX_VERSION=1.25.5
@@ -27,19 +27,20 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
         ca-certificates tzdata gettext-base curl \
     && rm -rf /var/lib/apt/lists/*
 
-# 2b) DEPENDENCY VERSION BUMP: upgrade the libraries nginx links against to the
-#     latest patched Debian releases (libssl3 3.0.11 -> 3.0.22 closes
-#     CVE-2026-31789).
-RUN apt-get update \
- && apt-get install -y --only-upgrade libssl3 libpcre2-8-0 zlib1g \
- && rm -rf /var/lib/apt/lists/*
-
 # 3) Install nginx, nginx-debug and the module packages built from source.
 #    apt resolves the libraries they declare in Depends (libgd3, libxml2, ...).
 COPY dist/*.deb /tmp/debs/
 RUN apt-get update \
  && apt-get install -y --no-install-recommends /tmp/debs/*.deb \
  && rm -rf /tmp/debs /var/lib/apt/lists/*
+
+# 3b) DEPENDENCY VERSION BUMP check. CVE-2026-31789 is fixed in libssl3
+#     3.0.19-1~deb12u2 (the official image ships 3.0.11-1~deb12u2). The packages
+#     declare this minimum in Depends; the build fails if it ever resolves lower.
+RUN v="$(dpkg-query -W -f='${Version}' libssl3)"; \
+    dpkg --compare-versions "$v" ge 3.0.19-1~deb12u2 \
+      || { echo "libssl3 $v is older than 3.0.19-1~deb12u2 (CVE-2026-31789)" >&2; exit 1; }; \
+    echo "libssl3 $v"
 
 # 4) Configuration, entrypoint scripts and static assets copied from the official
 #    image. No binaries are copied (see reports/stock-copy-check.txt).
