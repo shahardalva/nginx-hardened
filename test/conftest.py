@@ -1,4 +1,5 @@
 """Boots the reference and hardened containers on ephemeral ports."""
+import socket
 import os, time
 import http.client
 import docker
@@ -26,7 +27,6 @@ def _wait_http(host, port, timeout=30):
 
 
 def _free_port():
-    import socket
     with socket.socket() as s:
         s.bind(("127.0.0.1", 0))
         return s.getsockname()[1]

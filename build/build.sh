@@ -13,19 +13,26 @@ echo "==> Download nginx ${NGINX_VERSION} source"
 curl -fSL "https://nginx.org/download/nginx-${NGINX_VERSION}.tar.gz" -o nginx.tar.gz
 
 echo "==> Verify checksum (supply-chain gate)"
-if [ -f "${HERE}/nginx.sha256" ]; then
-    echo "$(cat "${HERE}/nginx.sha256")  nginx.tar.gz" | sha256sum -c -
-else
-    echo "!! No pinned checksum found. Recording current hash to build/nginx.sha256."
-    echo "!! REVIEW it against nginx.org before trusting this build."
-    sha256sum nginx.tar.gz | awk '{print $1}' > "${HERE}/nginx.sha256"
+# Fail-closed: refuse to build if the pinned checksum is missing.
+if [ ! -f "${HERE}/nginx.sha256" ]; then
+    echo "!! build/nginx.sha256 is missing — refusing to build without a pinned checksum." >&2
+    echo "!! Record the verified hash (from nginx.org) into build/nginx.sha256 first." >&2
+    exit 1
 fi
+echo "$(cat "${HERE}/nginx.sha256")  nginx.tar.gz" | sha256sum -c -
 
 tar xf nginx.tar.gz
 cd "nginx-${NGINX_VERSION}"
 
-echo "==> Apply backport patches"
-for p in "${HERE}"/patches/*.patch; do
+echo "==> Apply backport patches (in filename order)"
+# Applied in sorted filename order. If order matters, prefix names (01-, 02-).
+shopt -s nullglob
+patches=("${HERE}"/patches/*.patch)
+if [ ${#patches[@]} -eq 0 ]; then
+    echo "!! No patches found in ${HERE}/patches" >&2
+    exit 1
+fi
+for p in "${patches[@]}"; do
     echo "    - $(basename "$p")"
     patch -p1 < "$p"
 done
@@ -67,10 +74,10 @@ install -d "$DEST/var/cache/nginx" "$DEST/var/log/nginx"
 
 echo "==> Build .deb"
 ARCH="$(dpkg --print-architecture)"
-DEB_VER="${NGINX_VERSION}-hardened1"
+DEB_VER="${NGINX_VERSION}-1~bookworm+hardened1"
 mkdir -p "$DEST/DEBIAN"
 cat > "$DEST/DEBIAN/control" <<CTRL
-Package: nginx-hardened
+Package: nginx
 Version: ${DEB_VER}
 Architecture: ${ARCH}
 Maintainer: Shahar Dalva <shahardalva@gmail.com>
