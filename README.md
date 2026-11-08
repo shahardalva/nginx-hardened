@@ -27,7 +27,7 @@ make triage  # classify every baseline finding -> reports/triage.csv
 | `make clean` | removes `dist/` and the built images |
 
 `make clean && make all` was run from a clean state: the build completed and all
-18 tests passed.
+20 tests passed.
 
 **Prerequisites:** Docker, Python 3 with `pytest` and the `docker` SDK, Trivy, Grype.
 
@@ -148,6 +148,11 @@ CVEs Grype reports for the baseline, already triaged above.
   because the entrypoint relies on its md5. Binaries and modules are
   stripped, as in the official packages. `Depends` is computed from
   the shared libraries each binary links against (`ldd` + `dpkg -S`).
+  `nginx-module-njs` also ships the `njs` command-line tool (`/usr/bin/njs`),
+  built from the njs source with libedit, as the official package does. The
+  init scripts, `/etc/default` files, logrotate config and systemd units of the
+  official `nginx` package are shipped unmodified from `build/files/` (copied
+  once from `nginx:1.25-bookworm`), registered as the same conffiles.
 - **Containerfile.** Starts from `debian:bookworm-slim`, sets the same `ENV` as
   the official image (`NGINX_VERSION`, `NJS_VERSION`, `NJS_RELEASE`,
   `PKG_RELEASE`), creates the `nginx` user with uid/gid 101, applies the OpenSSL
@@ -221,6 +226,8 @@ missing, nginx does not start and these tests fail):
 | `test_dynamic_modules_present` | the same 12 module files (6 modules, normal and debug) in both images |
 | `test_image_config_matches` | `User`, `WorkingDir`, `ExposedPorts`, `Entrypoint`, `Cmd`, `StopSignal`, `Env` are identical |
 | `test_entrypoint_enables_ipv6` | the entrypoint enables `listen [::]:80` in both images (it does so only when `default.conf` matches the packaged version) |
+| `test_installed_packages_match` | the same Debian packages are installed in both images (`dpkg-query -W`), e.g. `curl` for healthchecks; the allowlist of differences is empty |
+| `test_package_files_match` | every path owned by an `nginx*` package in either image exists in both or in neither (e.g. `/usr/bin/njs`, init scripts); the allowlist is empty |
 
 **Headers excluded from comparison:** `Date` (time of the request), and
 `Connection` / `Keep-Alive` (connection handling, not content). All other

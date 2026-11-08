@@ -112,6 +112,24 @@ build_tree b-nginx-debug   build   --with-debug
 build_tree b-modules       modules "${MODULE_ARGS[@]}" --add-dynamic-module="${SRC}/njs-normal/nginx"
 build_tree b-modules-debug modules --with-debug "${MODULE_ARGS[@]}" --add-dynamic-module="${SRC}/njs-debug/nginx"
 
+# njs command-line tool, shipped as /usr/bin/njs in nginx-module-njs like the
+# official package. configure silently drops line editing if libedit is missing,
+# so the build fails unless the binary links libedit.
+echo "==> Build njs CLI"
+rm -rf "${SRC}/njs-cli"
+cp -a "${SRC}/njs-${NJS_VERSION}" "${SRC}/njs-cli"
+(
+    cd "${SRC}/njs-cli"
+    ./configure --cc-opt="${CC_OPT}" --ld-opt="${LD_OPT}"
+    make -j"$(nproc)" njs
+)
+if ldd "${SRC}/njs-cli/build/njs" | grep -q 'libedit\.so'; then
+    echo "    njs CLI links libedit"
+else
+    echo "ERROR: njs CLI was built without libedit" >&2
+    exit 1
+fi
+
 # deps_for <file>...: the Debian packages providing the shared libraries these
 # ELF files link against, as a Depends list.
 deps_for() {
@@ -156,13 +174,26 @@ install -m 0755 "${SRC}/b-nginx-debug/objs/nginx" "$ST/usr/sbin/nginx-debug"
 strip --strip-unneeded "$ST/usr/sbin/nginx" "$ST/usr/sbin/nginx-debug"
 rm -rf "$ST/etc/nginx/html"
 rm -f "$ST"/etc/nginx/*.default
+# Not shipped by the official package.
+rm -f "$ST"/etc/nginx/fastcgi.conf "$ST"/etc/nginx/koi-utf "$ST"/etc/nginx/koi-win "$ST"/etc/nginx/win-utf
 install -d "$ST/usr/lib/nginx/modules" "$ST/var/cache/nginx" "$ST/var/log/nginx"
 ln -sfn /usr/lib/nginx/modules "$ST/etc/nginx/modules"
 # The official entrypoint enables IPv6 only if conf.d/default.conf matches the
 # md5 that dpkg records for the nginx package, so ship the official file as a conffile.
 install -D -m 0644 "${HERE}/files/default.conf" "$ST/etc/nginx/conf.d/default.conf"
 mkdir -p "$ST/DEBIAN"
-echo "/etc/nginx/conf.d/default.conf" > "$ST/DEBIAN/conffiles"
+# Service integration files of the official package (init scripts, defaults,
+# logrotate, systemd units), copied unmodified from nginx:1.25-bookworm into
+# build/files/. Modes are kept from the copied files.
+for f in etc/default/nginx etc/default/nginx-debug etc/init.d/nginx etc/init.d/nginx-debug \
+         etc/logrotate.d/nginx lib/systemd/system/nginx.service lib/systemd/system/nginx-debug.service; do
+    install -D -m "$(stat -c %a "${HERE}/files/${f}")" "${HERE}/files/${f}" "$ST/${f}"
+done
+install -D -m 0644 "${SRC}/nginx-${NGINX_VERSION}/LICENSE" "$ST/usr/share/doc/nginx/copyright"
+# Same conffiles as the official package for the files it owns outside /etc/nginx.
+printf '%s\n' /etc/default/nginx /etc/default/nginx-debug /etc/init.d/nginx \
+    /etc/init.d/nginx-debug /etc/logrotate.d/nginx /etc/nginx/conf.d/default.conf \
+    > "$ST/DEBIAN/conffiles"
 cat > "$ST/DEBIAN/postinst" <<'PINST'
 #!/bin/sh
 set -e
@@ -189,6 +220,13 @@ stage_module() {
         install -m 0644 "${SRC}/b-modules-debug/objs/${m}.so" "$st/usr/lib/nginx/modules/${m}-debug.so"
         files+=("$st/usr/lib/nginx/modules/${m}.so" "$st/usr/lib/nginx/modules/${m}-debug.so")
     done
+    if [ "$pkg" = "nginx-module-njs" ]; then
+        install -D -m 0755 "${SRC}/njs-cli/build/njs" "$st/usr/bin/njs"
+        files+=("$st/usr/bin/njs")
+        install -D -m 0644 "${SRC}/njs-${NJS_VERSION}/LICENSE" "$st/usr/share/doc/${pkg}/copyright"
+    else
+        install -D -m 0644 "${SRC}/nginx-${NGINX_VERSION}/LICENSE" "$st/usr/share/doc/${pkg}/copyright"
+    fi
     strip --strip-unneeded "${files[@]}"
     deps="nginx (= ${NGINX_DEB_VERSION})"
     libdeps="$(deps_for "${files[@]}")"

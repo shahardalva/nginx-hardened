@@ -21,9 +21,10 @@ RUN set -eux; \
     useradd --system --gid nginx --uid 101 --home /nonexistent \
             --no-create-home --shell /bin/false nginx
 
-# 2) Runtime dependencies that the .debs do not pull in.
+# 2) Runtime dependencies that the .debs do not pull in. curl is part of the
+#    official image (healthchecks often call it), so it is installed here too.
 RUN apt-get update && apt-get install -y --no-install-recommends \
-        ca-certificates tzdata gettext-base \
+        ca-certificates tzdata gettext-base curl \
     && rm -rf /var/lib/apt/lists/*
 
 # 2b) DEPENDENCY VERSION BUMP: upgrade the libraries nginx links against to the
