@@ -10,6 +10,9 @@ NGINX_VERSION=1.25.5
 NJS_VERSION=0.8.4
 NGINX_DEB_VERSION="${NGINX_VERSION}-1~bookworm+hardened1"
 NJS_DEB_VERSION="${NGINX_VERSION}+${NJS_VERSION}-3~bookworm+hardened1"
+# Version bump (CVE-2026-31789): Debian fixed it in libssl3 3.0.19-1~deb12u2.
+# Every package that links libssl3 declares this minimum in Depends.
+LIBSSL3_MIN="3.0.19-1~deb12u2"
 
 HERE="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 SRC=/usr/src
@@ -139,7 +142,8 @@ deps_for() {
         p=${p%%:*}
         if [ -n "$p" ]; then pkgs="${pkgs} ${p}"; fi
     done
-    echo ${pkgs} | tr ' ' '\n' | sort -u | paste -sd, - | sed 's/,/, /g'
+    echo ${pkgs} | tr ' ' '\n' | sort -u | paste -sd, - | sed 's/,/, /g' \
+        | sed "s/\blibssl3\b/libssl3 (>= ${LIBSSL3_MIN})/"
 }
 
 # make_deb <stage dir> <package> <version> <depends> <description>

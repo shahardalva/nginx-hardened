@@ -35,7 +35,9 @@ A VEX statement records that it is fixed.
 
 ### CVE-2026-31789: version bump
 - `libssl3` 3.0.11-1~deb12u2 in the baseline. Debian fixed it in 3.0.19-1~deb12u2;
-  the hardened image runs 3.0.22-1~deb12u2.
+  the hardened image runs 3.0.22-1~deb12u2. Every package that links `libssl3`
+  declares `libssl3 (>= 3.0.19-1~deb12u2)` in `Depends`, and the Containerfile
+  fails the build if the installed version is lower.
 - **Why the system library and not OpenSSL built from source.** I considered
   building nginx against OpenSSL 3.0.22 from source (`--with-openssl=`) and
   rejected it. In the official image both nginx and the njs module link

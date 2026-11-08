@@ -56,7 +56,7 @@ make triage  # classify every baseline finding -> reports/triage.csv
 | CVE | Severity | Component | Technique | Evidence |
 |-----|----------|-----------|-----------|----------|
 | **CVE-2026-15176** | Critical | nginx `ngx_http_core_module` (`ngx_http_map_uri_to_path`) | **Backport**: upstream commit `f8a23425b` (released in nginx 1.31.7) applied to 1.25.5 | `build/patches/CVE-2026-15176.patch`, `poc/prove-cve-2026-15176.sh`, `reports/cve-2026-15176-proof.txt` |
-| **CVE-2026-31789** | Critical | `libssl3` / `openssl` (OS packages) | **Version bump**: `libssl3` 3.0.11-1~deb12u2 → 3.0.22-1~deb12u2 (Debian fixed it in 3.0.19-1~deb12u2) | present in `reports/baseline-trivy.txt` (2 rows), absent from `reports/hardened-trivy.txt` |
+| **CVE-2026-31789** | Critical | `libssl3` / `openssl` (OS packages) | **Version bump**: `libssl3` 3.0.11-1~deb12u2 → 3.0.22-1~deb12u2 (Debian fixed it in 3.0.19-1~deb12u2), enforced by `libssl3 (>= 3.0.19-1~deb12u2)` in the packages' `Depends` and a build-time check | present in `reports/baseline-trivy.txt` (2 rows), absent from `reports/hardened-trivy.txt` |
 
 The same OpenSSL bump closes most of the other OpenSSL findings: Trivy reports
 98 rows mentioning `libssl3`/`openssl` in the baseline and
@@ -115,7 +115,7 @@ upstream fix status and version, and how this image handles it. One row per find
 
 | Outcome | Findings |
 |---|---|
-| Version bump: package installed at a version without the finding (explicit `libssl3`/`libpcre2-8-0`/`zlib1g` upgrade plus the current bookworm base) | 315 |
+| Version bump: package installed at a version without the finding (`libssl3` minimum version in `Depends`, plus the current bookworm base) | 315 |
 | Component removed: package not installed in this image (`curl`, `libcurl4`, Kerberos, LDAP, `libssh2`, `libnghttp2`, SASL) | 173 |
 | Backport (`build/patches/`) | 1 |
 | Not affected, VEX statement (`vex/vex.openvex.json`) | 3 |
@@ -153,11 +153,12 @@ CVEs Grype reports for the baseline, already triaged above.
   init scripts, `/etc/default` files, logrotate config and systemd units of the
   official `nginx` package are shipped unmodified from `build/files/` (copied
   once from `nginx:1.25-bookworm`), registered as the same conffiles.
-- **Containerfile.** Starts from `debian:bookworm-slim`, sets the same `ENV` as
+- **Containerfile.** Starts from `debian:bookworm-slim` (both base images, here
+  and in `build/Dockerfile`, are pinned by digest), sets the same `ENV` as
   the official image (`NGINX_VERSION`, `NJS_VERSION`, `NJS_RELEASE`,
-  `PKG_RELEASE`), creates the `nginx` user with uid/gid 101, applies the OpenSSL
-  version bump (`apt-get install --only-upgrade`), installs the `.deb`s with apt
-  (which resolves their library dependencies), and sets `EXPOSE 80`,
+  `PKG_RELEASE`), creates the `nginx` user with uid/gid 101, installs the `.deb`s with apt
+  (which resolves their library dependencies, including the `libssl3` minimum
+  version), checks that `libssl3` is at least 3.0.19-1~deb12u2, and sets `EXPOSE 80`,
   `STOPSIGNAL SIGQUIT`, `ENTRYPOINT` and `CMD` as in the official image.
 - **What `COPY --from=stock` copies.** The official image is used as a source of
   files in four paths:
@@ -290,6 +291,11 @@ pytest exits non-zero, which makes `make test` fail. Run it with `make test` or
   VEX, not a patch.
 - Renaming the package to `nginx-hardened` made its CVEs disappear from Grype.
   That was hiding them, not fixing them.
+- My first version-bump step, `apt-get install --only-upgrade libssl3`, did
+  nothing: `debian:bookworm-slim` does not contain `libssl3`, and `--only-upgrade`
+  skips packages that are not installed. The fixed version arrived only because
+  apt picked the newest `libssl3` when it installed the `.deb`s. The minimum
+  version is now declared in the packages' `Depends` and checked at build time.
 - My first image was not a real drop-in. `docker inspect` and a module listing
   showed it lacked the official `ENV`, `nginx-debug` and all 12 module files, so
   any config with `load_module` would have failed. I had also dropped HTTP/3
