@@ -1,0 +1,17 @@
+=== VEX suppression proof (Grype) — backported CVE ===
+--- nginx CVEs BEFORE VEX ---
+CVE-2023-44487 High
+CVE-2009-4487 Negligible
+CVE-2026-93479 Critical
+CVE-2026-15176 Critical
+CVE-2026-97205 Critical
+CVE-2026-95101 Medium
+CVE-2026-97629 High
+CVE-2013-0337 Negligible
+--- nginx CVEs AFTER VEX ---
+CVE-2023-44487 High
+CVE-2009-4487 Negligible
+CVE-2026-97205 Critical
+CVE-2026-95101 Medium
+CVE-2026-97629 High
+CVE-2013-0337 Negligible

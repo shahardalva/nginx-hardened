@@ -1,0 +1,3 @@
+--- regular files with an ELF header (should be empty) ---
+--- symlinks under copied paths ---
+lrwxrwxrwx 1 root root 22 Apr 16  2024 /etc/nginx/modules -> /usr/lib/nginx/modules

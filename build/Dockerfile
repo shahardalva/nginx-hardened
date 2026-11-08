@@ -1,20 +1,18 @@
-# Builder image: compiles nginx from source and emits a .deb.
-# Separate from the runtime image so the toolchain never ships to production.
+# Builder image: compiles nginx, nginx-debug and the dynamic modules from source
+# and emits .debs. Separate from the runtime image so the toolchain never ships.
 FROM debian:bookworm-slim
 
-# Build toolchain + the -dev headers nginx links against (dynamic linking,
-# same as the official image: system OpenSSL, PCRE2 and zlib).
+# Toolchain + headers. nginx links dynamically against the system libraries,
+# like the official image (OpenSSL, PCRE2, zlib; libxml2/libxslt, libgd and
+# libGeoIP for the modules).
 RUN apt-get update && apt-get install -y --no-install-recommends \
-        build-essential \
-        ca-certificates \
-        curl \
-        libssl-dev \
-        libpcre2-dev \
-        zlib1g-dev \
+        build-essential ca-certificates curl pkg-config \
+        libssl-dev libpcre2-dev zlib1g-dev \
+        libxml2-dev libxslt1-dev libgd-dev libgeoip-dev \
     && rm -rf /var/lib/apt/lists/*
 
 COPY . /build
 RUN chmod +x /build/build.sh
 
-# The .deb is written to /out (bind-mounted by `make deb`).
+# The .debs are written to /out (bind-mounted by `make deb`).
 ENTRYPOINT ["/build/build.sh"]
