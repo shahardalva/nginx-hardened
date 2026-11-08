@@ -31,6 +31,13 @@ for f in "nginx-${NGINX_VERSION}.tar.gz" "njs-${NJS_VERSION}.tar.gz"; do
 done
 sha256sum -c "${HERE}/SHA256SUMS"
 
+echo "==> Verify nginx PGP signature (key from https://nginx.org/keys/arut.key)"
+# Independent of the SHA-256 pin: the tarball must carry a valid signature from
+# the nginx developer key committed in build/keys/. Missing or bad -> build fails.
+# njs: GitHub tag archives are unsigned; it is pinned by SHA-256 only (README, section 5).
+gpgv --keyring "${HERE}/keys/nginx-arutyunyan.gpg" \
+    "${HERE}/nginx-${NGINX_VERSION}.tar.gz.asc" "nginx-${NGINX_VERSION}.tar.gz"
+
 tar xf "nginx-${NGINX_VERSION}.tar.gz"
 tar xf "njs-${NJS_VERSION}.tar.gz"
 
