@@ -1,17 +1,9 @@
-=== VEX suppression proof (Grype) — backported CVE ===
---- nginx CVEs BEFORE VEX ---
-CVE-2023-44487 High
-CVE-2009-4487 Negligible
-CVE-2026-93479 Critical
-CVE-2026-15176 Critical
-CVE-2026-97205 Critical
-CVE-2026-95101 Medium
-CVE-2026-97629 High
-CVE-2013-0337 Negligible
---- nginx CVEs AFTER VEX ---
-CVE-2023-44487 High
-CVE-2009-4487 Negligible
-CVE-2026-97205 Critical
-CVE-2026-95101 Medium
-CVE-2026-97629 High
-CVE-2013-0337 Negligible
+# Grype VEX proof on the final image (nginx-hardened:latest), 2026-11-08
+$ grype nginx-hardened:latest                             -> 312 findings
+$ grype nginx-hardened:latest --vex vex/vex.openvex.json  -> 308 findings
+
+Rows suppressed by vex/vex.openvex.json:
+libssl3             3.0.22-1~deb12u2                          deb   CVE-2025-27587    Negligible  0.4% (39th)    < 0.1         
+nginx               1.25.5-1~bookworm+hardened1               deb   CVE-2026-15176    Critical    1.0% (62nd)    0.9           
+nginx               1.25.5-1~bookworm+hardened1               deb   CVE-2026-93479    Critical    1.2% (68th)    1.1           
+openssl             3.0.22-1~deb12u2                          deb   CVE-2025-27587    Negligible  0.4% (39th)    < 0.1         

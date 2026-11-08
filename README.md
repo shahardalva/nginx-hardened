@@ -44,7 +44,9 @@ make scan    # Trivy + Grype on the hardened image -> reports/hardened-*.txt
   resolves.
 - Later in the session Grype became very slow on this machine: a scan of either
   image produced no result within 15 minutes, with no shortage of memory. I did
-  not find the cause, so the Grype reports come from earlier runs (section 1).
+  not find the cause. After restarting WSL, both scans finished in about 40
+  seconds, so all Grype reports in `reports/` are from the final images, run with
+  the same database.
 
 ## 1. What was fixed, and how
 
@@ -67,13 +69,11 @@ compiling OpenSSL into nginx is explained in `docs/TRIAGE.md`.
 |-----|-----------|------------|---------------|----------|
 | CVE-2026-15176 | Grype | `fixed` | Backported (above). The version string is still 1.25.5, so scanners keep flagging it. | `reports/grype-vex-proof.txt` |
 | CVE-2026-93479 | Grype | `not_affected` | `vulnerable_code_not_present`: the vulnerable code was added after 1.25.5 | `docs/TRIAGE.md`, `reports/grype-vex-proof.txt` |
-| CVE-2025-27587 | Trivy | `not_affected` | `vulnerable_code_not_in_execute_path`: affects PowerPC only; this image is amd64 | `reports/vex-proof.txt` |
+| CVE-2025-27587 | Trivy, Grype | `not_affected` | `vulnerable_code_not_in_execute_path`: affects PowerPC only; this image is amd64 | `reports/vex-proof.txt`, `reports/grype-vex-proof.txt` |
 
-- **Grype with VEX:** findings on the `nginx` package drop from 8 to
-  6; the two removed are exactly CVE-2026-15176 and CVE-2026-93479.
-  This was run on the build made before the dynamic modules and `nginx-debug`
-  were added. That build contains the same `nginx` package (same version, same
-  patch) as the final image.
+- **Grype with VEX** (final image): 312 → 308 findings. The four rows removed are
+  exactly CVE-2026-15176 and CVE-2026-93479 on `nginx`, and CVE-2025-27587 on
+  `libssl3` and `openssl`.
 - **Trivy with VEX** (final image): CVE-2025-27587 drops from 2 to
   0.
 
@@ -82,13 +82,12 @@ compiling OpenSSL into nginx is explained in `docs/TRIAGE.md`.
 | | Baseline (`nginx:1.25-bookworm`) | Hardened (`nginx-hardened:latest`) |
 |---|---|---|
 | Trivy findings (`--pkg-types os`, same database, final image) | 839 (785 CVE + 54 Debian TEMP/DLA/DSA) | 359 (316 CVE + 43 TEMP) |
-| Grype findings | 789 (first scan of the day) | 216 (build before the modules were added) |
+| Grype findings (same database, final image) | 789 | 312 |
 | Image size (`docker images`) | 276MB | 267MB |
 
-Findings are counted as lines containing a CVE or GHSA ID in `reports/`.
-Hardened counts are before VEX is applied. The Grype hardened count does not
-include the libraries added later for the modules (libxml2, libxslt, libgd,
-libGeoIP); the Trivy numbers are for the final image.
+Trivy counts are findings in `reports/*-trivy.json` (Debian TEMP/DLA/DSA IDs
+included); Grype counts are rows with a CVE or GHSA ID in `reports/*-grype.txt`.
+Hardened counts are before VEX is applied.
 
 > **Attribution.** Most of the drop in the totals comes from building on a current
 > `debian:bookworm-slim` base; the official image ships an older base. What this
@@ -260,8 +259,6 @@ pytest exits non-zero, which makes `make test` fail. Run it with `make test` or
 - **Source checksums.** `build/SHA256SUMS` was recorded from the downloads
   (nginx.org over HTTPS, njs from a GitHub tag archive): trust on first use.
   Verifying the nginx release's PGP signature would be stronger.
-- **Grype reports** come from earlier runs (section 1); the Trivy reports are
-  for the final image.
 - **Test scope.** See "Not covered" in section 4.
 
 ## 6. What surprised me
