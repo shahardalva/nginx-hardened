@@ -114,3 +114,60 @@ def test_entrypoint_enables_ipv6(docker_client):
     for image in (REFERENCE_IMAGE, HARDENED_IMAGE):
         _, out = _run(docker_client, image, "sh", "-c", script)
         assert out.strip().splitlines()[-1] == "1", f"{image}: {out}"
+
+
+# Packages allowed to differ between the images, each with its reason.
+# Empty: the hardened image installs exactly the official package set.
+PACKAGE_DIFF_ALLOWLIST = {}
+
+
+def _packages(client, image):
+    status, out = _run(client, image, "dpkg-query", "-W", r"-f=${Package}\n")
+    assert status == 0, f"{image}: {out}"
+    return set(out.split())
+
+
+def test_installed_packages_match(docker_client):
+    """Same Debian packages in both images, so tools such as curl (healthchecks) exist."""
+    ref = _packages(docker_client, REFERENCE_IMAGE)
+    hard = _packages(docker_client, HARDENED_IMAGE)
+    allowed = set(PACKAGE_DIFF_ALLOWLIST)
+    only_ref = sorted(ref - hard - allowed)
+    only_hard = sorted(hard - ref - allowed)
+    assert only_ref == [] and only_hard == [], (
+        f"only in reference: {only_ref}; only in hardened: {only_hard}")
+
+
+# Paths allowed to exist in only one image, each with its reason.
+# Empty: every file of the official nginx* packages is present, and nothing extra.
+FILE_DIFF_ALLOWLIST = {}
+
+_PKG_FILES = ("for p in $(dpkg-query -W -f='${Package}\\n' 'nginx*'); do "
+              "dpkg -L \"$p\" 2>/dev/null; done | sort -u")
+_EXISTING = 'for f in "$@"; do if [ -e "$f" ] || [ -L "$f" ]; then echo "$f"; fi; done'
+
+
+def _package_paths(client, image):
+    status, out = _run(client, image, "sh", "-c", _PKG_FILES)
+    assert status == 0, f"{image}: {out}"
+    return set(out.split())
+
+
+def _existing(client, image, paths):
+    status, out = _run(client, image, "sh", "-c", _EXISTING, "sh", *sorted(paths))
+    assert status == 0, f"{image}: {out}"
+    return set(out.split())
+
+
+def test_package_files_match(docker_client):
+    """Every path owned by an nginx* package in either image exists in both or in neither
+    (paths that the slim base excludes, such as docs, are absent from both)."""
+    paths = (_package_paths(docker_client, REFERENCE_IMAGE)
+             | _package_paths(docker_client, HARDENED_IMAGE))
+    ref = _existing(docker_client, REFERENCE_IMAGE, paths)
+    hard = _existing(docker_client, HARDENED_IMAGE, paths)
+    allowed = set(FILE_DIFF_ALLOWLIST)
+    only_ref = sorted(ref - hard - allowed)
+    only_hard = sorted(hard - ref - allowed)
+    assert only_ref == [] and only_hard == [], (
+        f"only in reference: {only_ref}; only in hardened: {only_hard}")

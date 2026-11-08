@@ -8,7 +8,7 @@ FROM debian:bookworm-slim
 RUN apt-get update && apt-get install -y --no-install-recommends \
         build-essential ca-certificates curl pkg-config \
         libssl-dev libpcre2-dev zlib1g-dev \
-        libxml2-dev libxslt1-dev libgd-dev libgeoip-dev \
+        libxml2-dev libxslt1-dev libgd-dev libgeoip-dev libedit-dev \
     && rm -rf /var/lib/apt/lists/*
 
 COPY . /build
