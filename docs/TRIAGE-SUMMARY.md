@@ -20,13 +20,12 @@ and the outcome in the hardened image:
 
 | Method | Findings |
 |---|---|
-| version bump | 315 |
-| component removed | 173 |
+| version bump | 381 |
 | backport | 1 |
-| not affected (VEX) | 3 |
+| not affected (VEX) | 5 |
 | open: backport candidate | 1 |
-| no Debian fix | 349 |
-| open | 5 |
+| no Debian fix | 455 |
+| open | 4 |
 | **total** | **847** |
 
 ## By package
@@ -34,8 +33,8 @@ and the outcome in the hardened image:
 | Package | Findings | Version bump | Removed | Backport | VEX | Open |
 |---|---|---|---|---|---|---|
 | `libheif1` | 72 | 3 | 0 | 0 | 0 | 69 |
-| `curl` | 52 | 0 | 52 | 0 | 0 | 0 |
-| `libcurl4` | 52 | 0 | 52 | 0 | 0 | 0 |
+| `curl` | 52 | 14 | 0 | 0 | 0 | 38 |
+| `libcurl4` | 52 | 14 | 0 | 0 | 0 | 38 |
 | `libssl3` | 49 | 48 | 0 | 0 | 1 | 0 |
 | `openssl` | 49 | 48 | 0 | 0 | 1 | 0 |
 | `libexpat1` | 41 | 33 | 0 | 0 | 0 | 8 |
@@ -49,10 +48,10 @@ and the outcome in the hardened image:
 | `libpng16-16` | 16 | 12 | 0 | 0 | 0 | 4 |
 | `libsystemd0` | 14 | 7 | 0 | 0 | 0 | 7 |
 | `libudev1` | 14 | 7 | 0 | 0 | 0 | 7 |
-| `libgssapi-krb5-2` | 13 | 0 | 13 | 0 | 0 | 0 |
-| `libk5crypto3` | 13 | 0 | 13 | 0 | 0 | 0 |
-| `libkrb5-3` | 13 | 0 | 13 | 0 | 0 | 0 |
-| `libkrb5support0` | 13 | 0 | 13 | 0 | 0 | 0 |
+| `libgssapi-krb5-2` | 13 | 7 | 0 | 0 | 0 | 6 |
+| `libk5crypto3` | 13 | 7 | 0 | 0 | 0 | 6 |
+| `libkrb5-3` | 13 | 7 | 0 | 0 | 0 | 6 |
+| `libkrb5support0` | 13 | 7 | 0 | 0 | 0 | 6 |
 | `bsdutils` | 8 | 0 | 0 | 0 | 0 | 8 |
 | `libblkid1` | 8 | 0 | 0 | 0 | 0 | 8 |
 | `libmount1` | 8 | 0 | 0 | 0 | 0 | 8 |
@@ -62,15 +61,15 @@ and the outcome in the hardened image:
 | `mount` | 8 | 0 | 0 | 0 | 0 | 8 |
 | `util-linux` | 8 | 0 | 0 | 0 | 0 | 8 |
 | `util-linux-extra` | 8 | 0 | 0 | 0 | 0 | 8 |
-| `nginx` | 8 | 0 | 0 | 1 | 1 | 6 |
+| `nginx` | 8 | 0 | 0 | 1 | 2 | 5 |
 | `gcc-12-base` | 7 | 1 | 0 | 0 | 0 | 6 |
 | `libaom3` | 7 | 5 | 0 | 0 | 0 | 2 |
 | `libgcc-s1` | 7 | 1 | 0 | 0 | 0 | 6 |
 | `libpcre2-8-0` | 7 | 7 | 0 | 0 | 0 | 0 |
 | `libstdc++6` | 7 | 1 | 0 | 0 | 0 | 6 |
 | `gpgv` | 6 | 1 | 0 | 0 | 0 | 5 |
-| `libldap-2.5-0` | 6 | 0 | 6 | 0 | 0 | 0 |
-| `libssh2-1` | 6 | 0 | 6 | 0 | 0 | 0 |
+| `libldap-2.5-0` | 6 | 0 | 0 | 0 | 0 | 6 |
+| `libssh2-1` | 6 | 6 | 0 | 0 | 0 | 0 |
 | `coreutils` | 5 | 0 | 0 | 0 | 0 | 5 |
 | `login` | 5 | 2 | 0 | 0 | 0 | 3 |
 | `passwd` | 5 | 2 | 0 | 0 | 0 | 3 |
@@ -82,9 +81,9 @@ and the outcome in the hardened image:
 | `libpam0g` | 4 | 2 | 0 | 0 | 0 | 2 |
 | `libx11-6` | 4 | 0 | 0 | 0 | 0 | 4 |
 | `libx11-data` | 4 | 0 | 0 | 0 | 0 | 4 |
-| `zlib1g` | 4 | 0 | 0 | 0 | 0 | 4 |
+| `zlib1g` | 4 | 0 | 0 | 0 | 1 | 3 |
 | `libgcrypt20` | 3 | 1 | 0 | 0 | 0 | 2 |
-| `libnghttp2-14` | 3 | 0 | 3 | 0 | 0 | 0 |
+| `libnghttp2-14` | 3 | 2 | 0 | 0 | 0 | 1 |
 | `libtinfo6` | 3 | 0 | 0 | 0 | 0 | 3 |
 | `ncurses-base` | 3 | 0 | 0 | 0 | 0 | 3 |
 | `ncurses-bin` | 3 | 0 | 0 | 0 | 0 | 3 |
@@ -112,8 +111,8 @@ and the outcome in the hardened image:
 | `libgd3` | 1 | 1 | 0 | 0 | 0 | 0 |
 | `libicu72` | 1 | 1 | 0 | 0 | 0 | 0 |
 | `libjbig0` | 1 | 0 | 0 | 0 | 0 | 1 |
-| `libsasl2-2` | 1 | 0 | 1 | 0 | 0 | 0 |
-| `libsasl2-modules-db` | 1 | 0 | 1 | 0 | 0 | 0 |
+| `libsasl2-2` | 1 | 1 | 0 | 0 | 0 | 0 |
+| `libsasl2-modules-db` | 1 | 1 | 0 | 0 | 0 | 0 |
 | `sed` | 1 | 1 | 0 | 0 | 0 | 0 |
 | `sysvinit-utils` | 1 | 0 | 0 | 0 | 0 | 1 |
 
@@ -122,6 +121,10 @@ and the outcome in the hardened image:
 | Package | Findings | Reason |
 |---|---|---|
 | `libheif1` | 69 | no Debian fix: affected |
+| `curl` | 20 | no Debian fix: affected |
+| `curl` | 18 | no Debian fix: fix_deferred |
+| `libcurl4` | 20 | no Debian fix: affected |
+| `libcurl4` | 18 | no Debian fix: fix_deferred |
 | `libc-bin` | 15 | no Debian fix: affected |
 | `libc-bin` | 9 | no Debian fix: fix_deferred |
 | `libc6` | 15 | no Debian fix: affected |
@@ -160,11 +163,18 @@ and the outcome in the hardened image:
 | `libgcc-s1` | 1 | no Debian fix: will_not_fix |
 | `libgcc-s1` | 1 | no Debian fix: fix_deferred |
 | `libgnutls30` | 6 | no Debian fix: affected |
+| `libgssapi-krb5-2` | 4 | no Debian fix: affected |
+| `libgssapi-krb5-2` | 2 | no Debian fix: fix_deferred |
+| `libk5crypto3` | 4 | no Debian fix: affected |
+| `libk5crypto3` | 2 | no Debian fix: fix_deferred |
+| `libkrb5-3` | 4 | no Debian fix: affected |
+| `libkrb5-3` | 2 | no Debian fix: fix_deferred |
+| `libkrb5support0` | 4 | no Debian fix: affected |
+| `libkrb5support0` | 2 | no Debian fix: fix_deferred |
+| `libldap-2.5-0` | 6 | no Debian fix: affected |
 | `libstdc++6` | 4 | no Debian fix: affected |
 | `libstdc++6` | 1 | no Debian fix: will_not_fix |
 | `libstdc++6` | 1 | no Debian fix: fix_deferred |
-| `nginx` | 5 | open |
-| `nginx` | 1 | open: backport candidate |
 | `coreutils` | 4 | no Debian fix: affected |
 | `coreutils` | 1 | no Debian fix: will_not_fix |
 | `gpgv` | 3 | no Debian fix: affected |
@@ -173,11 +183,11 @@ and the outcome in the hardened image:
 | `perl-base` | 1 | no Debian fix: fix_deferred |
 | `tar` | 3 | no Debian fix: affected |
 | `tar` | 2 | no Debian fix: fix_deferred |
+| `nginx` | 4 | open |
+| `nginx` | 1 | open: backport candidate |
 | `libpng16-16` | 4 | no Debian fix: affected |
 | `libx11-6` | 4 | no Debian fix: fix_deferred |
 | `libx11-data` | 4 | no Debian fix: fix_deferred |
-| `zlib1g` | 3 | no Debian fix: affected |
-| `zlib1g` | 1 | no Debian fix: will_not_fix |
 | `libtinfo6` | 3 | no Debian fix: affected |
 | `libxslt1.1` | 2 | no Debian fix: affected |
 | `libxslt1.1` | 1 | no Debian fix: fix_deferred |
@@ -185,6 +195,7 @@ and the outcome in the hardened image:
 | `ncurses-base` | 3 | no Debian fix: affected |
 | `ncurses-bin` | 3 | no Debian fix: affected |
 | `passwd` | 3 | no Debian fix: affected |
+| `zlib1g` | 3 | no Debian fix: affected |
 | `dash` | 2 | no Debian fix: affected |
 | `gzip` | 2 | no Debian fix: fix_deferred |
 | `libacl1` | 2 | no Debian fix: fix_deferred |
@@ -213,13 +224,15 @@ and the outcome in the hardened image:
 | `libdav1d6` | 1 | no Debian fix: will_not_fix |
 | `libfreetype6` | 1 | no Debian fix: fix_deferred |
 | `libjbig0` | 1 | no Debian fix: affected |
+| `libnghttp2-14` | 1 | no Debian fix: fix_deferred |
 | `libtasn1-6` | 1 | no Debian fix: affected |
 | `sysvinit-utils` | 1 | no Debian fix: affected |
 
 ## Findings present only in the hardened image
 
 Trivy reports no findings for the nginx.org `nginx` package in the official image,
-but does report findings for the `nginx` package built here (cause not investigated).
+because it treats packages maintained by `nginx-packaging@f5.com` as third-party and
+skips them. The `nginx` package built here is matched to Debian's nginx advisories.
 Each one should be an nginx CVE that Grype reports for the baseline and is triaged above;
 anything else is marked NOT TRIAGED.
 
@@ -227,7 +240,7 @@ anything else is marked NOT TRIAGED.
 |---|---|---|
 | CVE-2009-4487 | `nginx` | open |
 | CVE-2013-0337 | `nginx` | open |
-| CVE-2023-44487 | `nginx` | open |
+| CVE-2023-44487 | `nginx` | not affected (VEX) |
 | CVE-2026-15176 | `nginx` | backport |
 | CVE-2026-93479 | `nginx` | not affected (VEX) |
 | CVE-2026-95101 | `nginx` | open |

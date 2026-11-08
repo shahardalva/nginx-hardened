@@ -22,6 +22,8 @@ A VEX statement records that it is fixed.
 | CVE-2026-15176 | nginx `ngx_http_core_module` | Critical | vulnerable | **Backport** + VEX `fixed` |
 | CVE-2026-31789 | `libssl3` / `openssl` | Critical | vulnerable | **Version bump** of the system library |
 | CVE-2026-93479 | nginx `ngx_http_script` | Critical | not vulnerable | VEX `not_affected` |
+| CVE-2023-44487 | nginx HTTP/2 | High | mitigated since 1.25.3 | VEX `not_affected` |
+| CVE-2023-45853 | `zlib1g` (MiniZip) | Critical | code not in the image | VEX `not_affected` |
 | CVE-2025-27587 | `libssl3` / `openssl` | — | not reachable on amd64 | VEX `not_affected` |
 
 ### CVE-2026-15176: backport
@@ -60,15 +62,27 @@ A VEX statement records that it is fixed.
 - The advisory scopes it to OpenSSL on the PowerPC architecture. This image is
   amd64. VEX: `not_affected`, justification `vulnerable_code_not_in_execute_path`.
 
+### CVE-2023-44487: not affected (mitigation present)
+- HTTP/2 "rapid reset". nginx 1.25.3 added a mitigation (CHANGES 1.25.3:
+  "improved detection of misbehaving clients when using HTTP/2"): new streams
+  handled per read-handler iteration are limited to 2 x
+  `http2_max_concurrent_streams` (`h2c->new_streams` in
+  `src/http/v2/ngx_http_v2.c`). 1.25.5 contains it.
+- VEX: `not_affected`, justification `inline_mitigations_already_exist`.
+
+### CVE-2023-45853 (zlib): not affected
+- The bug is in MiniZip (`zipOpenNewFileInZip4_64`). Debian ships MiniZip in a
+  separate package, `libminizip1`. In this image `zlib1g` contains only
+  `libz.so.1`; `libminizip1` is not installed and no MiniZip file exists
+  (`dpkg -L zlib1g`, `find / -iname '*minizip*'`). The same holds for the
+  official image.
+- VEX: `not_affected`, justification `vulnerable_code_not_present`.
+
 ## Considered, not addressed (residual)
 
 - **CVE-2026-97629** (High, TLS session ticket keys): fix `1916f26e6` applies
   cleanly to 1.25.5 (`git apply --check`). The natural next backport.
 - **CVE-2026-95101** (Medium, HTTP/3 frame handling): HTTP/3 is compiled in, as
   in the official image, so this applies. Fix `1c173a2d8`; not tested against 1.25.5.
-- **CVE-2026-97205** (Critical, AIO + SSI use-after-free) and **CVE-2023-44487**
-  (High, HTTP/2 rapid reset): not assessed.
+- **CVE-2026-97205** (Critical, AIO + SSI use-after-free): not assessed.
 - **CVE-2009-4487**, **CVE-2013-0337** (Negligible): not assessed.
-- **zlib CVE-2023-45853** (Critical): Debian marks it `will_not_fix`, so no apt
-  upgrade closes it. Per its description the bug is in MiniZip. Whether MiniZip
-  is present in this image has not been verified, so it stays in residual risk.

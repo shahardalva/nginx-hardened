@@ -18,13 +18,15 @@ import pathlib
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 REPORTS = ROOT / "reports"
 
-# Packages upgraded explicitly by the Containerfile (the dependency version bump).
-EXPLICIT_BUMP = {"libssl3", "libpcre2-8-0", "zlib1g"}
+# Packages whose fixed minimum version is declared in Depends (the dependency version bump).
+EXPLICIT_BUMP = {"libssl3"}
 
 # OS-package findings covered by a VEX not_affected statement (vex/vex.openvex.json).
-VEX_NOT_AFFECTED = {("CVE-2025-27587", "libssl3"), ("CVE-2025-27587", "openssl")}
+VEX_NOT_AFFECTED = {("CVE-2025-27587", "libssl3"), ("CVE-2025-27587", "openssl"),
+                    ("CVE-2023-45853", "zlib1g")}
 
-# nginx findings come from Grype only (Trivy does not flag the nginx.org package).
+# nginx findings in the baseline come from Grype only: Trivy treats the nginx.org
+# package as third-party (Maintainer nginx-packaging@f5.com) and skips it.
 # CVE -> (method, upstream fix, notes)
 NGINX = {
     "CVE-2026-15176": ("backport", "nginx 1.31.7 (f8a23425b)", "patch applied to 1.25.5; VEX fixed"),
@@ -32,7 +34,7 @@ NGINX = {
     "CVE-2026-97629": ("open: backport candidate", "nginx 1.31.7 (1916f26e6)", "fix applies cleanly to 1.25.5; not applied"),
     "CVE-2026-95101": ("open", "nginx 1.31.7 (1c173a2d8)", "HTTP/3; patch not tested on 1.25.5"),
     "CVE-2026-97205": ("open", "nginx 1.31.7", "AIO + SSI; not assessed"),
-    "CVE-2023-44487": ("open", "not checked", "HTTP/2 rapid reset; not assessed"),
+    "CVE-2023-44487": ("not affected (VEX)", "nginx 1.25.3", "HTTP/2 rapid reset; mitigation (new_streams limit) is in 1.25.5"),
     "CVE-2009-4487": ("open", "not checked", "negligible; not assessed"),
     "CVE-2013-0337": ("open", "not checked", "negligible; not assessed"),
 }
@@ -69,7 +71,7 @@ def classify(key, hard_pkgs, hard_findings):
     if pkg not in hard_pkgs:
         return "closed", "component removed", "package is not installed in the hardened image"
     if key not in hard_findings:
-        source = "explicit bump in Containerfile" if pkg in EXPLICIT_BUMP else "current Debian base image"
+        source = "minimum version in Depends" if pkg in EXPLICIT_BUMP else "current Debian base image"
         return "closed", "version bump", f"hardened has {hard_pkgs[pkg]} ({source})"
     if key in VEX_NOT_AFFECTED:
         return "vex", "not affected (VEX)", "see vex/vex.openvex.json"
@@ -167,7 +169,8 @@ def main():
             md.append(f"| `{pkg}` | {n} | {reason} |")
     md += ["", "## Findings present only in the hardened image", "",
            "Trivy reports no findings for the nginx.org `nginx` package in the official image,",
-           "but does report findings for the `nginx` package built here (cause not investigated).",
+           "because it treats packages maintained by `nginx-packaging@f5.com` as third-party and",
+           "skips them. The `nginx` package built here is matched to Debian's nginx advisories.",
            "Each one should be an nginx CVE that Grype reports for the baseline and is triaged above;",
            "anything else is marked NOT TRIAGED.", ""]
     if new_in_hardened:

@@ -17,58 +17,58 @@ CVE-2017-18018,coreutils,LOW,9.1-1,affected,none,open,no Debian fix,Debian statu
 CVE-2025-5278,coreutils,LOW,9.1-1,affected,none,open,no Debian fix,Debian status in hardened image: affected,trivy
 CVE-2026-56391,coreutils,LOW,9.1-1,affected,none,open,no Debian fix,Debian status in hardened image: affected,trivy
 CVE-2026-56392,coreutils,LOW,9.1-1,affected,none,open,no Debian fix,Debian status in hardened image: affected,trivy
-CVE-2024-11053,curl,LOW,7.88.1-10+deb12u5,fixed,Debian 7.88.1-10+deb12u10,closed,component removed,package is not installed in the hardened image,trivy
-CVE-2024-2004,curl,LOW,7.88.1-10+deb12u5,fixed,Debian 7.88.1-10+deb12u6,closed,component removed,package is not installed in the hardened image,trivy
-CVE-2024-2379,curl,LOW,7.88.1-10+deb12u5,affected,none,closed,component removed,package is not installed in the hardened image,trivy
-CVE-2024-2398,curl,MEDIUM,7.88.1-10+deb12u5,fixed,Debian 7.88.1-10+deb12u6,closed,component removed,package is not installed in the hardened image,trivy
-CVE-2024-7264,curl,MEDIUM,7.88.1-10+deb12u5,fixed,Debian 7.88.1-10+deb12u7,closed,component removed,package is not installed in the hardened image,trivy
-CVE-2024-8096,curl,MEDIUM,7.88.1-10+deb12u5,fixed,Debian 7.88.1-10+deb12u8,closed,component removed,package is not installed in the hardened image,trivy
-CVE-2024-9681,curl,MEDIUM,7.88.1-10+deb12u5,fixed,Debian 7.88.1-10+deb12u9,closed,component removed,package is not installed in the hardened image,trivy
-CVE-2025-0167,curl,LOW,7.88.1-10+deb12u5,fixed,Debian 7.88.1-10+deb12u11,closed,component removed,package is not installed in the hardened image,trivy
-CVE-2025-0725,curl,LOW,7.88.1-10+deb12u5,affected,none,closed,component removed,package is not installed in the hardened image,trivy
-CVE-2025-10148,curl,LOW,7.88.1-10+deb12u5,fixed,Debian 7.88.1-10+deb12u15,closed,component removed,package is not installed in the hardened image,trivy
-CVE-2025-10966,curl,LOW,7.88.1-10+deb12u5,affected,none,closed,component removed,package is not installed in the hardened image,trivy
-CVE-2025-14017,curl,LOW,7.88.1-10+deb12u5,affected,none,closed,component removed,package is not installed in the hardened image,trivy
-CVE-2025-14524,curl,LOW,7.88.1-10+deb12u5,fixed,Debian 7.88.1-10+deb12u15,closed,component removed,package is not installed in the hardened image,trivy
-CVE-2025-14819,curl,LOW,7.88.1-10+deb12u5,fixed,Debian 7.88.1-10+deb12u15,closed,component removed,package is not installed in the hardened image,trivy
-CVE-2025-15079,curl,LOW,7.88.1-10+deb12u5,affected,none,closed,component removed,package is not installed in the hardened image,trivy
-CVE-2025-15224,curl,LOW,7.88.1-10+deb12u5,affected,none,closed,component removed,package is not installed in the hardened image,trivy
-CVE-2026-10536,curl,MEDIUM,7.88.1-10+deb12u5,fix_deferred,none,closed,component removed,package is not installed in the hardened image,trivy
-CVE-2026-107928,curl,LOW,7.88.1-10+deb12u5,affected,none,closed,component removed,package is not installed in the hardened image,trivy
-CVE-2026-11856,curl,MEDIUM,7.88.1-10+deb12u5,fix_deferred,none,closed,component removed,package is not installed in the hardened image,trivy
-CVE-2026-12064,curl,HIGH,7.88.1-10+deb12u5,fix_deferred,none,closed,component removed,package is not installed in the hardened image,trivy
-CVE-2026-13608,curl,LOW,7.88.1-10+deb12u5,fix_deferred,none,closed,component removed,package is not installed in the hardened image,trivy
-CVE-2026-18924,curl,LOW,7.88.1-10+deb12u5,fix_deferred,none,closed,component removed,package is not installed in the hardened image,trivy
-CVE-2026-1965,curl,MEDIUM,7.88.1-10+deb12u5,affected,none,closed,component removed,package is not installed in the hardened image,trivy
-CVE-2026-19931,curl,MEDIUM,7.88.1-10+deb12u5,fix_deferred,none,closed,component removed,package is not installed in the hardened image,trivy
-CVE-2026-3783,curl,MEDIUM,7.88.1-10+deb12u5,fixed,Debian 7.88.1-10+deb12u15,closed,component removed,package is not installed in the hardened image,trivy
-CVE-2026-3784,curl,MEDIUM,7.88.1-10+deb12u5,fixed,Debian 7.88.1-10+deb12u15,closed,component removed,package is not installed in the hardened image,trivy
-CVE-2026-4873,curl,MEDIUM,7.88.1-10+deb12u5,affected,none,closed,component removed,package is not installed in the hardened image,trivy
-CVE-2026-5545,curl,MEDIUM,7.88.1-10+deb12u5,affected,none,closed,component removed,package is not installed in the hardened image,trivy
-CVE-2026-5773,curl,HIGH,7.88.1-10+deb12u5,fixed,Debian 7.88.1-10+deb12u15,closed,component removed,package is not installed in the hardened image,trivy
-CVE-2026-6253,curl,MEDIUM,7.88.1-10+deb12u5,affected,none,closed,component removed,package is not installed in the hardened image,trivy
-CVE-2026-6276,curl,HIGH,7.88.1-10+deb12u5,affected,none,closed,component removed,package is not installed in the hardened image,trivy
-CVE-2026-6429,curl,MEDIUM,7.88.1-10+deb12u5,affected,none,closed,component removed,package is not installed in the hardened image,trivy
-CVE-2026-7168,curl,MEDIUM,7.88.1-10+deb12u5,fixed,Debian 7.88.1-10+deb12u15,closed,component removed,package is not installed in the hardened image,trivy
-CVE-2026-80230,curl,LOW,7.88.1-10+deb12u5,fix_deferred,none,closed,component removed,package is not installed in the hardened image,trivy
-CVE-2026-82209,curl,LOW,7.88.1-10+deb12u5,fix_deferred,none,closed,component removed,package is not installed in the hardened image,trivy
-CVE-2026-8286,curl,HIGH,7.88.1-10+deb12u5,fix_deferred,none,closed,component removed,package is not installed in the hardened image,trivy
-CVE-2026-8458,curl,HIGH,7.88.1-10+deb12u5,fix_deferred,none,closed,component removed,package is not installed in the hardened image,trivy
-CVE-2026-86409,curl,LOW,7.88.1-10+deb12u5,affected,none,closed,component removed,package is not installed in the hardened image,trivy
-CVE-2026-86410,curl,LOW,7.88.1-10+deb12u5,affected,none,closed,component removed,package is not installed in the hardened image,trivy
-CVE-2026-86414,curl,LOW,7.88.1-10+deb12u5,affected,none,closed,component removed,package is not installed in the hardened image,trivy
-CVE-2026-87864,curl,LOW,7.88.1-10+deb12u5,fix_deferred,none,closed,component removed,package is not installed in the hardened image,trivy
-CVE-2026-87865,curl,LOW,7.88.1-10+deb12u5,fix_deferred,none,closed,component removed,package is not installed in the hardened image,trivy
-CVE-2026-87866,curl,LOW,7.88.1-10+deb12u5,affected,none,closed,component removed,package is not installed in the hardened image,trivy
-CVE-2026-8924,curl,MEDIUM,7.88.1-10+deb12u5,fix_deferred,none,closed,component removed,package is not installed in the hardened image,trivy
-CVE-2026-8927,curl,HIGH,7.88.1-10+deb12u5,fix_deferred,none,closed,component removed,package is not installed in the hardened image,trivy
-CVE-2026-8932,curl,MEDIUM,7.88.1-10+deb12u5,fix_deferred,none,closed,component removed,package is not installed in the hardened image,trivy
-CVE-2026-92388,curl,MEDIUM,7.88.1-10+deb12u5,fix_deferred,none,closed,component removed,package is not installed in the hardened image,trivy
-CVE-2026-92389,curl,LOW,7.88.1-10+deb12u5,fix_deferred,none,closed,component removed,package is not installed in the hardened image,trivy
-CVE-2026-92390,curl,LOW,7.88.1-10+deb12u5,fix_deferred,none,closed,component removed,package is not installed in the hardened image,trivy
-CVE-2026-92391,curl,LOW,7.88.1-10+deb12u5,affected,none,closed,component removed,package is not installed in the hardened image,trivy
-CVE-2026-94266,curl,LOW,7.88.1-10+deb12u5,affected,none,closed,component removed,package is not installed in the hardened image,trivy
-CVE-2026-9547,curl,LOW,7.88.1-10+deb12u5,affected,none,closed,component removed,package is not installed in the hardened image,trivy
+CVE-2024-11053,curl,LOW,7.88.1-10+deb12u5,fixed,Debian 7.88.1-10+deb12u10,closed,version bump,hardened has 7.88.1-10+deb12u15 (current Debian base image),trivy
+CVE-2024-2004,curl,LOW,7.88.1-10+deb12u5,fixed,Debian 7.88.1-10+deb12u6,closed,version bump,hardened has 7.88.1-10+deb12u15 (current Debian base image),trivy
+CVE-2024-2379,curl,LOW,7.88.1-10+deb12u5,affected,none,open,no Debian fix,Debian status in hardened image: affected,trivy
+CVE-2024-2398,curl,MEDIUM,7.88.1-10+deb12u5,fixed,Debian 7.88.1-10+deb12u6,closed,version bump,hardened has 7.88.1-10+deb12u15 (current Debian base image),trivy
+CVE-2024-7264,curl,MEDIUM,7.88.1-10+deb12u5,fixed,Debian 7.88.1-10+deb12u7,closed,version bump,hardened has 7.88.1-10+deb12u15 (current Debian base image),trivy
+CVE-2024-8096,curl,MEDIUM,7.88.1-10+deb12u5,fixed,Debian 7.88.1-10+deb12u8,closed,version bump,hardened has 7.88.1-10+deb12u15 (current Debian base image),trivy
+CVE-2024-9681,curl,MEDIUM,7.88.1-10+deb12u5,fixed,Debian 7.88.1-10+deb12u9,closed,version bump,hardened has 7.88.1-10+deb12u15 (current Debian base image),trivy
+CVE-2025-0167,curl,LOW,7.88.1-10+deb12u5,fixed,Debian 7.88.1-10+deb12u11,closed,version bump,hardened has 7.88.1-10+deb12u15 (current Debian base image),trivy
+CVE-2025-0725,curl,LOW,7.88.1-10+deb12u5,affected,none,open,no Debian fix,Debian status in hardened image: affected,trivy
+CVE-2025-10148,curl,LOW,7.88.1-10+deb12u5,fixed,Debian 7.88.1-10+deb12u15,closed,version bump,hardened has 7.88.1-10+deb12u15 (current Debian base image),trivy
+CVE-2025-10966,curl,LOW,7.88.1-10+deb12u5,affected,none,open,no Debian fix,Debian status in hardened image: affected,trivy
+CVE-2025-14017,curl,LOW,7.88.1-10+deb12u5,affected,none,open,no Debian fix,Debian status in hardened image: affected,trivy
+CVE-2025-14524,curl,LOW,7.88.1-10+deb12u5,fixed,Debian 7.88.1-10+deb12u15,closed,version bump,hardened has 7.88.1-10+deb12u15 (current Debian base image),trivy
+CVE-2025-14819,curl,LOW,7.88.1-10+deb12u5,fixed,Debian 7.88.1-10+deb12u15,closed,version bump,hardened has 7.88.1-10+deb12u15 (current Debian base image),trivy
+CVE-2025-15079,curl,LOW,7.88.1-10+deb12u5,affected,none,open,no Debian fix,Debian status in hardened image: affected,trivy
+CVE-2025-15224,curl,LOW,7.88.1-10+deb12u5,affected,none,open,no Debian fix,Debian status in hardened image: affected,trivy
+CVE-2026-10536,curl,MEDIUM,7.88.1-10+deb12u5,fix_deferred,none,open,no Debian fix,Debian status in hardened image: fix_deferred,trivy
+CVE-2026-107928,curl,LOW,7.88.1-10+deb12u5,affected,none,open,no Debian fix,Debian status in hardened image: affected,trivy
+CVE-2026-11856,curl,MEDIUM,7.88.1-10+deb12u5,fix_deferred,none,open,no Debian fix,Debian status in hardened image: fix_deferred,trivy
+CVE-2026-12064,curl,HIGH,7.88.1-10+deb12u5,fix_deferred,none,open,no Debian fix,Debian status in hardened image: fix_deferred,trivy
+CVE-2026-13608,curl,LOW,7.88.1-10+deb12u5,fix_deferred,none,open,no Debian fix,Debian status in hardened image: fix_deferred,trivy
+CVE-2026-18924,curl,LOW,7.88.1-10+deb12u5,fix_deferred,none,open,no Debian fix,Debian status in hardened image: fix_deferred,trivy
+CVE-2026-1965,curl,MEDIUM,7.88.1-10+deb12u5,affected,none,open,no Debian fix,Debian status in hardened image: affected,trivy
+CVE-2026-19931,curl,MEDIUM,7.88.1-10+deb12u5,fix_deferred,none,open,no Debian fix,Debian status in hardened image: fix_deferred,trivy
+CVE-2026-3783,curl,MEDIUM,7.88.1-10+deb12u5,fixed,Debian 7.88.1-10+deb12u15,closed,version bump,hardened has 7.88.1-10+deb12u15 (current Debian base image),trivy
+CVE-2026-3784,curl,MEDIUM,7.88.1-10+deb12u5,fixed,Debian 7.88.1-10+deb12u15,closed,version bump,hardened has 7.88.1-10+deb12u15 (current Debian base image),trivy
+CVE-2026-4873,curl,MEDIUM,7.88.1-10+deb12u5,affected,none,open,no Debian fix,Debian status in hardened image: affected,trivy
+CVE-2026-5545,curl,MEDIUM,7.88.1-10+deb12u5,affected,none,open,no Debian fix,Debian status in hardened image: affected,trivy
+CVE-2026-5773,curl,HIGH,7.88.1-10+deb12u5,fixed,Debian 7.88.1-10+deb12u15,closed,version bump,hardened has 7.88.1-10+deb12u15 (current Debian base image),trivy
+CVE-2026-6253,curl,MEDIUM,7.88.1-10+deb12u5,affected,none,open,no Debian fix,Debian status in hardened image: affected,trivy
+CVE-2026-6276,curl,HIGH,7.88.1-10+deb12u5,affected,none,open,no Debian fix,Debian status in hardened image: affected,trivy
+CVE-2026-6429,curl,MEDIUM,7.88.1-10+deb12u5,affected,none,open,no Debian fix,Debian status in hardened image: affected,trivy
+CVE-2026-7168,curl,MEDIUM,7.88.1-10+deb12u5,fixed,Debian 7.88.1-10+deb12u15,closed,version bump,hardened has 7.88.1-10+deb12u15 (current Debian base image),trivy
+CVE-2026-80230,curl,LOW,7.88.1-10+deb12u5,fix_deferred,none,open,no Debian fix,Debian status in hardened image: fix_deferred,trivy
+CVE-2026-82209,curl,LOW,7.88.1-10+deb12u5,fix_deferred,none,open,no Debian fix,Debian status in hardened image: fix_deferred,trivy
+CVE-2026-8286,curl,HIGH,7.88.1-10+deb12u5,fix_deferred,none,open,no Debian fix,Debian status in hardened image: fix_deferred,trivy
+CVE-2026-8458,curl,HIGH,7.88.1-10+deb12u5,fix_deferred,none,open,no Debian fix,Debian status in hardened image: fix_deferred,trivy
+CVE-2026-86409,curl,LOW,7.88.1-10+deb12u5,affected,none,open,no Debian fix,Debian status in hardened image: affected,trivy
+CVE-2026-86410,curl,LOW,7.88.1-10+deb12u5,affected,none,open,no Debian fix,Debian status in hardened image: affected,trivy
+CVE-2026-86414,curl,LOW,7.88.1-10+deb12u5,affected,none,open,no Debian fix,Debian status in hardened image: affected,trivy
+CVE-2026-87864,curl,LOW,7.88.1-10+deb12u5,fix_deferred,none,open,no Debian fix,Debian status in hardened image: fix_deferred,trivy
+CVE-2026-87865,curl,LOW,7.88.1-10+deb12u5,fix_deferred,none,open,no Debian fix,Debian status in hardened image: fix_deferred,trivy
+CVE-2026-87866,curl,LOW,7.88.1-10+deb12u5,affected,none,open,no Debian fix,Debian status in hardened image: affected,trivy
+CVE-2026-8924,curl,MEDIUM,7.88.1-10+deb12u5,fix_deferred,none,open,no Debian fix,Debian status in hardened image: fix_deferred,trivy
+CVE-2026-8927,curl,HIGH,7.88.1-10+deb12u5,fix_deferred,none,open,no Debian fix,Debian status in hardened image: fix_deferred,trivy
+CVE-2026-8932,curl,MEDIUM,7.88.1-10+deb12u5,fix_deferred,none,open,no Debian fix,Debian status in hardened image: fix_deferred,trivy
+CVE-2026-92388,curl,MEDIUM,7.88.1-10+deb12u5,fix_deferred,none,open,no Debian fix,Debian status in hardened image: fix_deferred,trivy
+CVE-2026-92389,curl,LOW,7.88.1-10+deb12u5,fix_deferred,none,open,no Debian fix,Debian status in hardened image: fix_deferred,trivy
+CVE-2026-92390,curl,LOW,7.88.1-10+deb12u5,fix_deferred,none,open,no Debian fix,Debian status in hardened image: fix_deferred,trivy
+CVE-2026-92391,curl,LOW,7.88.1-10+deb12u5,affected,none,open,no Debian fix,Debian status in hardened image: affected,trivy
+CVE-2026-94266,curl,LOW,7.88.1-10+deb12u5,affected,none,open,no Debian fix,Debian status in hardened image: affected,trivy
+CVE-2026-9547,curl,LOW,7.88.1-10+deb12u5,affected,none,open,no Debian fix,Debian status in hardened image: affected,trivy
 CVE-2026-102473,dash,LOW,0.5.12-2,affected,none,open,no Debian fix,Debian status in hardened image: affected,trivy
 CVE-2026-102474,dash,LOW,0.5.12-2,affected,none,open,no Debian fix,Debian status in hardened image: affected,trivy
 CVE-2026-53910,diffutils,LOW,1:3.8-4,affected,none,open,no Debian fix,Debian status in hardened image: affected,trivy
@@ -182,58 +182,58 @@ CVE-2026-95818,libc6,MEDIUM,2.36-9+deb12u7,affected,none,open,no Debian fix,Debi
 CVE-2026-97399,libc6,LOW,2.36-9+deb12u7,affected,none,open,no Debian fix,Debian status in hardened image: affected,trivy
 CVE-2025-1390,libcap2,MEDIUM,1:2.66-4,fixed,Debian 1:2.66-4+deb12u1,closed,version bump,hardened has 1:2.66-4+deb12u3+b1 (current Debian base image),trivy
 CVE-2026-4878,libcap2,HIGH,1:2.66-4,fixed,Debian 1:2.66-4+deb12u3,closed,version bump,hardened has 1:2.66-4+deb12u3+b1 (current Debian base image),trivy
-CVE-2024-11053,libcurl4,LOW,7.88.1-10+deb12u5,fixed,Debian 7.88.1-10+deb12u10,closed,component removed,package is not installed in the hardened image,trivy
-CVE-2024-2004,libcurl4,LOW,7.88.1-10+deb12u5,fixed,Debian 7.88.1-10+deb12u6,closed,component removed,package is not installed in the hardened image,trivy
-CVE-2024-2379,libcurl4,LOW,7.88.1-10+deb12u5,affected,none,closed,component removed,package is not installed in the hardened image,trivy
-CVE-2024-2398,libcurl4,MEDIUM,7.88.1-10+deb12u5,fixed,Debian 7.88.1-10+deb12u6,closed,component removed,package is not installed in the hardened image,trivy
-CVE-2024-7264,libcurl4,MEDIUM,7.88.1-10+deb12u5,fixed,Debian 7.88.1-10+deb12u7,closed,component removed,package is not installed in the hardened image,trivy
-CVE-2024-8096,libcurl4,MEDIUM,7.88.1-10+deb12u5,fixed,Debian 7.88.1-10+deb12u8,closed,component removed,package is not installed in the hardened image,trivy
-CVE-2024-9681,libcurl4,MEDIUM,7.88.1-10+deb12u5,fixed,Debian 7.88.1-10+deb12u9,closed,component removed,package is not installed in the hardened image,trivy
-CVE-2025-0167,libcurl4,LOW,7.88.1-10+deb12u5,fixed,Debian 7.88.1-10+deb12u11,closed,component removed,package is not installed in the hardened image,trivy
-CVE-2025-0725,libcurl4,LOW,7.88.1-10+deb12u5,affected,none,closed,component removed,package is not installed in the hardened image,trivy
-CVE-2025-10148,libcurl4,LOW,7.88.1-10+deb12u5,fixed,Debian 7.88.1-10+deb12u15,closed,component removed,package is not installed in the hardened image,trivy
-CVE-2025-10966,libcurl4,LOW,7.88.1-10+deb12u5,affected,none,closed,component removed,package is not installed in the hardened image,trivy
-CVE-2025-14017,libcurl4,LOW,7.88.1-10+deb12u5,affected,none,closed,component removed,package is not installed in the hardened image,trivy
-CVE-2025-14524,libcurl4,LOW,7.88.1-10+deb12u5,fixed,Debian 7.88.1-10+deb12u15,closed,component removed,package is not installed in the hardened image,trivy
-CVE-2025-14819,libcurl4,LOW,7.88.1-10+deb12u5,fixed,Debian 7.88.1-10+deb12u15,closed,component removed,package is not installed in the hardened image,trivy
-CVE-2025-15079,libcurl4,LOW,7.88.1-10+deb12u5,affected,none,closed,component removed,package is not installed in the hardened image,trivy
-CVE-2025-15224,libcurl4,LOW,7.88.1-10+deb12u5,affected,none,closed,component removed,package is not installed in the hardened image,trivy
-CVE-2026-10536,libcurl4,MEDIUM,7.88.1-10+deb12u5,fix_deferred,none,closed,component removed,package is not installed in the hardened image,trivy
-CVE-2026-107928,libcurl4,LOW,7.88.1-10+deb12u5,affected,none,closed,component removed,package is not installed in the hardened image,trivy
-CVE-2026-11856,libcurl4,MEDIUM,7.88.1-10+deb12u5,fix_deferred,none,closed,component removed,package is not installed in the hardened image,trivy
-CVE-2026-12064,libcurl4,HIGH,7.88.1-10+deb12u5,fix_deferred,none,closed,component removed,package is not installed in the hardened image,trivy
-CVE-2026-13608,libcurl4,LOW,7.88.1-10+deb12u5,fix_deferred,none,closed,component removed,package is not installed in the hardened image,trivy
-CVE-2026-18924,libcurl4,LOW,7.88.1-10+deb12u5,fix_deferred,none,closed,component removed,package is not installed in the hardened image,trivy
-CVE-2026-1965,libcurl4,MEDIUM,7.88.1-10+deb12u5,affected,none,closed,component removed,package is not installed in the hardened image,trivy
-CVE-2026-19931,libcurl4,MEDIUM,7.88.1-10+deb12u5,fix_deferred,none,closed,component removed,package is not installed in the hardened image,trivy
-CVE-2026-3783,libcurl4,MEDIUM,7.88.1-10+deb12u5,fixed,Debian 7.88.1-10+deb12u15,closed,component removed,package is not installed in the hardened image,trivy
-CVE-2026-3784,libcurl4,MEDIUM,7.88.1-10+deb12u5,fixed,Debian 7.88.1-10+deb12u15,closed,component removed,package is not installed in the hardened image,trivy
-CVE-2026-4873,libcurl4,MEDIUM,7.88.1-10+deb12u5,affected,none,closed,component removed,package is not installed in the hardened image,trivy
-CVE-2026-5545,libcurl4,MEDIUM,7.88.1-10+deb12u5,affected,none,closed,component removed,package is not installed in the hardened image,trivy
-CVE-2026-5773,libcurl4,HIGH,7.88.1-10+deb12u5,fixed,Debian 7.88.1-10+deb12u15,closed,component removed,package is not installed in the hardened image,trivy
-CVE-2026-6253,libcurl4,MEDIUM,7.88.1-10+deb12u5,affected,none,closed,component removed,package is not installed in the hardened image,trivy
-CVE-2026-6276,libcurl4,HIGH,7.88.1-10+deb12u5,affected,none,closed,component removed,package is not installed in the hardened image,trivy
-CVE-2026-6429,libcurl4,MEDIUM,7.88.1-10+deb12u5,affected,none,closed,component removed,package is not installed in the hardened image,trivy
-CVE-2026-7168,libcurl4,MEDIUM,7.88.1-10+deb12u5,fixed,Debian 7.88.1-10+deb12u15,closed,component removed,package is not installed in the hardened image,trivy
-CVE-2026-80230,libcurl4,LOW,7.88.1-10+deb12u5,fix_deferred,none,closed,component removed,package is not installed in the hardened image,trivy
-CVE-2026-82209,libcurl4,LOW,7.88.1-10+deb12u5,fix_deferred,none,closed,component removed,package is not installed in the hardened image,trivy
-CVE-2026-8286,libcurl4,HIGH,7.88.1-10+deb12u5,fix_deferred,none,closed,component removed,package is not installed in the hardened image,trivy
-CVE-2026-8458,libcurl4,HIGH,7.88.1-10+deb12u5,fix_deferred,none,closed,component removed,package is not installed in the hardened image,trivy
-CVE-2026-86409,libcurl4,LOW,7.88.1-10+deb12u5,affected,none,closed,component removed,package is not installed in the hardened image,trivy
-CVE-2026-86410,libcurl4,LOW,7.88.1-10+deb12u5,affected,none,closed,component removed,package is not installed in the hardened image,trivy
-CVE-2026-86414,libcurl4,LOW,7.88.1-10+deb12u5,affected,none,closed,component removed,package is not installed in the hardened image,trivy
-CVE-2026-87864,libcurl4,LOW,7.88.1-10+deb12u5,fix_deferred,none,closed,component removed,package is not installed in the hardened image,trivy
-CVE-2026-87865,libcurl4,LOW,7.88.1-10+deb12u5,fix_deferred,none,closed,component removed,package is not installed in the hardened image,trivy
-CVE-2026-87866,libcurl4,LOW,7.88.1-10+deb12u5,affected,none,closed,component removed,package is not installed in the hardened image,trivy
-CVE-2026-8924,libcurl4,MEDIUM,7.88.1-10+deb12u5,fix_deferred,none,closed,component removed,package is not installed in the hardened image,trivy
-CVE-2026-8927,libcurl4,HIGH,7.88.1-10+deb12u5,fix_deferred,none,closed,component removed,package is not installed in the hardened image,trivy
-CVE-2026-8932,libcurl4,MEDIUM,7.88.1-10+deb12u5,fix_deferred,none,closed,component removed,package is not installed in the hardened image,trivy
-CVE-2026-92388,libcurl4,MEDIUM,7.88.1-10+deb12u5,fix_deferred,none,closed,component removed,package is not installed in the hardened image,trivy
-CVE-2026-92389,libcurl4,LOW,7.88.1-10+deb12u5,fix_deferred,none,closed,component removed,package is not installed in the hardened image,trivy
-CVE-2026-92390,libcurl4,LOW,7.88.1-10+deb12u5,fix_deferred,none,closed,component removed,package is not installed in the hardened image,trivy
-CVE-2026-92391,libcurl4,LOW,7.88.1-10+deb12u5,affected,none,closed,component removed,package is not installed in the hardened image,trivy
-CVE-2026-94266,libcurl4,LOW,7.88.1-10+deb12u5,affected,none,closed,component removed,package is not installed in the hardened image,trivy
-CVE-2026-9547,libcurl4,LOW,7.88.1-10+deb12u5,affected,none,closed,component removed,package is not installed in the hardened image,trivy
+CVE-2024-11053,libcurl4,LOW,7.88.1-10+deb12u5,fixed,Debian 7.88.1-10+deb12u10,closed,version bump,hardened has 7.88.1-10+deb12u15 (current Debian base image),trivy
+CVE-2024-2004,libcurl4,LOW,7.88.1-10+deb12u5,fixed,Debian 7.88.1-10+deb12u6,closed,version bump,hardened has 7.88.1-10+deb12u15 (current Debian base image),trivy
+CVE-2024-2379,libcurl4,LOW,7.88.1-10+deb12u5,affected,none,open,no Debian fix,Debian status in hardened image: affected,trivy
+CVE-2024-2398,libcurl4,MEDIUM,7.88.1-10+deb12u5,fixed,Debian 7.88.1-10+deb12u6,closed,version bump,hardened has 7.88.1-10+deb12u15 (current Debian base image),trivy
+CVE-2024-7264,libcurl4,MEDIUM,7.88.1-10+deb12u5,fixed,Debian 7.88.1-10+deb12u7,closed,version bump,hardened has 7.88.1-10+deb12u15 (current Debian base image),trivy
+CVE-2024-8096,libcurl4,MEDIUM,7.88.1-10+deb12u5,fixed,Debian 7.88.1-10+deb12u8,closed,version bump,hardened has 7.88.1-10+deb12u15 (current Debian base image),trivy
+CVE-2024-9681,libcurl4,MEDIUM,7.88.1-10+deb12u5,fixed,Debian 7.88.1-10+deb12u9,closed,version bump,hardened has 7.88.1-10+deb12u15 (current Debian base image),trivy
+CVE-2025-0167,libcurl4,LOW,7.88.1-10+deb12u5,fixed,Debian 7.88.1-10+deb12u11,closed,version bump,hardened has 7.88.1-10+deb12u15 (current Debian base image),trivy
+CVE-2025-0725,libcurl4,LOW,7.88.1-10+deb12u5,affected,none,open,no Debian fix,Debian status in hardened image: affected,trivy
+CVE-2025-10148,libcurl4,LOW,7.88.1-10+deb12u5,fixed,Debian 7.88.1-10+deb12u15,closed,version bump,hardened has 7.88.1-10+deb12u15 (current Debian base image),trivy
+CVE-2025-10966,libcurl4,LOW,7.88.1-10+deb12u5,affected,none,open,no Debian fix,Debian status in hardened image: affected,trivy
+CVE-2025-14017,libcurl4,LOW,7.88.1-10+deb12u5,affected,none,open,no Debian fix,Debian status in hardened image: affected,trivy
+CVE-2025-14524,libcurl4,LOW,7.88.1-10+deb12u5,fixed,Debian 7.88.1-10+deb12u15,closed,version bump,hardened has 7.88.1-10+deb12u15 (current Debian base image),trivy
+CVE-2025-14819,libcurl4,LOW,7.88.1-10+deb12u5,fixed,Debian 7.88.1-10+deb12u15,closed,version bump,hardened has 7.88.1-10+deb12u15 (current Debian base image),trivy
+CVE-2025-15079,libcurl4,LOW,7.88.1-10+deb12u5,affected,none,open,no Debian fix,Debian status in hardened image: affected,trivy
+CVE-2025-15224,libcurl4,LOW,7.88.1-10+deb12u5,affected,none,open,no Debian fix,Debian status in hardened image: affected,trivy
+CVE-2026-10536,libcurl4,MEDIUM,7.88.1-10+deb12u5,fix_deferred,none,open,no Debian fix,Debian status in hardened image: fix_deferred,trivy
+CVE-2026-107928,libcurl4,LOW,7.88.1-10+deb12u5,affected,none,open,no Debian fix,Debian status in hardened image: affected,trivy
+CVE-2026-11856,libcurl4,MEDIUM,7.88.1-10+deb12u5,fix_deferred,none,open,no Debian fix,Debian status in hardened image: fix_deferred,trivy
+CVE-2026-12064,libcurl4,HIGH,7.88.1-10+deb12u5,fix_deferred,none,open,no Debian fix,Debian status in hardened image: fix_deferred,trivy
+CVE-2026-13608,libcurl4,LOW,7.88.1-10+deb12u5,fix_deferred,none,open,no Debian fix,Debian status in hardened image: fix_deferred,trivy
+CVE-2026-18924,libcurl4,LOW,7.88.1-10+deb12u5,fix_deferred,none,open,no Debian fix,Debian status in hardened image: fix_deferred,trivy
+CVE-2026-1965,libcurl4,MEDIUM,7.88.1-10+deb12u5,affected,none,open,no Debian fix,Debian status in hardened image: affected,trivy
+CVE-2026-19931,libcurl4,MEDIUM,7.88.1-10+deb12u5,fix_deferred,none,open,no Debian fix,Debian status in hardened image: fix_deferred,trivy
+CVE-2026-3783,libcurl4,MEDIUM,7.88.1-10+deb12u5,fixed,Debian 7.88.1-10+deb12u15,closed,version bump,hardened has 7.88.1-10+deb12u15 (current Debian base image),trivy
+CVE-2026-3784,libcurl4,MEDIUM,7.88.1-10+deb12u5,fixed,Debian 7.88.1-10+deb12u15,closed,version bump,hardened has 7.88.1-10+deb12u15 (current Debian base image),trivy
+CVE-2026-4873,libcurl4,MEDIUM,7.88.1-10+deb12u5,affected,none,open,no Debian fix,Debian status in hardened image: affected,trivy
+CVE-2026-5545,libcurl4,MEDIUM,7.88.1-10+deb12u5,affected,none,open,no Debian fix,Debian status in hardened image: affected,trivy
+CVE-2026-5773,libcurl4,HIGH,7.88.1-10+deb12u5,fixed,Debian 7.88.1-10+deb12u15,closed,version bump,hardened has 7.88.1-10+deb12u15 (current Debian base image),trivy
+CVE-2026-6253,libcurl4,MEDIUM,7.88.1-10+deb12u5,affected,none,open,no Debian fix,Debian status in hardened image: affected,trivy
+CVE-2026-6276,libcurl4,HIGH,7.88.1-10+deb12u5,affected,none,open,no Debian fix,Debian status in hardened image: affected,trivy
+CVE-2026-6429,libcurl4,MEDIUM,7.88.1-10+deb12u5,affected,none,open,no Debian fix,Debian status in hardened image: affected,trivy
+CVE-2026-7168,libcurl4,MEDIUM,7.88.1-10+deb12u5,fixed,Debian 7.88.1-10+deb12u15,closed,version bump,hardened has 7.88.1-10+deb12u15 (current Debian base image),trivy
+CVE-2026-80230,libcurl4,LOW,7.88.1-10+deb12u5,fix_deferred,none,open,no Debian fix,Debian status in hardened image: fix_deferred,trivy
+CVE-2026-82209,libcurl4,LOW,7.88.1-10+deb12u5,fix_deferred,none,open,no Debian fix,Debian status in hardened image: fix_deferred,trivy
+CVE-2026-8286,libcurl4,HIGH,7.88.1-10+deb12u5,fix_deferred,none,open,no Debian fix,Debian status in hardened image: fix_deferred,trivy
+CVE-2026-8458,libcurl4,HIGH,7.88.1-10+deb12u5,fix_deferred,none,open,no Debian fix,Debian status in hardened image: fix_deferred,trivy
+CVE-2026-86409,libcurl4,LOW,7.88.1-10+deb12u5,affected,none,open,no Debian fix,Debian status in hardened image: affected,trivy
+CVE-2026-86410,libcurl4,LOW,7.88.1-10+deb12u5,affected,none,open,no Debian fix,Debian status in hardened image: affected,trivy
+CVE-2026-86414,libcurl4,LOW,7.88.1-10+deb12u5,affected,none,open,no Debian fix,Debian status in hardened image: affected,trivy
+CVE-2026-87864,libcurl4,LOW,7.88.1-10+deb12u5,fix_deferred,none,open,no Debian fix,Debian status in hardened image: fix_deferred,trivy
+CVE-2026-87865,libcurl4,LOW,7.88.1-10+deb12u5,fix_deferred,none,open,no Debian fix,Debian status in hardened image: fix_deferred,trivy
+CVE-2026-87866,libcurl4,LOW,7.88.1-10+deb12u5,affected,none,open,no Debian fix,Debian status in hardened image: affected,trivy
+CVE-2026-8924,libcurl4,MEDIUM,7.88.1-10+deb12u5,fix_deferred,none,open,no Debian fix,Debian status in hardened image: fix_deferred,trivy
+CVE-2026-8927,libcurl4,HIGH,7.88.1-10+deb12u5,fix_deferred,none,open,no Debian fix,Debian status in hardened image: fix_deferred,trivy
+CVE-2026-8932,libcurl4,MEDIUM,7.88.1-10+deb12u5,fix_deferred,none,open,no Debian fix,Debian status in hardened image: fix_deferred,trivy
+CVE-2026-92388,libcurl4,MEDIUM,7.88.1-10+deb12u5,fix_deferred,none,open,no Debian fix,Debian status in hardened image: fix_deferred,trivy
+CVE-2026-92389,libcurl4,LOW,7.88.1-10+deb12u5,fix_deferred,none,open,no Debian fix,Debian status in hardened image: fix_deferred,trivy
+CVE-2026-92390,libcurl4,LOW,7.88.1-10+deb12u5,fix_deferred,none,open,no Debian fix,Debian status in hardened image: fix_deferred,trivy
+CVE-2026-92391,libcurl4,LOW,7.88.1-10+deb12u5,affected,none,open,no Debian fix,Debian status in hardened image: affected,trivy
+CVE-2026-94266,libcurl4,LOW,7.88.1-10+deb12u5,affected,none,open,no Debian fix,Debian status in hardened image: affected,trivy
+CVE-2026-9547,libcurl4,LOW,7.88.1-10+deb12u5,affected,none,open,no Debian fix,Debian status in hardened image: affected,trivy
 CVE-2023-32570,libdav1d6,MEDIUM,1.0.0-2+deb12u1,will_not_fix,none,open,no Debian fix,Debian status in hardened image: will_not_fix,trivy
 CVE-2023-51792,libde265-0,MEDIUM,1.0.11-1+deb12u2,fixed,Debian 1.0.11-1+deb12u3,closed,version bump,hardened has 1.0.11-1+deb12u3 (current Debian base image),trivy
 CVE-2024-38949,libde265-0,MEDIUM,1.0.11-1+deb12u2,fixed,Debian 1.0.11-1+deb12u3,closed,version bump,hardened has 1.0.11-1+deb12u3 (current Debian base image),trivy
@@ -332,19 +332,19 @@ CVE-2026-88647,libgnutls30,LOW,3.7.9-2+deb12u2,affected,none,open,no Debian fix,
 CVE-2026-88648,libgnutls30,LOW,3.7.9-2+deb12u2,affected,none,open,no Debian fix,Debian status in hardened image: affected,trivy
 CVE-2026-95184,libgnutls30,LOW,3.7.9-2+deb12u2,affected,none,open,no Debian fix,Debian status in hardened image: affected,trivy
 CVE-2026-95210,libgnutls30,LOW,3.7.9-2+deb12u2,affected,none,open,no Debian fix,Debian status in hardened image: affected,trivy
-CVE-2018-5709,libgssapi-krb5-2,LOW,1.20.1-2+deb12u1,affected,none,closed,component removed,package is not installed in the hardened image,trivy
-CVE-2024-26458,libgssapi-krb5-2,LOW,1.20.1-2+deb12u1,affected,none,closed,component removed,package is not installed in the hardened image,trivy
-CVE-2024-26461,libgssapi-krb5-2,LOW,1.20.1-2+deb12u1,affected,none,closed,component removed,package is not installed in the hardened image,trivy
-CVE-2024-26462,libgssapi-krb5-2,MEDIUM,1.20.1-2+deb12u1,fixed,Debian 1.20.1-2+deb12u3,closed,component removed,package is not installed in the hardened image,trivy
-CVE-2024-37370,libgssapi-krb5-2,HIGH,1.20.1-2+deb12u1,fixed,Debian 1.20.1-2+deb12u2,closed,component removed,package is not installed in the hardened image,trivy
-CVE-2024-37371,libgssapi-krb5-2,CRITICAL,1.20.1-2+deb12u1,fixed,Debian 1.20.1-2+deb12u2,closed,component removed,package is not installed in the hardened image,trivy
-CVE-2025-24528,libgssapi-krb5-2,MEDIUM,1.20.1-2+deb12u1,fixed,Debian 1.20.1-2+deb12u3,closed,component removed,package is not installed in the hardened image,trivy
-CVE-2025-3576,libgssapi-krb5-2,MEDIUM,1.20.1-2+deb12u1,fixed,Debian 1.20.1-2+deb12u4,closed,component removed,package is not installed in the hardened image,trivy
-CVE-2026-107708,libgssapi-krb5-2,MEDIUM,1.20.1-2+deb12u1,fix_deferred,none,closed,component removed,package is not installed in the hardened image,trivy
-CVE-2026-107778,libgssapi-krb5-2,MEDIUM,1.20.1-2+deb12u1,fix_deferred,none,closed,component removed,package is not installed in the hardened image,trivy
-CVE-2026-11850,libgssapi-krb5-2,LOW,1.20.1-2+deb12u1,affected,none,closed,component removed,package is not installed in the hardened image,trivy
-CVE-2026-40355,libgssapi-krb5-2,HIGH,1.20.1-2+deb12u1,fixed,Debian 1.20.1-2+deb12u5,closed,component removed,package is not installed in the hardened image,trivy
-CVE-2026-40356,libgssapi-krb5-2,HIGH,1.20.1-2+deb12u1,fixed,Debian 1.20.1-2+deb12u5,closed,component removed,package is not installed in the hardened image,trivy
+CVE-2018-5709,libgssapi-krb5-2,LOW,1.20.1-2+deb12u1,affected,none,open,no Debian fix,Debian status in hardened image: affected,trivy
+CVE-2024-26458,libgssapi-krb5-2,LOW,1.20.1-2+deb12u1,affected,none,open,no Debian fix,Debian status in hardened image: affected,trivy
+CVE-2024-26461,libgssapi-krb5-2,LOW,1.20.1-2+deb12u1,affected,none,open,no Debian fix,Debian status in hardened image: affected,trivy
+CVE-2024-26462,libgssapi-krb5-2,MEDIUM,1.20.1-2+deb12u1,fixed,Debian 1.20.1-2+deb12u3,closed,version bump,hardened has 1.20.1-2+deb12u5 (current Debian base image),trivy
+CVE-2024-37370,libgssapi-krb5-2,HIGH,1.20.1-2+deb12u1,fixed,Debian 1.20.1-2+deb12u2,closed,version bump,hardened has 1.20.1-2+deb12u5 (current Debian base image),trivy
+CVE-2024-37371,libgssapi-krb5-2,CRITICAL,1.20.1-2+deb12u1,fixed,Debian 1.20.1-2+deb12u2,closed,version bump,hardened has 1.20.1-2+deb12u5 (current Debian base image),trivy
+CVE-2025-24528,libgssapi-krb5-2,MEDIUM,1.20.1-2+deb12u1,fixed,Debian 1.20.1-2+deb12u3,closed,version bump,hardened has 1.20.1-2+deb12u5 (current Debian base image),trivy
+CVE-2025-3576,libgssapi-krb5-2,MEDIUM,1.20.1-2+deb12u1,fixed,Debian 1.20.1-2+deb12u4,closed,version bump,hardened has 1.20.1-2+deb12u5 (current Debian base image),trivy
+CVE-2026-107708,libgssapi-krb5-2,MEDIUM,1.20.1-2+deb12u1,fix_deferred,none,open,no Debian fix,Debian status in hardened image: fix_deferred,trivy
+CVE-2026-107778,libgssapi-krb5-2,MEDIUM,1.20.1-2+deb12u1,fix_deferred,none,open,no Debian fix,Debian status in hardened image: fix_deferred,trivy
+CVE-2026-11850,libgssapi-krb5-2,LOW,1.20.1-2+deb12u1,affected,none,open,no Debian fix,Debian status in hardened image: affected,trivy
+CVE-2026-40355,libgssapi-krb5-2,HIGH,1.20.1-2+deb12u1,fixed,Debian 1.20.1-2+deb12u5,closed,version bump,hardened has 1.20.1-2+deb12u5 (current Debian base image),trivy
+CVE-2026-40356,libgssapi-krb5-2,HIGH,1.20.1-2+deb12u1,fixed,Debian 1.20.1-2+deb12u5,closed,version bump,hardened has 1.20.1-2+deb12u5 (current Debian base image),trivy
 CVE-2023-29659,libheif1,MEDIUM,1.15.1-1,fixed,Debian 1.15.1-1+deb12u1,closed,version bump,hardened has 1.15.1-1+deb12u1 (current Debian base image),trivy
 CVE-2023-49462,libheif1,HIGH,1.15.1-1,fixed,Debian 1.15.1-1+deb12u1,closed,version bump,hardened has 1.15.1-1+deb12u1 (current Debian base image),trivy
 CVE-2023-49463,libheif1,LOW,1.15.1-1,affected,none,open,no Debian fix,Debian status in hardened image: affected,trivy
@@ -419,51 +419,51 @@ TEMP-1148137-089975,libheif1,UNKNOWN,1.15.1-1,affected,none,open,no Debian fix,D
 TEMP-1148137-126A7B,libheif1,UNKNOWN,1.15.1-1,affected,none,open,no Debian fix,Debian status in hardened image: affected,trivy
 CVE-2025-5222,libicu72,MEDIUM,72.1-3,fixed,Debian 72.1-3+deb12u1,closed,version bump,hardened has 72.1-3+deb12u1 (current Debian base image),trivy
 CVE-2017-9937,libjbig0,LOW,2.1-6.1,affected,none,open,no Debian fix,Debian status in hardened image: affected,trivy
-CVE-2018-5709,libk5crypto3,LOW,1.20.1-2+deb12u1,affected,none,closed,component removed,package is not installed in the hardened image,trivy
-CVE-2024-26458,libk5crypto3,LOW,1.20.1-2+deb12u1,affected,none,closed,component removed,package is not installed in the hardened image,trivy
-CVE-2024-26461,libk5crypto3,LOW,1.20.1-2+deb12u1,affected,none,closed,component removed,package is not installed in the hardened image,trivy
-CVE-2024-26462,libk5crypto3,MEDIUM,1.20.1-2+deb12u1,fixed,Debian 1.20.1-2+deb12u3,closed,component removed,package is not installed in the hardened image,trivy
-CVE-2024-37370,libk5crypto3,HIGH,1.20.1-2+deb12u1,fixed,Debian 1.20.1-2+deb12u2,closed,component removed,package is not installed in the hardened image,trivy
-CVE-2024-37371,libk5crypto3,CRITICAL,1.20.1-2+deb12u1,fixed,Debian 1.20.1-2+deb12u2,closed,component removed,package is not installed in the hardened image,trivy
-CVE-2025-24528,libk5crypto3,MEDIUM,1.20.1-2+deb12u1,fixed,Debian 1.20.1-2+deb12u3,closed,component removed,package is not installed in the hardened image,trivy
-CVE-2025-3576,libk5crypto3,MEDIUM,1.20.1-2+deb12u1,fixed,Debian 1.20.1-2+deb12u4,closed,component removed,package is not installed in the hardened image,trivy
-CVE-2026-107708,libk5crypto3,MEDIUM,1.20.1-2+deb12u1,fix_deferred,none,closed,component removed,package is not installed in the hardened image,trivy
-CVE-2026-107778,libk5crypto3,MEDIUM,1.20.1-2+deb12u1,fix_deferred,none,closed,component removed,package is not installed in the hardened image,trivy
-CVE-2026-11850,libk5crypto3,LOW,1.20.1-2+deb12u1,affected,none,closed,component removed,package is not installed in the hardened image,trivy
-CVE-2026-40355,libk5crypto3,HIGH,1.20.1-2+deb12u1,fixed,Debian 1.20.1-2+deb12u5,closed,component removed,package is not installed in the hardened image,trivy
-CVE-2026-40356,libk5crypto3,HIGH,1.20.1-2+deb12u1,fixed,Debian 1.20.1-2+deb12u5,closed,component removed,package is not installed in the hardened image,trivy
-CVE-2018-5709,libkrb5-3,LOW,1.20.1-2+deb12u1,affected,none,closed,component removed,package is not installed in the hardened image,trivy
-CVE-2024-26458,libkrb5-3,LOW,1.20.1-2+deb12u1,affected,none,closed,component removed,package is not installed in the hardened image,trivy
-CVE-2024-26461,libkrb5-3,LOW,1.20.1-2+deb12u1,affected,none,closed,component removed,package is not installed in the hardened image,trivy
-CVE-2024-26462,libkrb5-3,MEDIUM,1.20.1-2+deb12u1,fixed,Debian 1.20.1-2+deb12u3,closed,component removed,package is not installed in the hardened image,trivy
-CVE-2024-37370,libkrb5-3,HIGH,1.20.1-2+deb12u1,fixed,Debian 1.20.1-2+deb12u2,closed,component removed,package is not installed in the hardened image,trivy
-CVE-2024-37371,libkrb5-3,CRITICAL,1.20.1-2+deb12u1,fixed,Debian 1.20.1-2+deb12u2,closed,component removed,package is not installed in the hardened image,trivy
-CVE-2025-24528,libkrb5-3,MEDIUM,1.20.1-2+deb12u1,fixed,Debian 1.20.1-2+deb12u3,closed,component removed,package is not installed in the hardened image,trivy
-CVE-2025-3576,libkrb5-3,MEDIUM,1.20.1-2+deb12u1,fixed,Debian 1.20.1-2+deb12u4,closed,component removed,package is not installed in the hardened image,trivy
-CVE-2026-107708,libkrb5-3,MEDIUM,1.20.1-2+deb12u1,fix_deferred,none,closed,component removed,package is not installed in the hardened image,trivy
-CVE-2026-107778,libkrb5-3,MEDIUM,1.20.1-2+deb12u1,fix_deferred,none,closed,component removed,package is not installed in the hardened image,trivy
-CVE-2026-11850,libkrb5-3,LOW,1.20.1-2+deb12u1,affected,none,closed,component removed,package is not installed in the hardened image,trivy
-CVE-2026-40355,libkrb5-3,HIGH,1.20.1-2+deb12u1,fixed,Debian 1.20.1-2+deb12u5,closed,component removed,package is not installed in the hardened image,trivy
-CVE-2026-40356,libkrb5-3,HIGH,1.20.1-2+deb12u1,fixed,Debian 1.20.1-2+deb12u5,closed,component removed,package is not installed in the hardened image,trivy
-CVE-2018-5709,libkrb5support0,LOW,1.20.1-2+deb12u1,affected,none,closed,component removed,package is not installed in the hardened image,trivy
-CVE-2024-26458,libkrb5support0,LOW,1.20.1-2+deb12u1,affected,none,closed,component removed,package is not installed in the hardened image,trivy
-CVE-2024-26461,libkrb5support0,LOW,1.20.1-2+deb12u1,affected,none,closed,component removed,package is not installed in the hardened image,trivy
-CVE-2024-26462,libkrb5support0,MEDIUM,1.20.1-2+deb12u1,fixed,Debian 1.20.1-2+deb12u3,closed,component removed,package is not installed in the hardened image,trivy
-CVE-2024-37370,libkrb5support0,HIGH,1.20.1-2+deb12u1,fixed,Debian 1.20.1-2+deb12u2,closed,component removed,package is not installed in the hardened image,trivy
-CVE-2024-37371,libkrb5support0,CRITICAL,1.20.1-2+deb12u1,fixed,Debian 1.20.1-2+deb12u2,closed,component removed,package is not installed in the hardened image,trivy
-CVE-2025-24528,libkrb5support0,MEDIUM,1.20.1-2+deb12u1,fixed,Debian 1.20.1-2+deb12u3,closed,component removed,package is not installed in the hardened image,trivy
-CVE-2025-3576,libkrb5support0,MEDIUM,1.20.1-2+deb12u1,fixed,Debian 1.20.1-2+deb12u4,closed,component removed,package is not installed in the hardened image,trivy
-CVE-2026-107708,libkrb5support0,MEDIUM,1.20.1-2+deb12u1,fix_deferred,none,closed,component removed,package is not installed in the hardened image,trivy
-CVE-2026-107778,libkrb5support0,MEDIUM,1.20.1-2+deb12u1,fix_deferred,none,closed,component removed,package is not installed in the hardened image,trivy
-CVE-2026-11850,libkrb5support0,LOW,1.20.1-2+deb12u1,affected,none,closed,component removed,package is not installed in the hardened image,trivy
-CVE-2026-40355,libkrb5support0,HIGH,1.20.1-2+deb12u1,fixed,Debian 1.20.1-2+deb12u5,closed,component removed,package is not installed in the hardened image,trivy
-CVE-2026-40356,libkrb5support0,HIGH,1.20.1-2+deb12u1,fixed,Debian 1.20.1-2+deb12u5,closed,component removed,package is not installed in the hardened image,trivy
-CVE-2015-3276,libldap-2.5-0,LOW,2.5.13+dfsg-5,affected,none,closed,component removed,package is not installed in the hardened image,trivy
-CVE-2017-14159,libldap-2.5-0,LOW,2.5.13+dfsg-5,affected,none,closed,component removed,package is not installed in the hardened image,trivy
-CVE-2017-17740,libldap-2.5-0,LOW,2.5.13+dfsg-5,affected,none,closed,component removed,package is not installed in the hardened image,trivy
-CVE-2020-15719,libldap-2.5-0,LOW,2.5.13+dfsg-5,affected,none,closed,component removed,package is not installed in the hardened image,trivy
-CVE-2023-2953,libldap-2.5-0,HIGH,2.5.13+dfsg-5,affected,none,closed,component removed,package is not installed in the hardened image,trivy
-CVE-2026-22185,libldap-2.5-0,LOW,2.5.13+dfsg-5,affected,none,closed,component removed,package is not installed in the hardened image,trivy
+CVE-2018-5709,libk5crypto3,LOW,1.20.1-2+deb12u1,affected,none,open,no Debian fix,Debian status in hardened image: affected,trivy
+CVE-2024-26458,libk5crypto3,LOW,1.20.1-2+deb12u1,affected,none,open,no Debian fix,Debian status in hardened image: affected,trivy
+CVE-2024-26461,libk5crypto3,LOW,1.20.1-2+deb12u1,affected,none,open,no Debian fix,Debian status in hardened image: affected,trivy
+CVE-2024-26462,libk5crypto3,MEDIUM,1.20.1-2+deb12u1,fixed,Debian 1.20.1-2+deb12u3,closed,version bump,hardened has 1.20.1-2+deb12u5 (current Debian base image),trivy
+CVE-2024-37370,libk5crypto3,HIGH,1.20.1-2+deb12u1,fixed,Debian 1.20.1-2+deb12u2,closed,version bump,hardened has 1.20.1-2+deb12u5 (current Debian base image),trivy
+CVE-2024-37371,libk5crypto3,CRITICAL,1.20.1-2+deb12u1,fixed,Debian 1.20.1-2+deb12u2,closed,version bump,hardened has 1.20.1-2+deb12u5 (current Debian base image),trivy
+CVE-2025-24528,libk5crypto3,MEDIUM,1.20.1-2+deb12u1,fixed,Debian 1.20.1-2+deb12u3,closed,version bump,hardened has 1.20.1-2+deb12u5 (current Debian base image),trivy
+CVE-2025-3576,libk5crypto3,MEDIUM,1.20.1-2+deb12u1,fixed,Debian 1.20.1-2+deb12u4,closed,version bump,hardened has 1.20.1-2+deb12u5 (current Debian base image),trivy
+CVE-2026-107708,libk5crypto3,MEDIUM,1.20.1-2+deb12u1,fix_deferred,none,open,no Debian fix,Debian status in hardened image: fix_deferred,trivy
+CVE-2026-107778,libk5crypto3,MEDIUM,1.20.1-2+deb12u1,fix_deferred,none,open,no Debian fix,Debian status in hardened image: fix_deferred,trivy
+CVE-2026-11850,libk5crypto3,LOW,1.20.1-2+deb12u1,affected,none,open,no Debian fix,Debian status in hardened image: affected,trivy
+CVE-2026-40355,libk5crypto3,HIGH,1.20.1-2+deb12u1,fixed,Debian 1.20.1-2+deb12u5,closed,version bump,hardened has 1.20.1-2+deb12u5 (current Debian base image),trivy
+CVE-2026-40356,libk5crypto3,HIGH,1.20.1-2+deb12u1,fixed,Debian 1.20.1-2+deb12u5,closed,version bump,hardened has 1.20.1-2+deb12u5 (current Debian base image),trivy
+CVE-2018-5709,libkrb5-3,LOW,1.20.1-2+deb12u1,affected,none,open,no Debian fix,Debian status in hardened image: affected,trivy
+CVE-2024-26458,libkrb5-3,LOW,1.20.1-2+deb12u1,affected,none,open,no Debian fix,Debian status in hardened image: affected,trivy
+CVE-2024-26461,libkrb5-3,LOW,1.20.1-2+deb12u1,affected,none,open,no Debian fix,Debian status in hardened image: affected,trivy
+CVE-2024-26462,libkrb5-3,MEDIUM,1.20.1-2+deb12u1,fixed,Debian 1.20.1-2+deb12u3,closed,version bump,hardened has 1.20.1-2+deb12u5 (current Debian base image),trivy
+CVE-2024-37370,libkrb5-3,HIGH,1.20.1-2+deb12u1,fixed,Debian 1.20.1-2+deb12u2,closed,version bump,hardened has 1.20.1-2+deb12u5 (current Debian base image),trivy
+CVE-2024-37371,libkrb5-3,CRITICAL,1.20.1-2+deb12u1,fixed,Debian 1.20.1-2+deb12u2,closed,version bump,hardened has 1.20.1-2+deb12u5 (current Debian base image),trivy
+CVE-2025-24528,libkrb5-3,MEDIUM,1.20.1-2+deb12u1,fixed,Debian 1.20.1-2+deb12u3,closed,version bump,hardened has 1.20.1-2+deb12u5 (current Debian base image),trivy
+CVE-2025-3576,libkrb5-3,MEDIUM,1.20.1-2+deb12u1,fixed,Debian 1.20.1-2+deb12u4,closed,version bump,hardened has 1.20.1-2+deb12u5 (current Debian base image),trivy
+CVE-2026-107708,libkrb5-3,MEDIUM,1.20.1-2+deb12u1,fix_deferred,none,open,no Debian fix,Debian status in hardened image: fix_deferred,trivy
+CVE-2026-107778,libkrb5-3,MEDIUM,1.20.1-2+deb12u1,fix_deferred,none,open,no Debian fix,Debian status in hardened image: fix_deferred,trivy
+CVE-2026-11850,libkrb5-3,LOW,1.20.1-2+deb12u1,affected,none,open,no Debian fix,Debian status in hardened image: affected,trivy
+CVE-2026-40355,libkrb5-3,HIGH,1.20.1-2+deb12u1,fixed,Debian 1.20.1-2+deb12u5,closed,version bump,hardened has 1.20.1-2+deb12u5 (current Debian base image),trivy
+CVE-2026-40356,libkrb5-3,HIGH,1.20.1-2+deb12u1,fixed,Debian 1.20.1-2+deb12u5,closed,version bump,hardened has 1.20.1-2+deb12u5 (current Debian base image),trivy
+CVE-2018-5709,libkrb5support0,LOW,1.20.1-2+deb12u1,affected,none,open,no Debian fix,Debian status in hardened image: affected,trivy
+CVE-2024-26458,libkrb5support0,LOW,1.20.1-2+deb12u1,affected,none,open,no Debian fix,Debian status in hardened image: affected,trivy
+CVE-2024-26461,libkrb5support0,LOW,1.20.1-2+deb12u1,affected,none,open,no Debian fix,Debian status in hardened image: affected,trivy
+CVE-2024-26462,libkrb5support0,MEDIUM,1.20.1-2+deb12u1,fixed,Debian 1.20.1-2+deb12u3,closed,version bump,hardened has 1.20.1-2+deb12u5 (current Debian base image),trivy
+CVE-2024-37370,libkrb5support0,HIGH,1.20.1-2+deb12u1,fixed,Debian 1.20.1-2+deb12u2,closed,version bump,hardened has 1.20.1-2+deb12u5 (current Debian base image),trivy
+CVE-2024-37371,libkrb5support0,CRITICAL,1.20.1-2+deb12u1,fixed,Debian 1.20.1-2+deb12u2,closed,version bump,hardened has 1.20.1-2+deb12u5 (current Debian base image),trivy
+CVE-2025-24528,libkrb5support0,MEDIUM,1.20.1-2+deb12u1,fixed,Debian 1.20.1-2+deb12u3,closed,version bump,hardened has 1.20.1-2+deb12u5 (current Debian base image),trivy
+CVE-2025-3576,libkrb5support0,MEDIUM,1.20.1-2+deb12u1,fixed,Debian 1.20.1-2+deb12u4,closed,version bump,hardened has 1.20.1-2+deb12u5 (current Debian base image),trivy
+CVE-2026-107708,libkrb5support0,MEDIUM,1.20.1-2+deb12u1,fix_deferred,none,open,no Debian fix,Debian status in hardened image: fix_deferred,trivy
+CVE-2026-107778,libkrb5support0,MEDIUM,1.20.1-2+deb12u1,fix_deferred,none,open,no Debian fix,Debian status in hardened image: fix_deferred,trivy
+CVE-2026-11850,libkrb5support0,LOW,1.20.1-2+deb12u1,affected,none,open,no Debian fix,Debian status in hardened image: affected,trivy
+CVE-2026-40355,libkrb5support0,HIGH,1.20.1-2+deb12u1,fixed,Debian 1.20.1-2+deb12u5,closed,version bump,hardened has 1.20.1-2+deb12u5 (current Debian base image),trivy
+CVE-2026-40356,libkrb5support0,HIGH,1.20.1-2+deb12u1,fixed,Debian 1.20.1-2+deb12u5,closed,version bump,hardened has 1.20.1-2+deb12u5 (current Debian base image),trivy
+CVE-2015-3276,libldap-2.5-0,LOW,2.5.13+dfsg-5,affected,none,open,no Debian fix,Debian status in hardened image: affected,trivy
+CVE-2017-14159,libldap-2.5-0,LOW,2.5.13+dfsg-5,affected,none,open,no Debian fix,Debian status in hardened image: affected,trivy
+CVE-2017-17740,libldap-2.5-0,LOW,2.5.13+dfsg-5,affected,none,open,no Debian fix,Debian status in hardened image: affected,trivy
+CVE-2020-15719,libldap-2.5-0,LOW,2.5.13+dfsg-5,affected,none,open,no Debian fix,Debian status in hardened image: affected,trivy
+CVE-2023-2953,libldap-2.5-0,HIGH,2.5.13+dfsg-5,affected,none,open,no Debian fix,Debian status in hardened image: affected,trivy
+CVE-2026-22185,libldap-2.5-0,LOW,2.5.13+dfsg-5,affected,none,open,no Debian fix,Debian status in hardened image: affected,trivy
 CVE-2025-31115,liblzma5,HIGH,5.4.1-0.2,fixed,Debian 5.4.1-1,closed,version bump,hardened has 5.4.1-1+deb12u2 (current Debian base image),trivy
 CVE-2026-34743,liblzma5,MEDIUM,5.4.1-0.2,fixed,Debian 5.4.1-1+deb12u1,closed,version bump,hardened has 5.4.1-1+deb12u2 (current Debian base image),trivy
 DLA-4783-1,liblzma5,UNKNOWN,5.4.1-0.2,fixed,Debian 5.4.1-1+deb12u2,closed,version bump,hardened has 5.4.1-1+deb12u2 (current Debian base image),trivy
@@ -476,9 +476,9 @@ CVE-2026-3184,libmount1,MEDIUM,2.38.1-5+deb12u1,will_not_fix,none,open,no Debian
 CVE-2026-53613,libmount1,HIGH,2.38.1-5+deb12u1,affected,none,open,no Debian fix,Debian status in hardened image: affected,trivy
 CVE-2026-53615,libmount1,HIGH,2.38.1-5+deb12u1,affected,none,open,no Debian fix,Debian status in hardened image: affected,trivy
 CVE-2026-78410,libmount1,HIGH,2.38.1-5+deb12u1,affected,none,open,no Debian fix,Debian status in hardened image: affected,trivy
-CVE-2024-28182,libnghttp2-14,MEDIUM,1.52.0-1+deb12u1,fixed,Debian 1.52.0-1+deb12u2,closed,component removed,package is not installed in the hardened image,trivy
-CVE-2026-27135,libnghttp2-14,HIGH,1.52.0-1+deb12u1,fixed,Debian 1.52.0-1+deb12u3,closed,component removed,package is not installed in the hardened image,trivy
-CVE-2026-58055,libnghttp2-14,MEDIUM,1.52.0-1+deb12u1,fix_deferred,none,closed,component removed,package is not installed in the hardened image,trivy
+CVE-2024-28182,libnghttp2-14,MEDIUM,1.52.0-1+deb12u1,fixed,Debian 1.52.0-1+deb12u2,closed,version bump,hardened has 1.52.0-1+deb12u3 (current Debian base image),trivy
+CVE-2026-27135,libnghttp2-14,HIGH,1.52.0-1+deb12u1,fixed,Debian 1.52.0-1+deb12u3,closed,version bump,hardened has 1.52.0-1+deb12u3 (current Debian base image),trivy
+CVE-2026-58055,libnghttp2-14,MEDIUM,1.52.0-1+deb12u1,fix_deferred,none,open,no Debian fix,Debian status in hardened image: fix_deferred,trivy
 CVE-2026-13757,libp11-kit0,MEDIUM,0.24.1-2,fix_deferred,none,open,no Debian fix,Debian status in hardened image: fix_deferred,trivy
 CVE-2026-18938,libp11-kit0,MEDIUM,0.24.1-2,fix_deferred,none,open,no Debian fix,Debian status in hardened image: fix_deferred,trivy
 CVE-2024-10041,libpam-modules,MEDIUM,1.5.2-6+deb12u1,will_not_fix,none,open,no Debian fix,Debian status in hardened image: will_not_fix,trivy
@@ -497,13 +497,13 @@ CVE-2024-10041,libpam0g,MEDIUM,1.5.2-6+deb12u1,will_not_fix,none,open,no Debian 
 CVE-2024-22365,libpam0g,MEDIUM,1.5.2-6+deb12u1,fixed,Debian 1.5.2-6+deb12u2,closed,version bump,hardened has 1.5.2-6+deb12u2 (current Debian base image),trivy
 CVE-2025-6020,libpam0g,HIGH,1.5.2-6+deb12u1,fixed,Debian 1.5.2-6+deb12u2,closed,version bump,hardened has 1.5.2-6+deb12u2 (current Debian base image),trivy
 CVE-2026-54411,libpam0g,MEDIUM,1.5.2-6+deb12u1,fix_deferred,none,open,no Debian fix,Debian status in hardened image: fix_deferred,trivy
-CVE-2026-103111,libpcre2-8-0,HIGH,10.42-1,fixed,Debian 10.42-1+deb12u2,closed,version bump,hardened has 10.42-1+deb12u2 (explicit bump in Containerfile),trivy
-CVE-2026-86145,libpcre2-8-0,HIGH,10.42-1,fixed,Debian 10.42-1+deb12u1,closed,version bump,hardened has 10.42-1+deb12u2 (explicit bump in Containerfile),trivy
-CVE-2026-89156,libpcre2-8-0,MEDIUM,10.42-1,fixed,Debian 10.42-1+deb12u1,closed,version bump,hardened has 10.42-1+deb12u2 (explicit bump in Containerfile),trivy
-CVE-2026-89157,libpcre2-8-0,HIGH,10.42-1,fixed,Debian 10.42-1+deb12u1,closed,version bump,hardened has 10.42-1+deb12u2 (explicit bump in Containerfile),trivy
-CVE-2026-89158,libpcre2-8-0,MEDIUM,10.42-1,fixed,Debian 10.42-1+deb12u1,closed,version bump,hardened has 10.42-1+deb12u2 (explicit bump in Containerfile),trivy
-CVE-2026-89160,libpcre2-8-0,MEDIUM,10.42-1,fixed,Debian 10.42-1+deb12u1,closed,version bump,hardened has 10.42-1+deb12u2 (explicit bump in Containerfile),trivy
-CVE-2026-89161,libpcre2-8-0,HIGH,10.42-1,fixed,Debian 10.42-1+deb12u1,closed,version bump,hardened has 10.42-1+deb12u2 (explicit bump in Containerfile),trivy
+CVE-2026-103111,libpcre2-8-0,HIGH,10.42-1,fixed,Debian 10.42-1+deb12u2,closed,version bump,hardened has 10.42-1+deb12u2 (current Debian base image),trivy
+CVE-2026-86145,libpcre2-8-0,HIGH,10.42-1,fixed,Debian 10.42-1+deb12u1,closed,version bump,hardened has 10.42-1+deb12u2 (current Debian base image),trivy
+CVE-2026-89156,libpcre2-8-0,MEDIUM,10.42-1,fixed,Debian 10.42-1+deb12u1,closed,version bump,hardened has 10.42-1+deb12u2 (current Debian base image),trivy
+CVE-2026-89157,libpcre2-8-0,HIGH,10.42-1,fixed,Debian 10.42-1+deb12u1,closed,version bump,hardened has 10.42-1+deb12u2 (current Debian base image),trivy
+CVE-2026-89158,libpcre2-8-0,MEDIUM,10.42-1,fixed,Debian 10.42-1+deb12u1,closed,version bump,hardened has 10.42-1+deb12u2 (current Debian base image),trivy
+CVE-2026-89160,libpcre2-8-0,MEDIUM,10.42-1,fixed,Debian 10.42-1+deb12u1,closed,version bump,hardened has 10.42-1+deb12u2 (current Debian base image),trivy
+CVE-2026-89161,libpcre2-8-0,HIGH,10.42-1,fixed,Debian 10.42-1+deb12u1,closed,version bump,hardened has 10.42-1+deb12u2 (current Debian base image),trivy
 CVE-2021-4214,libpng16-16,LOW,1.6.39-2,affected,none,open,no Debian fix,Debian status in hardened image: affected,trivy
 CVE-2025-28162,libpng16-16,LOW,1.6.39-2,affected,none,open,no Debian fix,Debian status in hardened image: affected,trivy
 CVE-2025-28164,libpng16-16,LOW,1.6.39-2,affected,none,open,no Debian fix,Debian status in hardened image: affected,trivy
@@ -520,8 +520,8 @@ CVE-2026-33636,libpng16-16,MEDIUM,1.6.39-2,fixed,Debian 1.6.39-2+deb12u4,closed,
 CVE-2026-34757,libpng16-16,MEDIUM,1.6.39-2,fixed,Debian 1.6.39-2+deb12u5,closed,version bump,hardened has 1.6.39-2+deb12u6 (current Debian base image),trivy
 CVE-2026-3713,libpng16-16,LOW,1.6.39-2,affected,none,open,no Debian fix,Debian status in hardened image: affected,trivy
 CVE-2026-46675,libpng16-16,MEDIUM,1.6.39-2,fixed,Debian 1.6.39-2+deb12u6,closed,version bump,hardened has 1.6.39-2+deb12u6 (current Debian base image),trivy
-CVE-2026-107161,libsasl2-2,MEDIUM,2.1.28+dfsg-10,fixed,Debian 2.1.28+dfsg-10+deb12u1,closed,component removed,package is not installed in the hardened image,trivy
-CVE-2026-107161,libsasl2-modules-db,MEDIUM,2.1.28+dfsg-10,fixed,Debian 2.1.28+dfsg-10+deb12u1,closed,component removed,package is not installed in the hardened image,trivy
+CVE-2026-107161,libsasl2-2,MEDIUM,2.1.28+dfsg-10,fixed,Debian 2.1.28+dfsg-10+deb12u1,closed,version bump,hardened has 2.1.28+dfsg-10+deb12u1 (current Debian base image),trivy
+CVE-2026-107161,libsasl2-modules-db,MEDIUM,2.1.28+dfsg-10,fixed,Debian 2.1.28+dfsg-10+deb12u1,closed,version bump,hardened has 2.1.28+dfsg-10+deb12u1 (current Debian base image),trivy
 CVE-2022-0563,libsmartcols1,LOW,2.38.1-5+deb12u1,affected,none,open,no Debian fix,Debian status in hardened image: affected,trivy
 CVE-2025-14104,libsmartcols1,LOW,2.38.1-5+deb12u1,affected,none,open,no Debian fix,Debian status in hardened image: affected,trivy
 CVE-2026-13595,libsmartcols1,MEDIUM,2.38.1-5+deb12u1,affected,none,open,no Debian fix,Debian status in hardened image: affected,trivy
@@ -530,61 +530,61 @@ CVE-2026-3184,libsmartcols1,MEDIUM,2.38.1-5+deb12u1,will_not_fix,none,open,no De
 CVE-2026-53613,libsmartcols1,HIGH,2.38.1-5+deb12u1,affected,none,open,no Debian fix,Debian status in hardened image: affected,trivy
 CVE-2026-53615,libsmartcols1,HIGH,2.38.1-5+deb12u1,affected,none,open,no Debian fix,Debian status in hardened image: affected,trivy
 CVE-2026-78410,libsmartcols1,HIGH,2.38.1-5+deb12u1,affected,none,open,no Debian fix,Debian status in hardened image: affected,trivy
-CVE-2025-15661,libssh2-1,MEDIUM,1.10.0-3+b1,fixed,Debian 1.10.0-3+deb12u1,closed,component removed,package is not installed in the hardened image,trivy
-CVE-2026-58050,libssh2-1,HIGH,1.10.0-3+b1,fixed,Debian 1.10.0-3+deb12u1,closed,component removed,package is not installed in the hardened image,trivy
-CVE-2026-58051,libssh2-1,MEDIUM,1.10.0-3+b1,fixed,Debian 1.10.0-3+deb12u1,closed,component removed,package is not installed in the hardened image,trivy
-CVE-2026-66032,libssh2-1,MEDIUM,1.10.0-3+b1,fixed,Debian 1.10.0-3+deb12u1,closed,component removed,package is not installed in the hardened image,trivy
-CVE-2026-66034,libssh2-1,MEDIUM,1.10.0-3+b1,fixed,Debian 1.10.0-3+deb12u1,closed,component removed,package is not installed in the hardened image,trivy
-CVE-2026-7598,libssh2-1,HIGH,1.10.0-3+b1,fixed,Debian 1.10.0-3+deb12u1,closed,component removed,package is not installed in the hardened image,trivy
-CVE-2023-5678,libssl3,MEDIUM,3.0.11-1~deb12u2,fixed,Debian 3.0.13-1~deb12u1,closed,version bump,hardened has 3.0.22-1~deb12u2 (explicit bump in Containerfile),trivy
-CVE-2023-6129,libssl3,MEDIUM,3.0.11-1~deb12u2,fixed,Debian 3.0.13-1~deb12u1,closed,version bump,hardened has 3.0.22-1~deb12u2 (explicit bump in Containerfile),trivy
-CVE-2023-6237,libssl3,LOW,3.0.11-1~deb12u2,fixed,Debian 3.0.13-1~deb12u1,closed,version bump,hardened has 3.0.22-1~deb12u2 (explicit bump in Containerfile),trivy
-CVE-2024-0727,libssl3,MEDIUM,3.0.11-1~deb12u2,fixed,Debian 3.0.13-1~deb12u1,closed,version bump,hardened has 3.0.22-1~deb12u2 (explicit bump in Containerfile),trivy
-CVE-2024-13176,libssl3,LOW,3.0.11-1~deb12u2,fixed,Debian 3.0.16-1~deb12u1,closed,version bump,hardened has 3.0.22-1~deb12u2 (explicit bump in Containerfile),trivy
-CVE-2024-2511,libssl3,LOW,3.0.11-1~deb12u2,fixed,Debian 3.0.14-1~deb12u1,closed,version bump,hardened has 3.0.22-1~deb12u2 (explicit bump in Containerfile),trivy
-CVE-2024-4603,libssl3,LOW,3.0.11-1~deb12u2,fixed,Debian 3.0.14-1~deb12u1,closed,version bump,hardened has 3.0.22-1~deb12u2 (explicit bump in Containerfile),trivy
-CVE-2024-4741,libssl3,LOW,3.0.11-1~deb12u2,fixed,Debian 3.0.14-1~deb12u1,closed,version bump,hardened has 3.0.22-1~deb12u2 (explicit bump in Containerfile),trivy
-CVE-2024-5535,libssl3,LOW,3.0.11-1~deb12u2,fixed,Debian 3.0.15-1~deb12u1,closed,version bump,hardened has 3.0.22-1~deb12u2 (explicit bump in Containerfile),trivy
-CVE-2024-6119,libssl3,HIGH,3.0.11-1~deb12u2,fixed,Debian 3.0.14-1~deb12u2,closed,version bump,hardened has 3.0.22-1~deb12u2 (explicit bump in Containerfile),trivy
-CVE-2024-9143,libssl3,LOW,3.0.11-1~deb12u2,fixed,Debian 3.0.15-1~deb12u1,closed,version bump,hardened has 3.0.22-1~deb12u2 (explicit bump in Containerfile),trivy
-CVE-2025-15467,libssl3,HIGH,3.0.11-1~deb12u2,fixed,Debian 3.0.18-1~deb12u2,closed,version bump,hardened has 3.0.22-1~deb12u2 (explicit bump in Containerfile),trivy
+CVE-2025-15661,libssh2-1,MEDIUM,1.10.0-3+b1,fixed,Debian 1.10.0-3+deb12u1,closed,version bump,hardened has 1.10.0-3+deb12u1 (current Debian base image),trivy
+CVE-2026-58050,libssh2-1,HIGH,1.10.0-3+b1,fixed,Debian 1.10.0-3+deb12u1,closed,version bump,hardened has 1.10.0-3+deb12u1 (current Debian base image),trivy
+CVE-2026-58051,libssh2-1,MEDIUM,1.10.0-3+b1,fixed,Debian 1.10.0-3+deb12u1,closed,version bump,hardened has 1.10.0-3+deb12u1 (current Debian base image),trivy
+CVE-2026-66032,libssh2-1,MEDIUM,1.10.0-3+b1,fixed,Debian 1.10.0-3+deb12u1,closed,version bump,hardened has 1.10.0-3+deb12u1 (current Debian base image),trivy
+CVE-2026-66034,libssh2-1,MEDIUM,1.10.0-3+b1,fixed,Debian 1.10.0-3+deb12u1,closed,version bump,hardened has 1.10.0-3+deb12u1 (current Debian base image),trivy
+CVE-2026-7598,libssh2-1,HIGH,1.10.0-3+b1,fixed,Debian 1.10.0-3+deb12u1,closed,version bump,hardened has 1.10.0-3+deb12u1 (current Debian base image),trivy
+CVE-2023-5678,libssl3,MEDIUM,3.0.11-1~deb12u2,fixed,Debian 3.0.13-1~deb12u1,closed,version bump,hardened has 3.0.22-1~deb12u2 (minimum version in Depends),trivy
+CVE-2023-6129,libssl3,MEDIUM,3.0.11-1~deb12u2,fixed,Debian 3.0.13-1~deb12u1,closed,version bump,hardened has 3.0.22-1~deb12u2 (minimum version in Depends),trivy
+CVE-2023-6237,libssl3,LOW,3.0.11-1~deb12u2,fixed,Debian 3.0.13-1~deb12u1,closed,version bump,hardened has 3.0.22-1~deb12u2 (minimum version in Depends),trivy
+CVE-2024-0727,libssl3,MEDIUM,3.0.11-1~deb12u2,fixed,Debian 3.0.13-1~deb12u1,closed,version bump,hardened has 3.0.22-1~deb12u2 (minimum version in Depends),trivy
+CVE-2024-13176,libssl3,LOW,3.0.11-1~deb12u2,fixed,Debian 3.0.16-1~deb12u1,closed,version bump,hardened has 3.0.22-1~deb12u2 (minimum version in Depends),trivy
+CVE-2024-2511,libssl3,LOW,3.0.11-1~deb12u2,fixed,Debian 3.0.14-1~deb12u1,closed,version bump,hardened has 3.0.22-1~deb12u2 (minimum version in Depends),trivy
+CVE-2024-4603,libssl3,LOW,3.0.11-1~deb12u2,fixed,Debian 3.0.14-1~deb12u1,closed,version bump,hardened has 3.0.22-1~deb12u2 (minimum version in Depends),trivy
+CVE-2024-4741,libssl3,LOW,3.0.11-1~deb12u2,fixed,Debian 3.0.14-1~deb12u1,closed,version bump,hardened has 3.0.22-1~deb12u2 (minimum version in Depends),trivy
+CVE-2024-5535,libssl3,LOW,3.0.11-1~deb12u2,fixed,Debian 3.0.15-1~deb12u1,closed,version bump,hardened has 3.0.22-1~deb12u2 (minimum version in Depends),trivy
+CVE-2024-6119,libssl3,HIGH,3.0.11-1~deb12u2,fixed,Debian 3.0.14-1~deb12u2,closed,version bump,hardened has 3.0.22-1~deb12u2 (minimum version in Depends),trivy
+CVE-2024-9143,libssl3,LOW,3.0.11-1~deb12u2,fixed,Debian 3.0.15-1~deb12u1,closed,version bump,hardened has 3.0.22-1~deb12u2 (minimum version in Depends),trivy
+CVE-2025-15467,libssl3,HIGH,3.0.11-1~deb12u2,fixed,Debian 3.0.18-1~deb12u2,closed,version bump,hardened has 3.0.22-1~deb12u2 (minimum version in Depends),trivy
 CVE-2025-27587,libssl3,LOW,3.0.11-1~deb12u2,affected,none,vex,not affected (VEX),see vex/vex.openvex.json,trivy
-CVE-2025-68160,libssl3,LOW,3.0.11-1~deb12u2,fixed,Debian 3.0.18-1~deb12u2,closed,version bump,hardened has 3.0.22-1~deb12u2 (explicit bump in Containerfile),trivy
-CVE-2025-69418,libssl3,LOW,3.0.11-1~deb12u2,fixed,Debian 3.0.18-1~deb12u2,closed,version bump,hardened has 3.0.22-1~deb12u2 (explicit bump in Containerfile),trivy
-CVE-2025-69419,libssl3,MEDIUM,3.0.11-1~deb12u2,fixed,Debian 3.0.18-1~deb12u2,closed,version bump,hardened has 3.0.22-1~deb12u2 (explicit bump in Containerfile),trivy
-CVE-2025-69420,libssl3,LOW,3.0.11-1~deb12u2,fixed,Debian 3.0.18-1~deb12u2,closed,version bump,hardened has 3.0.22-1~deb12u2 (explicit bump in Containerfile),trivy
-CVE-2025-69421,libssl3,HIGH,3.0.11-1~deb12u2,fixed,Debian 3.0.18-1~deb12u2,closed,version bump,hardened has 3.0.22-1~deb12u2 (explicit bump in Containerfile),trivy
-CVE-2025-9230,libssl3,MEDIUM,3.0.11-1~deb12u2,fixed,Debian 3.0.17-1~deb12u3,closed,version bump,hardened has 3.0.22-1~deb12u2 (explicit bump in Containerfile),trivy
-CVE-2025-9232,libssl3,LOW,3.0.11-1~deb12u2,fixed,Debian 3.0.17-1~deb12u3,closed,version bump,hardened has 3.0.22-1~deb12u2 (explicit bump in Containerfile),trivy
-CVE-2026-22795,libssl3,LOW,3.0.11-1~deb12u2,fixed,Debian 3.0.18-1~deb12u2,closed,version bump,hardened has 3.0.22-1~deb12u2 (explicit bump in Containerfile),trivy
-CVE-2026-22796,libssl3,LOW,3.0.11-1~deb12u2,fixed,Debian 3.0.18-1~deb12u2,closed,version bump,hardened has 3.0.22-1~deb12u2 (explicit bump in Containerfile),trivy
-CVE-2026-28387,libssl3,HIGH,3.0.11-1~deb12u2,fixed,Debian 3.0.19-1~deb12u2,closed,version bump,hardened has 3.0.22-1~deb12u2 (explicit bump in Containerfile),trivy
-CVE-2026-28388,libssl3,HIGH,3.0.11-1~deb12u2,fixed,Debian 3.0.19-1~deb12u2,closed,version bump,hardened has 3.0.22-1~deb12u2 (explicit bump in Containerfile),trivy
-CVE-2026-28389,libssl3,HIGH,3.0.11-1~deb12u2,fixed,Debian 3.0.19-1~deb12u2,closed,version bump,hardened has 3.0.22-1~deb12u2 (explicit bump in Containerfile),trivy
-CVE-2026-28390,libssl3,HIGH,3.0.11-1~deb12u2,fixed,Debian 3.0.19-1~deb12u2,closed,version bump,hardened has 3.0.22-1~deb12u2 (explicit bump in Containerfile),trivy
-CVE-2026-31789,libssl3,CRITICAL,3.0.11-1~deb12u2,fixed,Debian 3.0.19-1~deb12u2,closed,version bump,hardened has 3.0.22-1~deb12u2 (explicit bump in Containerfile),trivy
-CVE-2026-31790,libssl3,MEDIUM,3.0.11-1~deb12u2,fixed,Debian 3.0.19-1~deb12u2,closed,version bump,hardened has 3.0.22-1~deb12u2 (explicit bump in Containerfile),trivy
-CVE-2026-34180,libssl3,LOW,3.0.11-1~deb12u2,fixed,Debian 3.0.20-1~deb12u2,closed,version bump,hardened has 3.0.22-1~deb12u2 (explicit bump in Containerfile),trivy
-CVE-2026-34182,libssl3,MEDIUM,3.0.11-1~deb12u2,fixed,Debian 3.0.20-1~deb12u2,closed,version bump,hardened has 3.0.22-1~deb12u2 (explicit bump in Containerfile),trivy
-CVE-2026-35189,libssl3,LOW,3.0.11-1~deb12u2,fixed,Debian 3.0.22-1~deb12u2,closed,version bump,hardened has 3.0.22-1~deb12u2 (explicit bump in Containerfile),trivy
-CVE-2026-42766,libssl3,LOW,3.0.11-1~deb12u2,fixed,Debian 3.0.20-1~deb12u2,closed,version bump,hardened has 3.0.22-1~deb12u2 (explicit bump in Containerfile),trivy
-CVE-2026-42767,libssl3,LOW,3.0.11-1~deb12u2,fixed,Debian 3.0.22-1~deb12u1,closed,version bump,hardened has 3.0.22-1~deb12u2 (explicit bump in Containerfile),trivy
-CVE-2026-42770,libssl3,LOW,3.0.11-1~deb12u2,fixed,Debian 3.0.20-1~deb12u2,closed,version bump,hardened has 3.0.22-1~deb12u2 (explicit bump in Containerfile),trivy
-CVE-2026-45445,libssl3,MEDIUM,3.0.11-1~deb12u2,fixed,Debian 3.0.20-1~deb12u2,closed,version bump,hardened has 3.0.22-1~deb12u2 (explicit bump in Containerfile),trivy
-CVE-2026-45446,libssl3,LOW,3.0.11-1~deb12u2,fixed,Debian 3.0.20-1~deb12u2,closed,version bump,hardened has 3.0.22-1~deb12u2 (explicit bump in Containerfile),trivy
-CVE-2026-45447,libssl3,HIGH,3.0.11-1~deb12u2,fixed,Debian 3.0.20-1~deb12u2,closed,version bump,hardened has 3.0.22-1~deb12u2 (explicit bump in Containerfile),trivy
-CVE-2026-54872,libssl3,MEDIUM,3.0.11-1~deb12u2,fixed,Debian 3.0.22-1~deb12u2,closed,version bump,hardened has 3.0.22-1~deb12u2 (explicit bump in Containerfile),trivy
-CVE-2026-54874,libssl3,LOW,3.0.11-1~deb12u2,fixed,Debian 3.0.22-1~deb12u1,closed,version bump,hardened has 3.0.22-1~deb12u2 (explicit bump in Containerfile),trivy
-CVE-2026-63072,libssl3,MEDIUM,3.0.11-1~deb12u2,fixed,Debian 3.0.22-1~deb12u1,closed,version bump,hardened has 3.0.22-1~deb12u2 (explicit bump in Containerfile),trivy
-CVE-2026-63074,libssl3,LOW,3.0.11-1~deb12u2,fixed,Debian 3.0.22-1~deb12u1,closed,version bump,hardened has 3.0.22-1~deb12u2 (explicit bump in Containerfile),trivy
-CVE-2026-63076,libssl3,MEDIUM,3.0.11-1~deb12u2,fixed,Debian 3.0.22-1~deb12u1,closed,version bump,hardened has 3.0.22-1~deb12u2 (explicit bump in Containerfile),trivy
-CVE-2026-7383,libssl3,LOW,3.0.11-1~deb12u2,fixed,Debian 3.0.20-1~deb12u2,closed,version bump,hardened has 3.0.22-1~deb12u2 (explicit bump in Containerfile),trivy
-CVE-2026-75803,libssl3,LOW,3.0.11-1~deb12u2,fixed,Debian 3.0.22-1~deb12u1,closed,version bump,hardened has 3.0.22-1~deb12u2 (explicit bump in Containerfile),trivy
-CVE-2026-75805,libssl3,MEDIUM,3.0.11-1~deb12u2,fixed,Debian 3.0.22-1~deb12u2,closed,version bump,hardened has 3.0.22-1~deb12u2 (explicit bump in Containerfile),trivy
-CVE-2026-75806,libssl3,MEDIUM,3.0.11-1~deb12u2,fixed,Debian 3.0.22-1~deb12u2,closed,version bump,hardened has 3.0.22-1~deb12u2 (explicit bump in Containerfile),trivy
-CVE-2026-77696,libssl3,MEDIUM,3.0.11-1~deb12u2,fixed,Debian 3.0.22-1~deb12u2,closed,version bump,hardened has 3.0.22-1~deb12u2 (explicit bump in Containerfile),trivy
-CVE-2026-84782,libssl3,HIGH,3.0.11-1~deb12u2,fixed,Debian 3.0.22-1~deb12u2,closed,version bump,hardened has 3.0.22-1~deb12u2 (explicit bump in Containerfile),trivy
-CVE-2026-9076,libssl3,LOW,3.0.11-1~deb12u2,fixed,Debian 3.0.20-1~deb12u2,closed,version bump,hardened has 3.0.22-1~deb12u2 (explicit bump in Containerfile),trivy
+CVE-2025-68160,libssl3,LOW,3.0.11-1~deb12u2,fixed,Debian 3.0.18-1~deb12u2,closed,version bump,hardened has 3.0.22-1~deb12u2 (minimum version in Depends),trivy
+CVE-2025-69418,libssl3,LOW,3.0.11-1~deb12u2,fixed,Debian 3.0.18-1~deb12u2,closed,version bump,hardened has 3.0.22-1~deb12u2 (minimum version in Depends),trivy
+CVE-2025-69419,libssl3,MEDIUM,3.0.11-1~deb12u2,fixed,Debian 3.0.18-1~deb12u2,closed,version bump,hardened has 3.0.22-1~deb12u2 (minimum version in Depends),trivy
+CVE-2025-69420,libssl3,LOW,3.0.11-1~deb12u2,fixed,Debian 3.0.18-1~deb12u2,closed,version bump,hardened has 3.0.22-1~deb12u2 (minimum version in Depends),trivy
+CVE-2025-69421,libssl3,HIGH,3.0.11-1~deb12u2,fixed,Debian 3.0.18-1~deb12u2,closed,version bump,hardened has 3.0.22-1~deb12u2 (minimum version in Depends),trivy
+CVE-2025-9230,libssl3,MEDIUM,3.0.11-1~deb12u2,fixed,Debian 3.0.17-1~deb12u3,closed,version bump,hardened has 3.0.22-1~deb12u2 (minimum version in Depends),trivy
+CVE-2025-9232,libssl3,LOW,3.0.11-1~deb12u2,fixed,Debian 3.0.17-1~deb12u3,closed,version bump,hardened has 3.0.22-1~deb12u2 (minimum version in Depends),trivy
+CVE-2026-22795,libssl3,LOW,3.0.11-1~deb12u2,fixed,Debian 3.0.18-1~deb12u2,closed,version bump,hardened has 3.0.22-1~deb12u2 (minimum version in Depends),trivy
+CVE-2026-22796,libssl3,LOW,3.0.11-1~deb12u2,fixed,Debian 3.0.18-1~deb12u2,closed,version bump,hardened has 3.0.22-1~deb12u2 (minimum version in Depends),trivy
+CVE-2026-28387,libssl3,HIGH,3.0.11-1~deb12u2,fixed,Debian 3.0.19-1~deb12u2,closed,version bump,hardened has 3.0.22-1~deb12u2 (minimum version in Depends),trivy
+CVE-2026-28388,libssl3,HIGH,3.0.11-1~deb12u2,fixed,Debian 3.0.19-1~deb12u2,closed,version bump,hardened has 3.0.22-1~deb12u2 (minimum version in Depends),trivy
+CVE-2026-28389,libssl3,HIGH,3.0.11-1~deb12u2,fixed,Debian 3.0.19-1~deb12u2,closed,version bump,hardened has 3.0.22-1~deb12u2 (minimum version in Depends),trivy
+CVE-2026-28390,libssl3,HIGH,3.0.11-1~deb12u2,fixed,Debian 3.0.19-1~deb12u2,closed,version bump,hardened has 3.0.22-1~deb12u2 (minimum version in Depends),trivy
+CVE-2026-31789,libssl3,CRITICAL,3.0.11-1~deb12u2,fixed,Debian 3.0.19-1~deb12u2,closed,version bump,hardened has 3.0.22-1~deb12u2 (minimum version in Depends),trivy
+CVE-2026-31790,libssl3,MEDIUM,3.0.11-1~deb12u2,fixed,Debian 3.0.19-1~deb12u2,closed,version bump,hardened has 3.0.22-1~deb12u2 (minimum version in Depends),trivy
+CVE-2026-34180,libssl3,LOW,3.0.11-1~deb12u2,fixed,Debian 3.0.20-1~deb12u2,closed,version bump,hardened has 3.0.22-1~deb12u2 (minimum version in Depends),trivy
+CVE-2026-34182,libssl3,MEDIUM,3.0.11-1~deb12u2,fixed,Debian 3.0.20-1~deb12u2,closed,version bump,hardened has 3.0.22-1~deb12u2 (minimum version in Depends),trivy
+CVE-2026-35189,libssl3,LOW,3.0.11-1~deb12u2,fixed,Debian 3.0.22-1~deb12u2,closed,version bump,hardened has 3.0.22-1~deb12u2 (minimum version in Depends),trivy
+CVE-2026-42766,libssl3,LOW,3.0.11-1~deb12u2,fixed,Debian 3.0.20-1~deb12u2,closed,version bump,hardened has 3.0.22-1~deb12u2 (minimum version in Depends),trivy
+CVE-2026-42767,libssl3,LOW,3.0.11-1~deb12u2,fixed,Debian 3.0.22-1~deb12u1,closed,version bump,hardened has 3.0.22-1~deb12u2 (minimum version in Depends),trivy
+CVE-2026-42770,libssl3,LOW,3.0.11-1~deb12u2,fixed,Debian 3.0.20-1~deb12u2,closed,version bump,hardened has 3.0.22-1~deb12u2 (minimum version in Depends),trivy
+CVE-2026-45445,libssl3,MEDIUM,3.0.11-1~deb12u2,fixed,Debian 3.0.20-1~deb12u2,closed,version bump,hardened has 3.0.22-1~deb12u2 (minimum version in Depends),trivy
+CVE-2026-45446,libssl3,LOW,3.0.11-1~deb12u2,fixed,Debian 3.0.20-1~deb12u2,closed,version bump,hardened has 3.0.22-1~deb12u2 (minimum version in Depends),trivy
+CVE-2026-45447,libssl3,HIGH,3.0.11-1~deb12u2,fixed,Debian 3.0.20-1~deb12u2,closed,version bump,hardened has 3.0.22-1~deb12u2 (minimum version in Depends),trivy
+CVE-2026-54872,libssl3,MEDIUM,3.0.11-1~deb12u2,fixed,Debian 3.0.22-1~deb12u2,closed,version bump,hardened has 3.0.22-1~deb12u2 (minimum version in Depends),trivy
+CVE-2026-54874,libssl3,LOW,3.0.11-1~deb12u2,fixed,Debian 3.0.22-1~deb12u1,closed,version bump,hardened has 3.0.22-1~deb12u2 (minimum version in Depends),trivy
+CVE-2026-63072,libssl3,MEDIUM,3.0.11-1~deb12u2,fixed,Debian 3.0.22-1~deb12u1,closed,version bump,hardened has 3.0.22-1~deb12u2 (minimum version in Depends),trivy
+CVE-2026-63074,libssl3,LOW,3.0.11-1~deb12u2,fixed,Debian 3.0.22-1~deb12u1,closed,version bump,hardened has 3.0.22-1~deb12u2 (minimum version in Depends),trivy
+CVE-2026-63076,libssl3,MEDIUM,3.0.11-1~deb12u2,fixed,Debian 3.0.22-1~deb12u1,closed,version bump,hardened has 3.0.22-1~deb12u2 (minimum version in Depends),trivy
+CVE-2026-7383,libssl3,LOW,3.0.11-1~deb12u2,fixed,Debian 3.0.20-1~deb12u2,closed,version bump,hardened has 3.0.22-1~deb12u2 (minimum version in Depends),trivy
+CVE-2026-75803,libssl3,LOW,3.0.11-1~deb12u2,fixed,Debian 3.0.22-1~deb12u1,closed,version bump,hardened has 3.0.22-1~deb12u2 (minimum version in Depends),trivy
+CVE-2026-75805,libssl3,MEDIUM,3.0.11-1~deb12u2,fixed,Debian 3.0.22-1~deb12u2,closed,version bump,hardened has 3.0.22-1~deb12u2 (minimum version in Depends),trivy
+CVE-2026-75806,libssl3,MEDIUM,3.0.11-1~deb12u2,fixed,Debian 3.0.22-1~deb12u2,closed,version bump,hardened has 3.0.22-1~deb12u2 (minimum version in Depends),trivy
+CVE-2026-77696,libssl3,MEDIUM,3.0.11-1~deb12u2,fixed,Debian 3.0.22-1~deb12u2,closed,version bump,hardened has 3.0.22-1~deb12u2 (minimum version in Depends),trivy
+CVE-2026-84782,libssl3,HIGH,3.0.11-1~deb12u2,fixed,Debian 3.0.22-1~deb12u2,closed,version bump,hardened has 3.0.22-1~deb12u2 (minimum version in Depends),trivy
+CVE-2026-9076,libssl3,LOW,3.0.11-1~deb12u2,fixed,Debian 3.0.20-1~deb12u2,closed,version bump,hardened has 3.0.22-1~deb12u2 (minimum version in Depends),trivy
 CVE-2022-27943,libstdc++6,LOW,12.2.0-14,affected,none,open,no Debian fix,Debian status in hardened image: affected,trivy
 CVE-2023-4039,libstdc++6,LOW,12.2.0-14,fixed,Debian 12.2.0-14+deb12u1,closed,version bump,hardened has 12.2.0-14+deb12u1 (current Debian base image),trivy
 CVE-2026-102010,libstdc++6,MEDIUM,12.2.0-14,will_not_fix,none,open,no Debian fix,Debian status in hardened image: will_not_fix,trivy
@@ -834,13 +834,13 @@ CVE-2026-3184,util-linux-extra,MEDIUM,2.38.1-5+deb12u1,will_not_fix,none,open,no
 CVE-2026-53613,util-linux-extra,HIGH,2.38.1-5+deb12u1,affected,none,open,no Debian fix,Debian status in hardened image: affected,trivy
 CVE-2026-53615,util-linux-extra,HIGH,2.38.1-5+deb12u1,affected,none,open,no Debian fix,Debian status in hardened image: affected,trivy
 CVE-2026-78410,util-linux-extra,HIGH,2.38.1-5+deb12u1,affected,none,open,no Debian fix,Debian status in hardened image: affected,trivy
-CVE-2023-45853,zlib1g,CRITICAL,1:1.2.13.dfsg-1,will_not_fix,none,open,no Debian fix,Debian status in hardened image: will_not_fix,trivy
+CVE-2023-45853,zlib1g,CRITICAL,1:1.2.13.dfsg-1,will_not_fix,none,vex,not affected (VEX),see vex/vex.openvex.json,trivy
 CVE-2026-27171,zlib1g,MEDIUM,1:1.2.13.dfsg-1,affected,none,open,no Debian fix,Debian status in hardened image: affected,trivy
 CVE-2026-76844,zlib1g,HIGH,1:1.2.13.dfsg-1,affected,none,open,no Debian fix,Debian status in hardened image: affected,trivy
 CVE-2026-85091,zlib1g,HIGH,1:1.2.13.dfsg-1,affected,none,open,no Debian fix,Debian status in hardened image: affected,trivy
 CVE-2009-4487,nginx,NEGLIGIBLE,1.25.5-1~bookworm,nginx.org package,not checked,open,open,negligible; not assessed,grype
 CVE-2013-0337,nginx,NEGLIGIBLE,1.25.5-1~bookworm,nginx.org package,not checked,open,open,negligible; not assessed,grype
-CVE-2023-44487,nginx,HIGH,1.25.5-1~bookworm,nginx.org package,not checked,open,open,HTTP/2 rapid reset; not assessed,grype
+CVE-2023-44487,nginx,HIGH,1.25.5-1~bookworm,nginx.org package,nginx 1.25.3,vex,not affected (VEX),HTTP/2 rapid reset; mitigation (new_streams limit) is in 1.25.5,grype
 CVE-2026-15176,nginx,CRITICAL,1.25.5-1~bookworm,nginx.org package,nginx 1.31.7 (f8a23425b),closed,backport,patch applied to 1.25.5; VEX fixed,grype
 CVE-2026-93479,nginx,CRITICAL,1.25.5-1~bookworm,nginx.org package,nginx 1.31.7 (6aa4b3fdd),vex,not affected (VEX),vulnerable code was added after 1.25.5,grype
 CVE-2026-95101,nginx,MEDIUM,1.25.5-1~bookworm,nginx.org package,nginx 1.31.7 (1c173a2d8),open,open,HTTP/3; patch not tested on 1.25.5,grype

@@ -43,11 +43,12 @@ make triage  # classify every baseline finding -> reports/triage.csv
   Grype from its official container image (`anchore/grype`) with the repository
   mounted as the working directory, so that `--vex vex/vex.openvex.json`
   resolves.
-- Later in the session Grype became very slow on this machine: a scan of either
-  image produced no result within 15 minutes, with no shortage of memory. I did
-  not find the cause. After restarting WSL, both scans finished in about 40
-  seconds, so all Grype reports in `reports/` are from the final images, run with
-  the same database.
+- Grype hung on this machine more than once (no result within 15 minutes, no
+  shortage of memory). I did not find the cause. Restarting WSL fixed it each
+  time; a scan then takes about 40 seconds. For the final rescan Grype read each
+  image from a `docker save` archive (`grype docker-archive:...`) instead of the
+  Docker daemon. All Grype reports in `reports/` are from the final images, run
+  with the same database.
 
 ## 1. What was fixed, and how
 
@@ -68,39 +69,47 @@ compiling OpenSSL into nginx is explained in `docs/TRIAGE.md`.
 
 | CVE | Flagged by | VEX status | Justification | Evidence |
 |-----|-----------|------------|---------------|----------|
-| CVE-2026-15176 | Grype | `fixed` | Backported (above). The version string is still 1.25.5, so scanners keep flagging it. | `reports/grype-vex-proof.txt` |
-| CVE-2026-93479 | Grype | `not_affected` | `vulnerable_code_not_present`: the vulnerable code was added after 1.25.5 | `docs/TRIAGE.md`, `reports/grype-vex-proof.txt` |
+| CVE-2026-15176 | Trivy, Grype | `fixed` | Backported (above). The version string is still 1.25.5, so scanners keep flagging it. | `reports/vex-proof.txt`, `reports/grype-vex-proof.txt` |
+| CVE-2026-93479 | Trivy, Grype | `not_affected` | `vulnerable_code_not_present`: the vulnerable code was added after 1.25.5 | `docs/TRIAGE.md`, `reports/vex-proof.txt`, `reports/grype-vex-proof.txt` |
 | CVE-2025-27587 | Trivy, Grype | `not_affected` | `vulnerable_code_not_in_execute_path`: affects PowerPC only; this image is amd64 | `reports/vex-proof.txt`, `reports/grype-vex-proof.txt` |
+| CVE-2023-44487 | Trivy, Grype | `not_affected` | `inline_mitigations_already_exist`: the HTTP/2 rapid reset mitigation added in 1.25.3 (`new_streams` limit in `ngx_http_v2.c`) is in 1.25.5 | `docs/TRIAGE.md`, `reports/vex-proof.txt`, `reports/grype-vex-proof.txt` |
+| CVE-2023-45853 | Trivy | `not_affected` | `vulnerable_code_not_present`: the bug is in MiniZip, which is not in `zlib1g` or anywhere in the image | `docs/TRIAGE.md`, `reports/vex-proof.txt` |
 
-- **Grype with VEX** (final image): 312 → 308 findings. The four rows removed are
-  exactly CVE-2026-15176 and CVE-2026-93479 on `nginx`, and CVE-2025-27587 on
-  `libssl3` and `openssl`.
-- **Trivy with VEX** (final image): CVE-2025-27587 drops from 2 to 0.
+- **Grype with VEX** (final image): 419 → 414 findings. The 5 rows removed are
+  exactly CVE-2026-15176, CVE-2026-93479 and CVE-2023-44487 on `nginx`, and
+  CVE-2025-27587 on `libssl3` and `openssl`. Grype does not report CVE-2023-45853.
+- **Trivy with VEX** (final image): 466 → 460 findings. The 6 rows removed are
+  the same five plus CVE-2023-45853 on `zlib1g`.
 
 ### Scan totals and image size
 
 | | Baseline (`nginx:1.25-bookworm`) | Hardened (`nginx-hardened:latest`) |
 |---|---|---|
-| Trivy findings (`--pkg-types os`, same database, final image) | 839 (785 CVE + 54 Debian TEMP/DLA/DSA) | 359 (316 CVE + 43 TEMP) |
-| Grype findings (same database, final image) | 789 | 312 |
-| Image size (`docker images`) | 276MB | 267MB |
+| Trivy findings (`--pkg-types os`, same database, final image) | 839 (785 CVE + 54 Debian TEMP/DLA/DSA) | 466 (423 CVE + 43 TEMP) |
+| Grype findings (same database, final image) | 789 | 419 |
+| Image size (`docker images`) | 276MB | 275MB |
 
 Trivy counts are findings in `reports/*-trivy.json` (Debian TEMP/DLA/DSA IDs
 included); Grype counts are rows with a CVE or GHSA ID in `reports/*-grype.txt`.
 Hardened counts are before VEX is applied.
 
-> **Attribution.** Most of the drop in the totals comes from two things: building on
-> a current `debian:bookworm-slim` base (the official image ships an older one), and
-> not installing packages nginx does not need, such as `curl` and the Kerberos and
-> LDAP libraries (173 findings, section 2). The CVE-specific changes are the
+> **Attribution.** Most of the drop in the totals comes from building on a current
+> `debian:bookworm-slim` base (the official image ships an older one). The image
+> installs exactly the official package set (`test_installed_packages_match`), so
+> no finding is closed by removing a component. The CVE-specific changes are the
 > backport, the OpenSSL bump and the VEX statements.
 
 ## 2. Key triage finding: the two scanners disagree
 
-- **Trivy** flags no CVEs against nginx in the official image, which installs
-  nginx from **nginx.org**, not from Debian. It does flag the nginx CVEs on the
-  `nginx` package built here, which is not from Debian either; I did not
-  establish why.
+- **Trivy** flags no CVEs against nginx in the official image. Its dpkg analyzer
+  marks packages whose `Maintainer` is `nginx-packaging@f5.com` as third-party,
+  and its detector skips third-party packages, because Debian's advisories do
+  not describe them (Trivy 0.76.2 with `--debug` logs "Third-party package
+  detected" for all five `nginx*` packages of the official image, and none for
+  this image). The packages built here have a different maintainer, so Trivy
+  matches them to Debian's `nginx` advisories and flags the nginx CVEs. I did not
+  change the maintainer to make them disappear, for the same reason the package
+  is not renamed (section 3).
 - **Grype** flags nginx by its version string, so it does see the nginx CVEs.
 
 A backport keeps the version at `1.25.5`, so Grype keeps flagging the patched CVE.
@@ -115,12 +124,11 @@ upstream fix status and version, and how this image handles it. One row per find
 
 | Outcome | Findings |
 |---|---|
-| Version bump: package installed at a version without the finding (`libssl3` minimum version in `Depends`, plus the current bookworm base) | 315 |
-| Component removed: package not installed in this image (`curl`, `libcurl4`, Kerberos, LDAP, `libssh2`, `libnghttp2`, SASL) | 173 |
+| Version bump: package installed at a version without the finding (`libssl3` minimum version in `Depends`, plus the current bookworm base) | 381 |
 | Backport (`build/patches/`) | 1 |
-| Not affected, VEX statement (`vex/vex.openvex.json`) | 3 |
-| Open: Debian has no fixed version (`affected`, `fix_deferred`, `will_not_fix`) | 349 |
-| Open: nginx CVEs not addressed (one is a backport candidate) | 6 |
+| Not affected, VEX statement (`vex/vex.openvex.json`) | 5 |
+| Open: Debian has no fixed version (`affected`, `fix_deferred`, `will_not_fix`) | 455 |
+| Open: nginx CVEs not addressed (one is a backport candidate) | 5 |
 | **Total** (839 Trivy + 8 Grype nginx findings) | **847** |
 
 No open finding has a fixed Debian version that is not installed. The largest open
@@ -255,13 +263,14 @@ pytest exits non-zero, which makes `make test` fail. Run it with `make test` or
   values (`PKG_RELEASE=1~bookworm` etc.) are kept identical to the official image
   so that scripts reading them behave the same.
 - **Image size.** Binaries and modules are stripped, as in the official
-  packages. The hardened image is 267MB; the official one is 276MB.
-- **zlib.** CVE-2023-45853 (Critical) is marked `will_not_fix` by Debian, so no
-  apt upgrade can close it. CVE-2026-85091 and CVE-2026-27171 also remain in
-  `zlib1g`. Not addressed.
-- **nginx findings still reported by Grype after VEX:** CVE-2026-97205 (Critical,
+  packages. The hardened image is 275MB; the official one is 276MB. It includes `curl` and
+  its libraries, as the official image does.
+- **zlib.** CVE-2023-45853 (Critical, `will_not_fix` in Debian) is in MiniZip,
+  which is not in this image; it is covered by VEX. CVE-2026-85091 and
+  CVE-2026-27171 remain in `zlib1g`. Not addressed.
+- **nginx findings still reported by Trivy and Grype after VEX:** CVE-2026-97205 (Critical,
   AIO + SSI use-after-free), CVE-2026-97629 (High, TLS session ticket keys),
-  CVE-2023-44487 (High, HTTP/2 rapid reset), CVE-2026-95101 (Medium, HTTP/3),
+  CVE-2026-95101 (Medium, HTTP/3),
   CVE-2009-4487 and CVE-2013-0337 (Negligible). HTTP/3 is compiled in, as in the
   official image, so CVE-2026-95101 applies. The upstream fix for CVE-2026-97629
   applies cleanly to 1.25.5 (`git apply --check`) and is the natural next
@@ -280,11 +289,16 @@ pytest exits non-zero, which makes `make test` fail. Run it with `make test` or
   (from hg.nginx.org, sha512 matching Alpine's APKBUILD) has identical files,
   apart from Mercurial's `.hg_archival.txt`.
 - **Test scope.** See "Not covered" in section 4.
+- **With more time:** `make poc` / `make vex` targets so the proofs regenerate
+  with one command; an AddressSanitizer build of unpatched 1.25.5 to show the
+  CVE-2026-15176 overflow itself, not only the changed behaviour; the
+  CVE-2026-97629 backport.
 
 ## 6. What surprised me
 
-- nginx is invisible to Trivy in the official image (nginx.org package) but
-  flagged by Grype. On my image Trivy does flag it, and I did not establish why.
+- nginx is invisible to Trivy in the official image but flagged by Grype. The
+  cause is a maintainer-based third-party heuristic in Trivy (section 2): whether
+  a scanner reports a CVE can depend on who maintains the package, not on the code.
 - **CVE-2026-93479 is a false positive on 1.25.5.** The vulnerable reserved-area
   allocation was introduced after 1.25.5 (commits `b76754049` / `a8289aa69`,
   2026-07-15), so the upstream fix does not even apply. The right treatment is
